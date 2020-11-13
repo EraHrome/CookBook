@@ -18,16 +18,10 @@ namespace CookBookServer.Controllers
             _logger = logger;
         }
 
-        [Authentifaction]
         public IActionResult Index()
         {
             return View();
-        }
-
-        public IActionResult Authorization()
-        {
-            return View();
-        }
+        }       
 
         public IActionResult Privacy()
         {
