@@ -1,13 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MyCodeServer.Models.Options;
+using MyCodeServer.Repositories;
+using MyCodeServer.Providers;
+using MongoDB.Driver;
 
 namespace CookBookServer
 {
@@ -23,6 +22,13 @@ namespace CookBookServer
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            string mongoConnStr = Configuration["MongoDbConnectionString"];
+            services.AddScoped<IMongoClient, MongoClient>(c => new MongoClient(mongoConnStr));
+            services.Configure<MongoAuthorizedDbOptions>(Configuration.GetSection("MongoAuthorizedDbOptions"));
+
+            services.AddScoped<MongoAuthorizationRepository>();
+            services.AddScoped<CookieProvider>();
+
             services.AddControllersWithViews();
         }
 

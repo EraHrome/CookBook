@@ -1,25 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
+using MyCodeServer.Providers;
 using CookBookServer.Models;
+using System.Diagnostics;
 
 namespace CookBookServer.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly CookieProvider _cookieProvider;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, CookieProvider cookieProvider)
         {
+            _cookieProvider = cookieProvider;
             _logger = logger;
         }
 
         public IActionResult Index()
         {
+            var prov = _cookieProvider.IsAuthentificated(HttpContext);
             return View();
         }
 
