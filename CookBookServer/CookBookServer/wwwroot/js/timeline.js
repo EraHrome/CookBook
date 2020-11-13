@@ -130,7 +130,7 @@ jQuery(document).ready(function($){
 	function setDatePosition(timelineComponents, min) {
 		for (i = 0; i < timelineComponents['timelineDates'].length; i++) { 
 		    var distance = daydiff(timelineComponents['timelineDates'][0], timelineComponents['timelineDates'][i]),
-		    	distanceNorm = Math.round(distance/timelineComponents['eventsMinLapse']) + 2;
+		    	distanceNorm = Math.round(distance/timelineComponents['eventsMinLapse']);
 		    timelineComponents['timelineEvents'].eq(i).css('left', distanceNorm*min+'px');
 		}
 	}
@@ -204,8 +204,8 @@ jQuery(document).ready(function($){
 	function parseDate(events) {
 		var dateArrays = [];
 		events.each(function(){
-			var dateComp = $(this).data('date').split('/'),
-				newDate = new Date(dateComp[2], dateComp[1]-1, dateComp[0]);
+			var dateComp = $(this).data('date').split(':'),
+				newDate = new Date(0,0,0,dateComp[0], dateComp[1]);
 			dateArrays.push(newDate);
 		});
 	    return dateArrays;
