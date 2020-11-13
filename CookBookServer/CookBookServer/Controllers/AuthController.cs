@@ -1,14 +1,19 @@
 ﻿using CookBookServer.Models.DTO.Auth;
+using CookBookServer.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace CookBookServer.Controllers
 {
     public class AuthController : Controller
     {
+        public readonly UserRepository _userRepository;
+
+        public AuthController(UserRepository userRepository) 
+        {
+            _userRepository = userRepository;
+        }
+
         public IActionResult Recover()
         {
             return View();
@@ -33,7 +38,7 @@ namespace CookBookServer.Controllers
 
         [HttpPost]
         public IActionResult SignUp(SignUpDTOModel model)
-        {
+        {            
             //todo. проверка и проставление куки
             return Redirect("/Home/Index");
         }
@@ -41,8 +46,24 @@ namespace CookBookServer.Controllers
         [HttpPost]
         public IActionResult SignIn(SignInDTOModel model)
         {
-            //todo. проверка и проставление куки
-            return Redirect("/Home/Index");
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    var user = _userRepository.Get(model);
+
+                }
+                //todo. проверка и проставление куки
+
+
+                return Redirect("/Home/Index");
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Error = "Пользователь с такими данными не найден";
+                return View();
+            }
+           
         }
     }
 }

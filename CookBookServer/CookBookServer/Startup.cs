@@ -3,10 +3,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
-using MyCodeServer.Models.Options;
-using MyCodeServer.Repositories;
-using MyCodeServer.Providers;
 using MongoDB.Driver;
+using CookBookServer.Repositories;
+using CookBookServer.Models;
+using CookBookServer.Providers;
 
 namespace CookBookServer
 {
@@ -24,9 +24,10 @@ namespace CookBookServer
         {
             string mongoConnStr = Configuration["MongoDbConnectionString"];
             services.AddScoped<IMongoClient, MongoClient>(c => new MongoClient(mongoConnStr));
-            services.Configure<MongoAuthorizedDbOptions>(Configuration.GetSection("MongoAuthorizedDbOptions"));
+            services.Configure<MongoDbOptions>(Configuration.GetSection("MongoAuthorizedDbOptions"));
 
-            services.AddScoped<MongoAuthorizationRepository>();
+            services.AddScoped<AuthRepository>();
+            services.AddScoped<UserRepository>();
             services.AddScoped<CookieProvider>();
 
             services.AddControllersWithViews();
