@@ -11,21 +11,7 @@ body {
     margin: 0 auto;
     padding: 0 30px;
 }
-.red-btn {
-    font-family: "NotoSans";
-    width: 200px;
-    height: 60px;
-    background: #fe6d73;
-    border-radius: 25px;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 25px;
-    color: #ffffff;
-    transition: 0.3s;
-    &:hover {
-        background: #ec565c;
-    }
-}
+
 .header {
     min-height: 100vh;
     background-color: white;

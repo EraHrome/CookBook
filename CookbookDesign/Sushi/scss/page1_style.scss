@@ -1,0 +1,144 @@
+@import "reset";
+@import "fonts";
+@import "header";
+
+.container2 {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.meal {
+    border-radius: 0px 0px 15px 15px;
+    background: url("../images/page1/background.png");
+    background-repeat: no-repeat;
+    background-position: center;
+
+    padding-top: 177px;
+    padding-bottom: 61px;
+    &__inner {
+    }
+
+    &__items {
+        margin-bottom: 19px;
+        display: flex;
+    }
+
+    &__stars {
+        margin-right: 25px;
+        width: 88px;
+        height: 37px;
+        display: flex;
+        padding-left: 43px;
+        align-items: center;
+        font-family: "NotoSans";
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 25px;
+        color: #000000;
+        background: #ffffff;
+        border-radius: 15px;
+        position: relative;
+        &::before {
+            content: "";
+            width: 20px;
+            height: 20px;
+            background: url("../images/header/star.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: inline-block;
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-53%);
+        }
+    }
+
+    &__profile-link {
+    }
+    &__profile-img {
+        width: 37px;
+        height: 37px;
+    }
+
+    &__title {
+        font-family: "OpenSans";
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 49px;
+        color: #ffffff;
+        margin-bottom: 7px;
+    }
+
+    &__descr {
+        font-family: "NotoSans";
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 25px;
+        color: #f5f5f5;
+    }
+}
+
+.recipe {
+    padding-top: 52px;
+    &__inner {
+    }
+}
+
+.ingredients {
+    width: 322px;
+    &__title {
+        font-family: "NotoSans";
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 19px;
+        color: #2c2c2c;
+        margin-bottom: 17px;
+    }
+
+    &__items {
+        margin-bottom: 33px;
+    }
+
+    &__item {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__item-name {
+        font-family: "NotoSans";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 16px;
+        color: #555555;
+    }
+
+    &__item-num {
+        font-family: "NotoSans";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 16px;
+        text-align: right;
+
+        color: #bfc0c0;
+    }
+
+    &__btn-items {
+        display: flex;
+    }
+
+    &__btn {
+        font-family: "NotoSans";
+        font-weight: bold;
+        font-size: 13px;
+        line-height: 18px;
+        color: #ffffff;
+        width: 135px;
+        height: 35px;
+        &:first-child{
+            margin-right: 15px;
+        }
+    }
+}
