@@ -3,6 +3,7 @@ using MyCodeServer.Models.Options;
 using CookBookServer.Models;
 using MongoDB.Driver;
 using System.Linq;
+using CookBookServer.Repositories;
 
 namespace MyCodeServer.Repositories
 {
@@ -11,13 +12,13 @@ namespace MyCodeServer.Repositories
 
         private IMongoDatabase _database;
         protected IMongoCollection<CookAuthorizationModel> _collection;
-        private readonly MongoAuthorizedDbOptions _options;
+        private readonly MongoDbOptions _options;
 
-        public MongoAuthorizationRepository(IOptions<MongoAuthorizedDbOptions> options, IMongoClient mongoClient)
+        public MongoAuthorizationRepository(IOptions<MongoDbOptions> options, IMongoClient mongoClient)
         {
             _options = options.Value;
             _database = mongoClient.GetDatabase(_options.DataBaseName);
-            _collection = _database.GetCollection<CookAuthorizationModel>(_options.CollectionName);
+            _collection = _database.GetCollection<CookAuthorizationModel>(MongoDocumentNameResolver.GetMongoDocumentName<CookAuthorizationModel>());
         }
 
         public void UpdateOne(CookAuthorizationModel authorizationModel)

@@ -24,7 +24,7 @@ namespace CookBookServer
         {
             string mongoConnStr = Configuration["MongoDbConnectionString"];
             services.AddScoped<IMongoClient, MongoClient>(c => new MongoClient(mongoConnStr));
-            services.Configure<MongoAuthorizedDbOptions>(Configuration.GetSection("MongoAuthorizedDbOptions"));
+            services.Configure<MongoDbOptions>(Configuration.GetSection("MongoAuthorizedDbOptions"));
 
             services.AddScoped<MongoAuthorizationRepository>();
             services.AddScoped<CookieProvider>();
