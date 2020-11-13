@@ -1,0 +1,25 @@
+﻿@*
+*@
+@{
+}
+
+<div>Пожалуйста, введите свои данные!</div>
+
+<div>
+    @using (Html.BeginForm("SignIn", "Auth", FormMethod.Post))
+    {
+        <p class="field">
+            <input type="text" name="Email" placeholder="Введите е-мэйл" />
+            <i class="icon-user icon-large"></i>
+        </p>
+        <p class="field">
+            <input type="password" name="Password" placeholder="Пароль" />
+            <i class="icon-lock icon-large"></i>
+        </p>
+        <p class="field"> <a href="@Url.Action("Recover", "Auth")">Забыли пароль?</a> </p>
+        <p class="field"> <a href="@Url.Action("SignUp", "Auth")">Зарегестрироваться</a> </p>
+        <p class="submit">
+            <button type="submit" name="submit"><i class="icon-arrow-right icon-large">Отправить</i></button>
+        </p>
+    }
+</div>
