@@ -4,48 +4,48 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - CookBookServer</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    @RenderSection("Styles", required: false)
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">CookBookServer</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Auth" asp-action="SignIn">Войти</a>
-                        </li>
-                    </ul>
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <h1 class="header__title">ВашСушеф.рф</h1>
+                <div class="header__descr">
+                    Станьте шеф-поваром вместе с вашим персональным
+                    помощником на кухне.
+                </div>
+                <div class="header__items">
+                    <button class="header__btn red-btn">Войти</button>
+                    <div class="header__create">
+                        <div class="header__create-label">Нет аккаунта?</div>
+                        <a class="header__create-link" href="#">Создайте его!</a>
+                    </div>
                 </div>
             </div>
-        </nav>
+        </div>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
-
-    <footer class="border-top footer text-muted">
+    @RenderBody()
+    <footer class="footer">
         <div class="container">
-            &copy; 2020 - CookBookServer - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <div class="footer__inner">
+                <h2 class="footer__title">Суши? Пицца? Стейк?</h2>
+                <div class="footer__text">
+                    <div class="footer__text-item">
+                        Ваш Су Шеф - интерактивная поваренная книга, где каждый может
+                        найти рецепт интересного блюда или загрузить собственный,
+                        поделившись им с тысячами других пользователей сервиса.
+                    </div>
+                    <div class="footer__text-item">
+                        Хотите попробовать традиционный английский зватрак, порадовать
+                        домашних вкусным обедом или приготовить романтический ужин?
+                        Станьте шеф-поваром вместе с нашим онлайн-помощником!
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>
