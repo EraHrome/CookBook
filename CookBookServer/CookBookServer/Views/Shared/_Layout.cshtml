@@ -16,10 +16,10 @@
                     помощником на кухне.
                 </div>
                 <div class="header__items">
-                    <button class="header__btn red-btn">Войти</button>
+                    <input type="button" class="header__btn red-btn" value="Войти" onclick="window.location.href='@Url.Action("SignIn", "Auth")';" />
                     <div class="header__create">
                         <div class="header__create-label">Нет аккаунта?</div>
-                        <a class="header__create-link" href="#">Создайте его!</a>
+                        <a class="header__create-link" href="@Url.Action("SignUp","Auth")">Создайте его!</a>
                     </div>
                 </div>
             </div>

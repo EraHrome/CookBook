@@ -1,9 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Mvc;
-using MyCodeServer.Providers;
 using CookBookServer.Models;
 using System.Diagnostics;
-using CookBookServer.Attributes;
 
 namespace CookBookServer.Controllers
 {

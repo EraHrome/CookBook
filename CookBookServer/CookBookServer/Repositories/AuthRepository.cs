@@ -1,20 +1,18 @@
 ﻿using Microsoft.Extensions.Options;
-using MyCodeServer.Models.Options;
 using CookBookServer.Models;
 using MongoDB.Driver;
 using System.Linq;
-using CookBookServer.Repositories;
 
-namespace MyCodeServer.Repositories
+namespace CookBookServer.Repositories
 {
-    public class MongoAuthorizationRepository
+    public class AuthRepository
     {
 
         private IMongoDatabase _database;
         protected IMongoCollection<CookAuthorizationModel> _collection;
         private readonly MongoDbOptions _options;
 
-        public MongoAuthorizationRepository(IOptions<MongoDbOptions> options, IMongoClient mongoClient)
+        public AuthRepository(IOptions<MongoDbOptions> options, IMongoClient mongoClient)
         {
             _options = options.Value;
             _database = mongoClient.GetDatabase(_options.DataBaseName);
@@ -25,10 +23,10 @@ namespace MyCodeServer.Repositories
         {
             _collection.DeleteOne(x => x.UserId == authorizationModel.UserId);
             _collection.InsertOne(new CookAuthorizationModel()
-            {
-                UserId = authorizationModel.UserId,
-                Guid = authorizationModel.Guid
-            }
+                {
+                    UserId = authorizationModel.UserId,
+                    Guid = authorizationModel.Guid
+                }
             );
         }
 

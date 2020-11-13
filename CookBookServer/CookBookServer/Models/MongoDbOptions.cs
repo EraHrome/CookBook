@@ -1,4 +1,4 @@
-﻿namespace MyCodeServer.Models.Options
+﻿namespace CookBookServer.Models
 {
     public class MongoDbOptions
     {

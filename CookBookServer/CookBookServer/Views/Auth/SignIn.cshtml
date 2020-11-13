@@ -1,6 +1,8 @@
-﻿@*
-*@
+﻿@model CookBookServer.Models.DTO.Auth.SignInDTOModel;
+
+
 @{
+    Layout = null;
 }
 
 <div>Пожалуйста, введите свои данные!</div>
@@ -8,11 +10,19 @@
 <div>
     @using (Html.BeginForm("SignIn", "Auth", FormMethod.Post))
     {
+        if (!String.IsNullOrEmpty(ViewBag.Error))
+        {
+            <p class="failed" style="color:red;">
+                @ViewBag.Error
+            </p>
+        }
+
         <p class="field">
-            <input type="text" name="Login" placeholder="Логин" />
+            @Html.EditorFor(x => x.Login, new { htmlAttributes = new { placeholder = "Логин" } })
             <i class="icon-user icon-large"></i>
         </p>
         <p class="field">
+            @Html.EditorFor(x => x.Password, new { htmlAttributes = new { placeholder = "Пароль" } })
             <input type="password" name="Password" placeholder="Пароль" />
             <i class="icon-lock icon-large"></i>
         </p>

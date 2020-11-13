@@ -1,11 +1,10 @@
 ﻿using CookBookServer.Interfaces;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
-using MyCodeServer.Models.Options;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using CookBookServer.Repositories.Interfaces;
+using CookBookServer.Models;
 
 namespace CookBookServer.Repositories
 {
