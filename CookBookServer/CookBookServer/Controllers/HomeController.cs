@@ -10,11 +10,9 @@ namespace CookBookServer.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly CookieProvider _cookieProvider;
 
-        public HomeController(ILogger<HomeController> logger, CookieProvider cookieProvider)
+        public HomeController(ILogger<HomeController> logger)
         {
-            _cookieProvider = cookieProvider;
             _logger = logger;
         }
 
