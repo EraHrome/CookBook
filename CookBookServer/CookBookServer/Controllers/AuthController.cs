@@ -14,6 +14,13 @@ namespace CookBookServer.Controllers
             return View();
         }
 
+        public IActionResult RecoverResult()
+        {
+            //todo. проверка емейла, отправка ссылки на востановление
+            ViewBag.IsSuccess = true;
+            return View();
+        }
+
         public IActionResult SignUp()
         {
             return View();
@@ -27,14 +34,14 @@ namespace CookBookServer.Controllers
         [HttpPost]
         public IActionResult SignUp(SignUpDTOModel model)
         {
-            //проверка и проставление куки
+            //todo. проверка и проставление куки
             return Redirect("/Home/Index");
         }
 
         [HttpPost]
         public IActionResult SignIn(SignInDTOModel model)
         {
-            //проверка и проставление куки
+            //todo. проверка и проставление куки
             return Redirect("/Home/Index");
         }
     }
