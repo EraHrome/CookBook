@@ -7,7 +7,8 @@ namespace CookBookServer.Attributes
     {
         public override void OnActionExecuting(ActionExecutingContext actionExecutingContext)
         {
-            actionExecutingContext.Result = new RedirectResult("/Home/Authorization ", true);
+            actionExecutingContext.Result = new RedirectResult("/Auth/SignUp ", true);
         }
     }
+
 }

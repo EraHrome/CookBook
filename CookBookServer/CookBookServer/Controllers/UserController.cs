@@ -9,7 +9,6 @@ namespace CookBookServer.Controllers
 {
     public class UserController : Controller
     {
-
         [Authentifaction]
         public IActionResult Index()
         {

@@ -8,7 +8,12 @@ using System.Threading.Tasks;
 namespace CookBookServer.Controllers
 {
     public class AuthController : Controller
-    {    
+    {
+        public IActionResult Recover()
+        {
+            return View();
+        }
+
         public IActionResult SignUp()
         {
             return View();
@@ -22,13 +27,15 @@ namespace CookBookServer.Controllers
         [HttpPost]
         public IActionResult SignUp(SignUpDTOModel model)
         {
-            return View();
+            //проверка и проставление куки
+            return Redirect("/Home/Index");
         }
 
         [HttpPost]
         public IActionResult SignIn(SignInDTOModel model)
         {
-            return View();
+            //проверка и проставление куки
+            return Redirect("/Home/Index");
         }
     }
 }
