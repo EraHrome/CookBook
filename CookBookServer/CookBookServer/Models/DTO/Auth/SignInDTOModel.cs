@@ -7,7 +7,7 @@ namespace CookBookServer.Models.DTO.Auth
 {
     public class SignInDTOModel
     {
-        public string Email { get; set; }
+        public string Login { get; set; }
         public string Password { get; set; }
     }
 }

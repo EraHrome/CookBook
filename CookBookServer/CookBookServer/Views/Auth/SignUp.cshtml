@@ -11,31 +11,28 @@
     @using (Html.BeginForm("SignUp", "Auth", FormMethod.Post))
     {
         <p class="field">
-            <input type="text" name="FirstName" placeholder="Имя" />
+            <input type="text" name="Email" placeholder="Введите адрес электронной почты" />
             <i class="icon-user icon-large"></i>
         </p>
         <p class="field">
-            <input type="text" name="LastName" placeholder="Фамилия" />
+            <input type="text" name="Login" placeholder="Задайте логин" />
             <i class="icon-user icon-large"></i>
         </p>
         <p class="field">
-            <input type="text" name="MiddleName" placeholder="Отчество" />
+            <input type="text" name="FirstName" placeholder="Введите имя" />
             <i class="icon-user icon-large"></i>
         </p>
         <p class="field">
-            <input type="text" name="Nickname" placeholder="Никнейм" />
+            <input type="text" name="LastName" placeholder="Введите фамилию" />
             <i class="icon-user icon-large"></i>
         </p>
+
         <p class="field">
-            <input type="text" name="Email" placeholder="Введите е-мэйл" />
-            <i class="icon-user icon-large"></i>
-        </p>
-        <p class="field">
-            <input type="password" name="Password" placeholder="Пароль" />
+            <input type="password" name="Password" placeholder="Задайте пароль" />
             <i class="icon-lock icon-large"></i>
         </p>
         <p class="submit">
-            <button type="submit" name="submit"><i class="icon-arrow-right icon-large">Отправить</i></button>
+            <button type="submit" name="submit"><i class="icon-arrow-right icon-large">Зарегистрироваться</i></button>
         </p>
     }
 </div>
