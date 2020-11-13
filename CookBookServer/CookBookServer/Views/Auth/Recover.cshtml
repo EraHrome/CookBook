@@ -1,0 +1,20 @@
+﻿@*
+    
+*@
+@{
+}
+
+
+<div>
+    @using (Html.BeginForm("RecoverResult", "Auth", FormMethod.Post))
+    {        
+        <p class="field">Введите емейл, привязанный к учетной записи для востановления пароля. </p>
+        <p class="field">
+            <input type="text" name="Email" placeholder="Введите е-мэйл" />
+            <i class="icon-user icon-large"></i>
+        </p>
+        <p class="submit">
+            <button type="submit" name="submit"><i class="icon-arrow-right icon-large">Отправить</i></button>
+        </p>
+    }
+</div>

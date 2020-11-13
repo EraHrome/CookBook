@@ -22,10 +22,10 @@ namespace MyCodeServer.Repositories
 
         public void UpdateOne(CookAuthorizationModel authorizationModel)
         {
-            _collection.DeleteOne(x => x.Id == authorizationModel.Id);
+            _collection.DeleteOne(x => x.UserId == authorizationModel.UserId);
             _collection.InsertOne(new CookAuthorizationModel()
             {
-                Id = authorizationModel.Id,
+                UserId = authorizationModel.UserId,
                 Guid = authorizationModel.Guid
             }
             );
