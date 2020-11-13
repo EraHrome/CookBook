@@ -10,6 +10,8 @@ namespace CookBookServer.Models.Recipe
         public int Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
+        public string Category { get; set; }
+        public List<string> TagsList { get; set; }
         public DateTime PublicationDate { get; set; }
         public DateTime CookingTime { get; set; }
         public List<CheckpointModel> Checkpoints { get; set; }

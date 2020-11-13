@@ -10,6 +10,5 @@ namespace CookBookServer.Models.Recipe
         public int Id { get; set; }
         public string Title { get; set; }
         public string Amount { get; set; }
-
     }
 }
