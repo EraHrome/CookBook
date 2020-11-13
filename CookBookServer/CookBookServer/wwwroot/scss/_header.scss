@@ -1,0 +1,66 @@
+.container {
+    max-width: 1654px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+.header {
+
+    &__inner {
+        height: 87px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__nav {
+        display: flex;
+        align-items: center;
+    }
+
+    &__logo {
+        margin-right: 150px;
+    }
+    &__logo-link {
+        font-family: "OpenSans";
+        font-style: normal;
+        font-weight: 800;
+        font-size: 18px;
+        line-height: 25px;
+        color: #000000;
+    }
+    &__profile {
+        display: flex;
+        align-items: center;
+        position: relative;
+        cursor: pointer;
+    }
+    &__profile-name {
+        margin-right: 20px;
+        font-family: 'NotoSans';
+
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 19px;
+        color: #2c2c2c;
+    }
+    &__profile-img {
+        width: 50px;
+        height: 50px;
+    }
+    &__menu {
+        display: flex;
+    }
+
+    &__menu-item {
+        margin-left: 20px;
+        margin-right: 20px;
+
+        a {
+            font-family: "NotoSans";
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 19px;
+            text-align: right;
+            color: #2c2c2c;
+        }
+    }
+}
