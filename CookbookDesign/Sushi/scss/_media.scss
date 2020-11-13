@@ -1,0 +1,46 @@
+@media (max-width: 1570px) {
+    .authorization {
+        &::after {
+            bottom: 34px;
+            right: 78px;
+        }
+    }
+}
+@media (max-width: 1170px) {
+    .authorization {
+        &::after {
+            width: 226px;
+            height: 315px;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            bottom: 34px;
+            right: 28px;
+        }
+    }
+}
+@media (max-width: 991px) {
+    .authorization {
+        &::after {
+            display: none;
+        }
+    }
+}
+
+@media (max-height: 660px) {
+    .authorization {
+        &__inner {
+            padding-top: 60px;
+        }
+    }
+}
+@media (max-height: 510px) {
+    .authorization {
+        &__inner {
+            padding-top: 60px;
+        }
+        &__logo {
+            margin-bottom: 50px;
+        }
+    }
+}
