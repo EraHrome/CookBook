@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using MyCodeServer.Providers;
 using CookBookServer.Models;
 using System.Diagnostics;
+using CookBookServer.Attributes;
 
 namespace CookBookServer.Controllers
 {
@@ -17,9 +18,14 @@ namespace CookBookServer.Controllers
             _logger = logger;
         }
 
+        [Authentifaction]
         public IActionResult Index()
         {
-            var prov = _cookieProvider.IsAuthentificated(HttpContext);
+            return View();
+        }
+
+        public IActionResult Authorization()
+        {
             return View();
         }
 
