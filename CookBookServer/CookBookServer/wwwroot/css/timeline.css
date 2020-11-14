@@ -188,3 +188,13 @@
     -ms-flex-pack: justify;
     justify-content: flex-start;
 }
+
+.recept-container {
+    font-family: "NotoSans";
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 19px;
+    color: #555555;
+    text-decoration: none;
+    margin-bottom: 15px;
+}
