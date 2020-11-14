@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 /*Обнуление*/
 * {
   padding: 0;
@@ -225,7 +225,6 @@ h6 {
 }
 
 .meal__stars {
-  margin-right: 25px;
   width: 88px;
   height: 37px;
   display: -webkit-box;
@@ -265,9 +264,7 @@ h6 {
   height: 37px;
 }
 
-.header {
-  margin-bottom: 35px;
-}
+
 .container3 {
   max-width: 1044px;
   padding: 0 15px;
@@ -281,7 +278,8 @@ h6 {
   padding-bottom: 68px;
 }
 .recipes__inner {
-  position: relative;
+    position: relative;
+    margin-top: 30px;
 }
 .recipes__inner::before {
   content: "";
@@ -294,19 +292,19 @@ h6 {
   top: 13px;
 }
 .recipes__input {
-  padding-left: 54px;
-  padding-right: 54px;
-  width: 100%;
-  background: #e9e9e9;
-  border-radius: 15px;
-  height: 38px;
-  font-family: "NotoSans";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 19px;
-  color: black;
-  margin-bottom: 42px;
+    padding-left: 54px;
+    padding-right: 54px;
+    width: 100%;
+    background: #e9e9e9;
+    border-radius: 15px;
+    height: 38px;
+    font-family: "NotoSans";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 19px;
+    color: black;
+    margin-bottom: 42px;
 }
 .recipes__input::-webkit-input-placeholder {
   color: #555555;

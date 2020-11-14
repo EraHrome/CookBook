@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 /*Обнуление*/
 * {
   padding: 0;
@@ -105,9 +105,10 @@ h6 {
   -o-transition: 0.3s;
   transition: 0.3s;
 }
-.red-btn:hover {
-  background: #ec565c;
-}
+    .red-btn:hover {
+        background: #ec565c;
+        cursor: pointer;
+    }
 
 @font-face {
   font-family: "NotoSans";
@@ -180,16 +181,16 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
 }
-.header__inner::after {
-  content: "";
-  display: block;
-  width: 40px;
-  height: 40px;
-  position: absolute;
-  top: 67px;
-  left: 0px;
-  background: #fe6d73;
-}
+    .header__inner::after {
+        content: "";
+        display: block;
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: 67px;
+        left: 0px;
+        background-image: url(/images/header/logomini.png);
+    }
 .header__title {
   font-weight: 800;
   font-size: 48px;
