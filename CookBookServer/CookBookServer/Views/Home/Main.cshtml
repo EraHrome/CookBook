@@ -3,86 +3,61 @@
     ViewData["Title"] = "Home Page";
 }
 @section Styles {
-    <link rel="stylesheet" href="~/css/index_style.css">
+    @*<link rel="stylesheet" href="~/css/index_style.css">*@
+    <link rel="stylesheet" href="~/css/main_style.css" />
 }
-<section class="statistics">
-    <div class="container">
-        <div class="statistics__inner">
-            <div class="statistics__item">
-                <div class="statistics__item-num">14000</div>
-                <div class="statistics__item-descr">
-                    Рецептов<br>
-                    создано
-                </div>
-            </div>
-            <div class="statistics__item">
-                <div class="statistics__item-num">1200</div>
-                <div class="statistics__item-descr">
-                    Шефов<br>
-                    зарегистрировано
-                </div>
-            </div>
-            <div class="statistics__item">
-                <div class="statistics__item-num">170</div>
-                <div class="statistics__item-descr">
-                    Блюд приготовлено<br>
-                    сегодня
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<main class="recipes">
-    <div class="container3">
-        <div class="recipes__inner">
-            <input type="text" class="recipes__input" placeholder="Поиск по рецептам">
-            <div class="recipes__items">
-                <div class="recipes__items-1">
-                    <div class="recipes__item-1">
-                        <h2 class="recipes__title">
-                            Классический стейк
-                            из говядины
-                        </h2>
-                        <div class="recipes__time">10 минут</div>
-                        <div class="meal__items">
-                            <a class="meal__profile-link" href="#">
-                                <img class="meal__profile-img" src="images/page1/prifile.png" alt="">
-                            </a>
-                            <div class="meal__stars">5.0</div>
+<body>
+    <main class="recipes">
+        <div class="container3">
+            <div class="recipes__inner">
+                <input type="text" class="recipes__input" placeholder="Поиск по рецептам">
+                <div class="recipes__items">
+                    <div class="recipes__items-1">
+                        <div class="recipes__item-1">
+                            <h2 class="recipes__title">
+                                Классический стейк
+                                из говядины
+                            </h2>
+                            <div class="recipes__time">10 минут</div>
+                            <div class="meal__items">
+                                <a class="meal__profile-link" href="#">
+                                    <img class="meal__profile-img" src="~/images/page1/prifile.png" alt="">
+                                </a>
+                                <div class="meal__stars">5.0</div>
+                            </div>
+                        </div>
+                        <div class="recipes__item-1">
+                            <h2 class="recipes__title">
+                                Средиземноморский
+                                салад
+                            </h2>
+                            <div class="recipes__time">5 минут</div>
+                            <div class="meal__items">
+                                <a class="meal__profile-link" href="#">
+                                    <img class="meal__profile-img" src="~/images/page1/prifile.png" alt="">
+                                </a>
+                                <div class="meal__stars">4.7</div>
+                            </div>
                         </div>
                     </div>
-                    <div class="recipes__item-1">
-                        <h2 class="recipes__title">
-                            Средиземноморский
-                            салад
-                        </h2>
-                        <div class="recipes__time">5 минут</div>
-                        <div class="meal__items">
-                            <a class="meal__profile-link" href="#">
-                                <img class="meal__profile-img" src="images/page1/prifile.png" alt="">
-                            </a>
-                            <div class="meal__stars">4.7</div>
+                    <div class="recipes__items-2">
+                        <div class="recipes__item-2">
+                            <h2 class="recipes__title">Маринара</h2>
+                            <div class="recipes__time">25 минут</div>
+                            <div class="bottom">
+                                <div class="meal__stars">5.0</div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="recipes__items-2">
-                    <div class="recipes__item-2">
-                        <h2 class="recipes__title">Маринара</h2>
-                        <div class="recipes__time">25 минут</div>
-                        <div class="bottom">
-                            <div class="meal__stars">5.0</div>
-                        </div>
-                    </div>
-                    <div class="recipes__item-2">
-                        <h2 class="recipes__title">Классический стейк</h2>
-                        <div class="recipes__time">10 минут</div>
-                        <div class="bottom">
-                            <div class="meal__stars">5.0</div>
+                        <div class="recipes__item-2">
+                            <h2 class="recipes__title">Классический стейк</h2>
+                            <div class="recipes__time">10 минут</div>
+                            <div class="bottom">
+                                <div class="meal__stars">5.0</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    </div>
-</main>
+    </main>
+</body>
