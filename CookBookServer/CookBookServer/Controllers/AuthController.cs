@@ -89,9 +89,6 @@ namespace CookBookServer.Controllers
                 };
                 _authRepository.UpdateOne(auth);
 
-
-                User = user;
-
                 //try
                 //{
                 //    var url = Url.Action("Confirm", "Auth", new { id = user.Id }, protocol: Request.Scheme);
