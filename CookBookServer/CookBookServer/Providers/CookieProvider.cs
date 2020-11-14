@@ -58,6 +58,7 @@ namespace CookBookServer.Providers
         public void DeleteGuidFromCookies(HttpContext httpContext)
         {
             httpContext.Response.Cookies.Delete("token");
+            httpContext.Response.Cookies.Delete(".AspNetCore.Cookies");
         }
 
     }

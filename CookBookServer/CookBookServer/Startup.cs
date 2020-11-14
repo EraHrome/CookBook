@@ -21,7 +21,6 @@ namespace CookBookServer
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             string mongoConnStr = Configuration["MongoDbConnectionString"];
@@ -31,9 +30,10 @@ namespace CookBookServer
             services.AddScoped<AuthRepository>();
             services.AddScoped<UserRepository>();
             services.AddScoped<CookieProvider>();
+            services.AddScoped<MongoRecipesRepository>();
 
-            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-               .AddCookie(options => //CookieAuthenticationOptions
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)               
+               .AddCookie(options =>
                 {
                    options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Auth/SignIn");
                });
@@ -42,7 +42,6 @@ namespace CookBookServer
             services.AddMapper("CookBookServer");
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
@@ -52,7 +51,6 @@ namespace CookBookServer
             else
             {
                 app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
             app.UseHttpsRedirection();
@@ -60,10 +58,8 @@ namespace CookBookServer
 
             app.UseRouting();
 
-            app.UseAuthentication();    // подключение аутентификации
+            app.UseAuthentication();   
             app.UseAuthorization();
-
-
 
             app.UseEndpoints(endpoints =>
             {

@@ -30,9 +30,14 @@ namespace CookBookServer.Repositories
             );
         }
 
-        public void DeleteOne(AuthModel authorizationModel)
+        public void DeleteOneByUserId(AuthModel authorizationModel)
         {
             _collection.DeleteOne(x => x.UserId == authorizationModel.UserId);
+        }
+
+        public void DeleteOneByGuid(string guid)
+        {
+            _collection.DeleteOne(x => x.Guid == guid);
         }
 
         /// <summary>
