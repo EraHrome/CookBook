@@ -319,7 +319,7 @@ h6 {
   font-family: "NotoSans";
   font-style: normal;
   font-weight: 500;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 16px;
   color: #555555;
 }
@@ -327,7 +327,7 @@ h6 {
   font-family: "NotoSans";
   font-style: normal;
   font-weight: 600;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 16px;
   text-align: right;
   color: #bfc0c0;
@@ -338,13 +338,22 @@ h6 {
   display: flex;
 }
 .ingredients__btn {
-  font-family: "NotoSans";
-  font-weight: bold;
-  font-size: 13px;
-  line-height: 18px;
-  color: #ffffff;
-  width: 135px;
-  height: 35px;
+    width: 114px;
+    height: 35px;
+    margin-right: 31px;
+    font-family: "NotoSans";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 18px;
+    color: #ffffff;
+    background: #fe6d73;
+    border-radius: 25px;
+    -webkit-filter: drop-shadow(0px 4px 4px #fe6d73);
+    filter: drop-shadow(0px 4px 4px #fe6d73);
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
 }
 .ingredients__btn:first-child {
   margin-right: 15px;

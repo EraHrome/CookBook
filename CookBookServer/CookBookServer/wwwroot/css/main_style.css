@@ -268,7 +268,7 @@ h6 {
     }
 
 .meal__stars {
-    margin-right: 25px;
+    /* margin-right: 25px; */
     width: 88px;
     height: 37px;
     display: -webkit-box;
@@ -311,7 +311,7 @@ h6 {
 }
 
 .header {
-    margin-bottom: 35px;
+
 }
 
 .container3 {
@@ -329,6 +329,7 @@ h6 {
 
 .recipes__inner {
     position: relative;
+    margin-top: 35px;
 }
 
     .recipes__inner::before {
