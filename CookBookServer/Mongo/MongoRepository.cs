@@ -1,11 +1,10 @@
-﻿using CookBookServer.Models.Options;
-using Microsoft.Extensions.Options;
+﻿using Microsoft.Extensions.Options;
 using System.Collections.Generic;
-using CookBookServer.Models;
 using MongoDB.Driver;
 using System.Linq;
 using Mongo.Interfaces;
 using Mongo;
+using Mongo.Models;
 
 namespace CookBookServer.Repositories
 {
@@ -14,7 +13,7 @@ namespace CookBookServer.Repositories
         private IMongoDatabase _database;
         protected IMongoCollection<T> _doc;
 
-        public MongoRepository(IOptions<MongoAuthorizedDbOptions> settings, IMongoClient mongoClient)
+        public MongoRepository(IOptions<MongoDbOptions> settings, IMongoClient mongoClient)
         {
             _database = mongoClient.GetDatabase(settings.Value.DataBaseName);
             _doc = _database.GetCollection<T>(MongoDocumentNameResolver.GetMongoDocumentName<T>());

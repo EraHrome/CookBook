@@ -1,5 +1,9 @@
 ﻿using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using Mongo.Models.Recipe;
+using Mongo.Repositories;
+using System;
 
 namespace CookBackApi.Controllers
 {
@@ -9,23 +13,63 @@ namespace CookBackApi.Controllers
     {
 
         private readonly ILogger<RecipeController> _logger;
+        private readonly RecipesRepository _recipesRepository;
 
-        public RecipeController(ILogger<RecipeController> logger)
+        public RecipeController(
+            RecipesRepository recipesRepository,
+            ILogger<RecipeController> logger)
         {
+            _recipesRepository = recipesRepository;
             _logger = logger;
         }
 
-        //[HttpGet]
-        //public IEnumerable<WeatherForecast> Get()
-        //{
-        //    var rng = new Random();
-        //    return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-        //    {
-        //        Date = DateTime.Now.AddDays(index),
-        //        TemperatureC = rng.Next(-20, 55),
-        //        Summary = Summaries[rng.Next(Summaries.Length)]
-        //    })
-        //    .ToArray();
-        //}
+        [HttpGet("[action]")]
+        public IActionResult Get()
+        {
+            try
+            {
+                var res = _recipesRepository.Get();
+                return Ok(res);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                return BadRequest();
+            }
+
+        }
+        
+        [HttpGet("[action]/{Id}")]
+        public IActionResult Get([FromRoute] string Id)
+        {
+            try
+            {
+                var res = _recipesRepository.GetByUid(Id);
+                return Ok(res);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                return BadRequest();
+            }
+            
+        }
+
+        [HttpPost("[action]")]
+        public IActionResult Create([FromBody] RecipeModel model)
+        {
+            try
+            {
+                var res = _recipesRepository.Create(model);
+                return Ok(res);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                return BadRequest();
+            }
+
+        }
+
     }
 }

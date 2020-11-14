@@ -13,10 +13,10 @@ namespace CookBookServer.Controllers
         public readonly CookieProvider _cookieProvider;
         public readonly UserRepository _userRepository;
         public readonly AuthRepository _authRepository;
-        public readonly MongoRecipesRepository _recipesRepository;
+        public readonly RecipesRepository _recipesRepository;
 
         public RecipeController(CookieProvider cookieProvider, UserRepository userRepository,
-            AuthRepository authRepository, MongoRecipesRepository recipesRepository)
+            AuthRepository authRepository, RecipesRepository recipesRepository)
         {
             _cookieProvider = cookieProvider;
             _userRepository = userRepository;

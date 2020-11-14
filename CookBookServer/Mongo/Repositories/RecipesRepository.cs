@@ -4,13 +4,13 @@ using MongoDB.Driver;
 using System.Linq;
 using Mongo.Models.Recipe;
 using CookBookServer.Repositories;
-using CookBookServer.Models;
+using Mongo.Models;
 
 namespace Mongo.Repositories
 {
-    public class MongoRecipesRepository : MongoRepository<RecipeModel>
+    public class RecipesRepository : MongoRepository<RecipeModel>
     {
-        public MongoRecipesRepository(IOptions<MongoAuthorizedDbOptions> options, IMongoClient client) : base(options, client)
+        public RecipesRepository(IOptions<MongoDbOptions> options, IMongoClient client) : base(options, client)
         { }
 
         public RecipeModel GetByUid(string id)
