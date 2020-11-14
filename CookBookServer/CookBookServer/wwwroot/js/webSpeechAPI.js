@@ -13,8 +13,10 @@ $(function () {
     SpeechRecognition.lang = "ru-RU";
     SpeechRecognition.interimResults = true;
     SpeechRecognition.onresult = function (event) {
-        var eventResult = event.results[0][0].transcript;
-        if (prevKeyWords.indexOf(eventResult) !== -1) {
+
+        var speech = event.results[0][0].transcript;
+
+        if (prevKeyWords.indexOf(speech) !== -1) {
             if (!isTimeout) {
                 console.log("Событие переключения назад")
                 $('.btn')[0].click()
@@ -23,7 +25,7 @@ $(function () {
             }
         }
 
-        if (nextKeyWords.indexOf(eventResult) !== -1) {
+        if (nextKeyWords.indexOf(speech) !== -1) {
             if (!isTimeout) {
                 console.log("Событие переключения вперед")
                 $('.btn')[1].click()

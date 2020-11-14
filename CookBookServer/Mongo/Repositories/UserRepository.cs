@@ -4,13 +4,12 @@ using System.Linq;
 using System;
 using Mongo.Models;
 using DTOModels;
-using CookBookServer.Models;
 
 namespace CookBookServer.Repositories
 {
     public class UserRepository : MongoRepository<User>
     {
-        public UserRepository(IOptions<MongoAuthorizedDbOptions> options, IMongoClient client) : base(options, client)
+        public UserRepository(IOptions<MongoDbOptions> options, IMongoClient client) : base(options, client)
         {
            
         }

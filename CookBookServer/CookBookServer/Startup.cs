@@ -5,12 +5,11 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 using MongoDB.Driver;
 using CookBookServer.Repositories;
-using CookBookServer.Models;
 using CookBookServer.Providers;
 using CookBookServer.Code.Automapper;
 using Microsoft.AspNetCore.Authentication.Cookies;
-using CookBookServer.Models.Options;
 using Mongo.Repositories;
+using Mongo.Models;
 
 namespace CookBookServer
 {
@@ -27,14 +26,11 @@ namespace CookBookServer
         {
             string mongoConnStr = Configuration["MongoDbConnectionString"];
             services.AddScoped<IMongoClient, MongoClient>(c => new MongoClient(mongoConnStr));
-            services.Configure<MongoAuthorizedDbOptions>(Configuration.GetSection("MongoAuthorizedDbOptions"));
-            services.Configure<MongoRecipedDbOptions>(Configuration.GetSection("MongoRecipedDbOptions"));
-            services.Configure<MongoUsersDbOptions>(Configuration.GetSection("MongoUsersDbOptions"));
+            services.Configure<MongoDbOptions>(Configuration.GetSection("MongoDbOptions"));
 
             services.AddScoped<AuthRepository>();
             services.AddScoped<UserRepository>();
             services.AddScoped<CookieProvider>();
-            services.AddScoped<MongoRecipesRepository>();
 
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                .AddCookie(options =>

@@ -1,8 +1,8 @@
 ﻿using CookBookServer.Interfaces;
 
-namespace CookBookServer.Models
+namespace Mongo.Models
 {
-    public class MongoAuthorizedDbOptions : IMongoDbOptions
+    public class MongoDbOptions : IMongoDbOptions
     {
 
         public string DataBaseName { get; set; }

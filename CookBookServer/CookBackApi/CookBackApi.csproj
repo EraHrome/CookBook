@@ -4,5 +4,10 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DTOModels\DTOModels.csproj" />
+    <ProjectReference Include="..\Mongo\Mongo.csproj" />
+  </ItemGroup>
+
 
 </Project>

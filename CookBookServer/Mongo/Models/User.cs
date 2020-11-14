@@ -23,6 +23,7 @@ namespace Mongo.Models
         public double Rating { get; set; }
 
         public bool IsConfirmed { get; set; }
+
         public IEnumerable<string> RecipesIds { get; set; }
     }
 }

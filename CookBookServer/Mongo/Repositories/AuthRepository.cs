@@ -3,7 +3,6 @@ using MongoDB.Driver;
 using System.Linq;
 using Mongo.Models;
 using Mongo;
-using CookBookServer.Models;
 
 namespace Mongo.Repositories
 {
@@ -12,9 +11,9 @@ namespace Mongo.Repositories
 
         private IMongoDatabase _database;
         protected IMongoCollection<AuthModel> _collection;
-        private readonly MongoAuthorizedDbOptions _options;
+        private readonly MongoDbOptions _options;
 
-        public AuthRepository(IOptions<MongoAuthorizedDbOptions> options, IMongoClient mongoClient)
+        public AuthRepository(IOptions<MongoDbOptions> options, IMongoClient mongoClient)
         {
             _options = options.Value;
             _database = mongoClient.GetDatabase(_options.DataBaseName);
