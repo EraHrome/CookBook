@@ -150,7 +150,7 @@ namespace CookBookServer.Controllers
                 _authRepository.UpdateOne(auth);
                 await Authenticate(String.Format("{0} {1}", user.FirstName, user.LastName));
 
-                return Redirect("/Recipe/Index");
+                return Redirect("/Home");
             }
             catch (Exception ex)
             {
