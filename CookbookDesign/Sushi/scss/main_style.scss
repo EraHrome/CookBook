@@ -78,6 +78,11 @@
     margin: 0 auto;
 }
 .recipes {
+    background-image: url("../images/main/back.png");
+    background-position: right;
+   
+    background-repeat: no-repeat;
+    padding-bottom: 68px;
     &__inner {
         position: relative;
         &::before {
@@ -116,27 +121,82 @@
     }
 
     &__items-1 {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 42px;
     }
 
     &__item-1 {
+        padding-left: 34px;
+        padding-right: 34px;
+        padding-top: 312px;
+        width: 490px;
+        height: 567px;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 15px;
+        &:first-child{
+            background-image: linear-gradient(360deg, #000000 0%, rgba(0, 0, 0, 0) 100%), url("../images/header/meet.png");
+        }
+        &:last-child{
+            background-image: linear-gradient(360deg, #000000 0%, rgba(0, 0, 0, 0) 100%), url("../images/main/salat.jpg");
+        }
     }
 
     &__title {
+        font-family: "OpenSans";
+        font-style: normal;
+        font-weight: bold;
+        font-size: 36px;
+        line-height: 49px;
+        display: flex;
+        align-items: flex-end;
+        color: #ffffff;
+        margin-bottom: 7px;
     }
 
     &__time {
+        font-family: "NotoSans";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 25px;
+        color: #f5f5f5;
+        margin-bottom: 61px;
     }
 
     &__items-2 {
     }
 
     &__item-2 {
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 15px;
+        padding-left: 69px;
+        padding-right: 37px;
+        width: 100%;
+        padding-top: 64px;
+        min-height: 209px;
+        .recipes__time{
+            margin-bottom: 8px;
+        }
+        &:first-child{
+            background-image: linear-gradient(360deg, #000000 0%, rgba(0, 0, 0, 0) 100%), url("../images/main/mokoron.png");
+            margin-bottom: 42px;
+        }
+        &:last-child{
+            background-image: linear-gradient(360deg, #000000 0%, rgba(0, 0, 0, 0) 100%), url("../images/header/meet.png");
+        }
     }
 }
 .container3 {
 }
 .meal {
     &__items {
+        display: flex;
+        justify-content: space-between;
     }
 
     &__profile-link {
@@ -149,4 +209,6 @@
     }
 }
 .bottom {
+    display: flex;
+    justify-content: flex-end;
 }
