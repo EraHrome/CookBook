@@ -1,5 +1,6 @@
-﻿using CookBookServer.Enums;
+﻿using System.Collections.Generic;
 using CookBookServer.Interfaces;
+using CookBookServer.Enums;
 
 namespace CookBookServer.Models.User
 {
@@ -22,5 +23,6 @@ namespace CookBookServer.Models.User
         public double Rating { get; set; }
 
         public bool IsConfirmed { get; set; }
+        public IEnumerable<string> RecipesIds { get; set; }
     }
 }
