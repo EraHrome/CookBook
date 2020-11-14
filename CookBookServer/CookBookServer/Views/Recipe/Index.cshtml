@@ -23,15 +23,7 @@
 <div id="Data" style="display:none">
     @foreach (var item in Model.Checkpoints)
     {
-        <span class="checkpoint-desc">@item.Description</span>
-        @if (String.IsNullOrEmpty(item.TimerSeconds))
-        {
-            <span class="checkpoint-timer">@item.TimerSeconds</span>
-        }
-        else
-        {
-            <span class="checkpoint-timer">empty</span>
-        }
+        <span class="checkpoint-desc" data-value="@item.TimerSeconds">@item.Description</span>
     }
 </div>
 <section class="meal">
