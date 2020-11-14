@@ -13,7 +13,7 @@ namespace Mongo.Models.Recipe
         //public string Category { get; set; }
         //public IEnumerable<string> TagsList { get; set; }
         public DateTime PublicationDate { get; set; }
-        public DateTime CookingTime { get; set; }
+        public string CookingTimeMinutes { get; set; }
         public IEnumerable<CheckpointModel> Checkpoints { get; set; }
         public IEnumerable<IngredientModel> Ingredients { get; set; }
         public double Raiting { get; set; }
