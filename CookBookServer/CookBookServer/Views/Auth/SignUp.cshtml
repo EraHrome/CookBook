@@ -4,7 +4,7 @@
     Layout = null;
 }
 
-@if (ViewBag.ShowResult)
+@if (ViewBag.ShowResult != null && ViewBag.ShowResult)
 {
     <div>
         Пользователь создан! Для дальнейшей работы на сайте необходимо подтвердить учетную запись.

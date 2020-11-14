@@ -4,8 +4,10 @@ using CookBookServer.Models.DTO.Auth;
 using CookBookServer.Models.User;
 using CookBookServer.Providers;
 using CookBookServer.Repositories;
+using CookBookServer.Services;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Collections.Generic;
 
 namespace CookBookServer.Controllers
 {
@@ -39,6 +41,15 @@ namespace CookBookServer.Controllers
             ViewBag.IsSuccess = true;
             return View();
         }
+        
+        public IActionResult Confirm([FromRoute] string Id)
+        {
+            var user = _userRepository.Get(Id);
+            user.IsConfirmed = true;
+            _userRepository.Update(Id, user);
+
+            return View();
+        }
 
         public IActionResult SignUp()
         {            
@@ -57,17 +68,46 @@ namespace CookBookServer.Controllers
             {
                 if (!ModelState.IsValid)
                     return View();
+                //todo проверка на существования юзера с таким логином или емейлом 
 
                 var user = _mapper.Map<User>(model);
                 var newUser = _userRepository.Create(user);
 
+                var auth = new AuthModel
+                {
+                    UserId = user.Id,
+                    Guid = Guid.NewGuid().ToString()
+                };
+                _authRepository.UpdateOne(auth);
+
+                try
+                {
+                    var url = Url.Action("Confirm", "Auth", new { id = user.Id }, protocol: Request.Scheme);
+                    EmailService.Send(new Email
+                    {
+                        Subject = "Подтверждение регистрации",
+                        Recipients = new List<string> { user.Email },
+                        Body = $"Здравствуйте, {user.FirstName}!<br><br> Перейдите по ссылке, для того, чтобы завершить регистрацию!<br> {url}",
+                        IsBodyHtml = true
+                    });
+                }
+                catch (Exception ex)
+                {
+                    _userRepository.Remove(user);
+                    _authRepository.DeleteOne(auth);
+
+                    ViewBag.Error = "Не удалось отправить сообщение для подтверждения! Попробуйье позднее";
+                    return View();
+                }
+                
+              
                 ViewBag.ShowResult = true;
                 return View();
             }
             catch (Exception ex)
             {
 
-                ViewBag.Error = "Пользователь с такими данными не найден";
+                ViewBag.Error = "Что-то пошло не так!";
                 return View();
             }
         }

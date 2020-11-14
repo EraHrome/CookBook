@@ -7,15 +7,16 @@ using System.Threading.Tasks;
 
 namespace CookBookServer.Services
 {
-    public class EmailService
+    public static class EmailService
     {
-        private readonly string _smtpDisplayName = "Cookbook";
-        private readonly string _smtpPassword = "01071997";
-        private readonly string _smtpEmail = "cookbooc@yandex.ru";
-        private readonly string _smtpHost = "smtp.yandex.ru";
-        private readonly int _smtpPort = 587;
+        private static readonly string _smtpDisplayName = "Cookbook";
+        /*private static readonly string _smtpPassword = "diqyminwmvduqaly";*/
+        private static readonly string _smtpPassword = "01071997";
+        private static readonly string _smtpEmail = "cookbooc@yandex.ru";
+        private static readonly string _smtpHost = "smtp.yandex.ru";
+        private static readonly int _smtpPort = 465;
 
-        private void Send(Email email)
+        public static void Send(Email email)
         {
             using (var message = new MailMessage())
             {
@@ -32,6 +33,7 @@ namespace CookBookServer.Services
 
                 using (var smtp = new SmtpClient(_smtpHost, _smtpPort))
                 {
+                    smtp.UseDefaultCredentials = false;
                     smtp.Credentials = new NetworkCredential(_smtpEmail, _smtpPassword);
                     smtp.EnableSsl = true;
                     smtp.Send(message);

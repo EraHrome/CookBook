@@ -4,7 +4,7 @@
 @{
 }
 
-@if (ViewBag.IsSuccess)
+@if (ViewBag.IsSuccess != null && ViewBag.IsSuccess)
 {
     <div>  Ссылка для востановления отправлена вам на почту! </div>
 }
