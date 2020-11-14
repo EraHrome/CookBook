@@ -17,27 +17,29 @@
 <body>
 
     <main class="auth">
-        @using (Html.BeginForm("SignIn", "Auth", FormMethod.Post, new { htmlAttributes = new { @class = "auth__form" } }))
-        {
-            <h1 class="auth__title title">Вход</h1>
-
-            @if (!String.IsNullOrEmpty(ViewBag.Error))
+        <div style="max-width: 365px;">
+            @using (Html.BeginForm("SignIn", "Auth", FormMethod.Post, new { htmlAttributes = new { @class = "auth__form" } }))
             {
-                <input class="auth__input input" style="color:red;border-bottom:none;" value="@ViewBag.Error" />
-            }
+                <h1 class="auth__title title">Вход</h1>
 
-            @Html.EditorFor(x => x.Login, new { htmlAttributes = new { @class = "auth__input input", placeholder = "Логин", type = "text", required = "" } })
-            @Html.ValidationMessageFor(x => x.Login)
-            @Html.EditorFor(x => x.Password, new { htmlAttributes = new { @class = "auth__input input", placeholder = "Пароль", type = "password", required = "" } })
-            @Html.ValidationMessageFor(x => x.Password)
-            <div class="auth__btns">
-                <button class="auth__btn red-btn" type="submit">Войти</button>
-                <div class="auth__links">
-                    <a href="@Url.Action("Recover", "Auth")">Забыли пароль?</a>
-                    <a href="@Url.Action("SignUp", "Auth")">Зарегистрироваться</a>
+                @if (!String.IsNullOrEmpty(ViewBag.Error))
+                {
+                    <input class="auth__input input" style="color:red;border-bottom:none;" value="@ViewBag.Error" />
+                }
+
+                @Html.EditorFor(x => x.Login, new { htmlAttributes = new { @class = "auth__input input", placeholder = "Логин", type = "text", required = "" } })
+                @Html.ValidationMessageFor(x => x.Login)
+                @Html.EditorFor(x => x.Password, new { htmlAttributes = new { @class = "auth__input input", placeholder = "Пароль", type = "password", required = "" } })
+                @Html.ValidationMessageFor(x => x.Password)
+                <div class="auth__btns">
+                    <button class="auth__btn red-btn" type="submit">Войти</button>
+                    <div class="auth__links">
+                        <a href="@Url.Action("Recover", "Auth")">Забыли пароль?</a>
+                        <a href="@Url.Action("SignUp", "Auth")">Зарегистрироваться</a>
+                    </div>
                 </div>
-            </div>
-        }
+            }
+        </div>
     </main>
 </body>
 
