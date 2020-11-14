@@ -168,6 +168,12 @@ h6 {
 }
 .header__logo {
   margin-right: 150px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .header__logo-link {
   font-family: "OpenSans";
@@ -176,6 +182,9 @@ h6 {
   font-size: 18px;
   line-height: 25px;
   color: #F8F8F8;
+}
+.header__logo-link:first-child {
+  padding-right: 10px;
 }
 .header__profile {
   display: -webkit-box;
@@ -193,6 +202,20 @@ h6 {
       -ms-flex-pack: end;
           justify-content: flex-end;
   background-image: url("../images/main/whitebackheader.png");
+  position: relative;
+}
+.header__profile::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  display: block;
+  background-image: url("../images/header/exit.png");
+  position: absolute;
+  right: 94px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 .header__profile-name {
   margin-right: 20px;
