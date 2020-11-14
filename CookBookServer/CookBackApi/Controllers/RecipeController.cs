@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Mongo.Models.Recipe;
 using Mongo.Repositories;
 using System;
+using System.Linq;
 
 namespace CookBackApi.Controllers
 {
@@ -51,8 +52,22 @@ namespace CookBackApi.Controllers
             {
                 _logger.LogError(ex.Message);
                 return BadRequest();
+            }            
+        }
+
+        [HttpGet("[action]")]
+        public IActionResult GetByIds([FromRoute] IEnumerable<string> Ids)
+        {
+            try
+            {
+                var res = _recipesRepository.GetManyByIds(Ids.ToArray());
+                return Ok(res);
             }
-            
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                return BadRequest();
+            }
         }
 
         [HttpPost("[action]")]
