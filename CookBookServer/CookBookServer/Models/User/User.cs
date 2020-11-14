@@ -19,8 +19,8 @@ namespace CookBookServer.Models.User
 
         public string Password { get; set; }
 
-        public string Rating { get; set; }
+        public double Rating { get; set; }
 
-        public string IsConfirmed { get; set; }
+        public bool IsConfirmed { get; set; }
     }
 }

@@ -1,4 +1,8 @@
-﻿using CookBookServer.Models.DTO.Auth;
+﻿using AutoMapper;
+using CookBookServer.Models;
+using CookBookServer.Models.DTO.Auth;
+using CookBookServer.Models.User;
+using CookBookServer.Providers;
 using CookBookServer.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -8,10 +12,20 @@ namespace CookBookServer.Controllers
     public class AuthController : Controller
     {
         public readonly UserRepository _userRepository;
+        public readonly AuthRepository _authRepository;
+        public readonly CookieProvider _cookieProvider;
+        private readonly IMapper _mapper;
 
-        public AuthController(UserRepository userRepository) 
+        public AuthController(
+            UserRepository userRepository, 
+            AuthRepository authRepository,
+            CookieProvider cookieProvider,
+            IMapper mapper) 
         {
             _userRepository = userRepository;
+            _authRepository = authRepository;
+            _cookieProvider = cookieProvider;
+            _mapper = mapper;
         }
 
         public IActionResult Recover()
@@ -27,7 +41,7 @@ namespace CookBookServer.Controllers
         }
 
         public IActionResult SignUp()
-        {
+        {            
             return View();
         }
 
@@ -38,9 +52,24 @@ namespace CookBookServer.Controllers
 
         [HttpPost]
         public IActionResult SignUp(SignUpDTOModel model)
-        {            
-            //todo. проверка и проставление куки
-            return Redirect("/Home/Index");
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                    return View();
+
+                var user = _mapper.Map<User>(model);
+                var newUser = _userRepository.Create(user);
+
+                ViewBag.ShowResult = true;
+                return View();
+            }
+            catch (Exception ex)
+            {
+
+                ViewBag.Error = "Пользователь с такими данными не найден";
+                return View();
+            }
         }
 
         [HttpPost]
@@ -48,13 +77,24 @@ namespace CookBookServer.Controllers
         {
             try
             {
-                if (ModelState.IsValid)
+                if (!ModelState.IsValid)
+                    return View();
+
+                var user = _userRepository.Get(model);
+
+                if (!user.IsConfirmed)
                 {
-                    var user = _userRepository.Get(model);
+                    ViewBag.Error = "Подтвердите почту! Сообщение было отправлено вам на почту.";
+                    return View();
+                }                
 
-                }
-                //todo. проверка и проставление куки
-
+                var auth = new AuthModel
+                {
+                    UserId = user.Id,
+                    Guid = Guid.NewGuid().ToString()
+                };
+                _cookieProvider.UpdateGuidInCookies(HttpContext, auth.Guid);
+                _authRepository.UpdateOne(auth);
 
                 return Redirect("/Home/Index");
             }

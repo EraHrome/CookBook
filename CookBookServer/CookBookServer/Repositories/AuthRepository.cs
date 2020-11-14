@@ -9,20 +9,20 @@ namespace CookBookServer.Repositories
     {
 
         private IMongoDatabase _database;
-        protected IMongoCollection<CookAuthorizationModel> _collection;
+        protected IMongoCollection<AuthModel> _collection;
         private readonly MongoDbOptions _options;
 
         public AuthRepository(IOptions<MongoDbOptions> options, IMongoClient mongoClient)
         {
             _options = options.Value;
             _database = mongoClient.GetDatabase(_options.DataBaseName);
-            _collection = _database.GetCollection<CookAuthorizationModel>(MongoDocumentNameResolver.GetMongoDocumentName<CookAuthorizationModel>());
+            _collection = _database.GetCollection<AuthModel>(MongoDocumentNameResolver.GetMongoDocumentName<AuthModel>());
         }
 
-        public void UpdateOne(CookAuthorizationModel authorizationModel)
+        public void UpdateOne(AuthModel authorizationModel)
         {
             _collection.DeleteOne(x => x.UserId == authorizationModel.UserId);
-            _collection.InsertOne(new CookAuthorizationModel()
+            _collection.InsertOne(new AuthModel()
                 {
                     UserId = authorizationModel.UserId,
                     Guid = authorizationModel.Guid
@@ -35,7 +35,7 @@ namespace CookBookServer.Repositories
         /// </summary>
         /// <param name="guid"></param>
         /// <returns></returns>
-        public CookAuthorizationModel LoginnedByToken(string guid)
+        public AuthModel LoginnedByToken(string guid)
             => _collection.Find(m => m.Guid == guid)?.FirstOrDefault();
 
     }

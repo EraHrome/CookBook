@@ -117,10 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="EmailValidationError" xml:space="preserve">
+    <value>Поле "Емейл" не может быть пустым</value>
+  </data>
+  <data name="FirstNameValidationError" xml:space="preserve">
+    <value>Поле "Имя" не может быть пустым</value>
+  </data>
+  <data name="LastNameValidationError" xml:space="preserve">
+    <value>Поле "Фамилия" не может быть пустым</value>
+  </data>
   <data name="LoginValidationError" xml:space="preserve">
-    <value>Логин не может быть пустым</value>
+    <value>Поле "Логин" не может быть пустым</value>
   </data>
   <data name="PasswordValidationError" xml:space="preserve">
-    <value>Пароль не может быть пустым</value>
+    <value>Поле "Пароль" не может быть пустым</value>
   </data>
 </root>

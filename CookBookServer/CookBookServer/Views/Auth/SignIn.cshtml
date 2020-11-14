@@ -1,6 +1,5 @@
 ﻿@model CookBookServer.Models.DTO.Auth.SignInDTOModel;
 
-
 @{
     Layout = null;
 }
@@ -19,11 +18,12 @@
 
         <p class="field">
             @Html.EditorFor(x => x.Login, new { htmlAttributes = new { placeholder = "Логин" } })
+            @Html.ValidationMessageFor(x => x.Login)
             <i class="icon-user icon-large"></i>
         </p>
         <p class="field">
             @Html.EditorFor(x => x.Password, new { htmlAttributes = new { placeholder = "Пароль" } })
-            <input type="password" name="Password" placeholder="Пароль" />
+            @Html.ValidationMessageFor(x => x.Password)
             <i class="icon-lock icon-large"></i>
         </p>
         <p class="field"> <a href="@Url.Action("Recover", "Auth")">Забыли пароль?</a> </p>
