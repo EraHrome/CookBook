@@ -51,5 +51,23 @@
     &__btn {
         width: 114px;
         height: 35px;
+        margin-right: 31px;
+    }
+    &__btns {
+        display: flex;
+        align-items: center;
+    }
+    &__links {
+        
+        a {
+            font-family: 'NotoSans';
+            font-style: normal;
+            font-weight: normal;
+            font-size: 10px;
+            line-height: 14px;
+            display: flex;
+            align-items: center;
+            color: #2c2c2c;
+        }
     }
 }
