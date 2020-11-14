@@ -15,10 +15,17 @@
     <link rel="stylesheet" href="~/css/auth_style.css">
 </head>
 <body>
+
     <main class="auth">
         @using (Html.BeginForm("SignIn", "Auth", FormMethod.Post, new { htmlAttributes = new { @class = "auth__form" } }))
         {
             <h1 class="auth__title title">Вход</h1>
+
+            @if (!String.IsNullOrEmpty(ViewBag.Error))
+            {
+                <input class="auth__input input" style="color:red;border-bottom:none;" value="@ViewBag.Error" />
+            }
+
             @Html.EditorFor(x => x.Login, new { htmlAttributes = new { @class = "auth__input input", placeholder = "Логин", type = "text", required = "" } })
             @Html.ValidationMessageFor(x => x.Login)
             @Html.EditorFor(x => x.Password, new { htmlAttributes = new { @class = "auth__input input", placeholder = "Пароль", type = "password", required = "" } })
