@@ -1,4 +1,4 @@
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -8,6 +8,7 @@ using CookBookServer.Repositories;
 using CookBookServer.Models;
 using CookBookServer.Providers;
 using CookBookServer.Code.Automapper;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace CookBookServer
 {
@@ -31,6 +32,12 @@ namespace CookBookServer
             services.AddScoped<UserRepository>();
             services.AddScoped<CookieProvider>();
 
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+               .AddCookie(options => //CookieAuthenticationOptions
+                {
+                   options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Auth/SignIn");
+               });
+
             services.AddControllersWithViews();
             services.AddMapper("CookBookServer");
         }
@@ -53,7 +60,10 @@ namespace CookBookServer
 
             app.UseRouting();
 
+            app.UseAuthentication();    // подключение аутентификации
             app.UseAuthorization();
+
+
 
             app.UseEndpoints(endpoints =>
             {

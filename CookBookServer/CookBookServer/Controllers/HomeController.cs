@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using CookBookServer.Models;
 using System.Diagnostics;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CookBookServer.Controllers
 {
@@ -16,8 +17,12 @@ namespace CookBookServer.Controllers
 
         public IActionResult Index()
         {
-            return View();
-        }       
+            if (HttpContext.User.Identity.IsAuthenticated)
+                return View();
+            
+            return View("Main");
+        }
+        
 
         public IActionResult Privacy()
         {

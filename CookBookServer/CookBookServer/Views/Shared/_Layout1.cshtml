@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - CookBookServer</title>
     @RenderSection("Styles", required: false)
+    <link rel="stylesheet" href="~/css/main_style.css">
 </head>
 <body>
     <header class="header">
@@ -26,12 +27,20 @@
                         </li>
                     </ul>
                 </nav>
-                <div class="header__profile">
-                    <div class="header__profile-name">Имя Фамилия</div>
-                    <a class="header__profile-link" href="#">
-                        <img class="header__profile-img" src="~/images/page1/prifile.png" alt="">
-                    </a>
-                </div>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <div class="header__profile">
+                        <div class="header__profile-name">@User.Identity.Name</div>
+                        <a class="header__profile-link" href="#">
+                            <img class="header__profile-img" src="~/images/page1/prifile.png" alt="">
+                        </a>
+                    </div>
+                }
+                else
+                {
+
+                    <input type="button" class="header__btn red-btn" value="Войти" onclick="window.location.href='@Url.Action("SignIn", "Auth")';" />
+                }
             </div>
         </div>
     </header>
