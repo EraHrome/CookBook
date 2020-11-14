@@ -4,9 +4,9 @@
     margin: 0 auto;
 }
 .header {
-
+    background: #FE6D73;
     &__inner {
-        height: 87px;
+        height: 84px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -25,13 +25,18 @@
         font-weight: 800;
         font-size: 18px;
         line-height: 25px;
-        color: #000000;
+        color: #F8F8F8;
     }
     &__profile {
         display: flex;
         align-items: center;
         position: relative;
         cursor: pointer;
+        width: 570px;
+        height: 100%;
+        padding-right: 139px;
+        justify-content: flex-end;
+        background-image: url("../images/main/whitebackheader.png");
     }
     &__profile-name {
         margin-right: 20px;
@@ -60,7 +65,7 @@
             font-size: 14px;
             line-height: 19px;
             text-align: right;
-            color: #2c2c2c;
+            color: #F8F8F8;
         }
     }
 }
