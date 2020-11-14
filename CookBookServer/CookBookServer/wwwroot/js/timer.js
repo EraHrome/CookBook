@@ -154,8 +154,8 @@ function setTimer($distance) {
 
 function startNewTimer(time)
 {
-    console.log(time)
-	var getTime = parseInt(time);
+    //console.log(time)
+	//var getTime = parseInt(time);
     countdown('countdownA', 0, 0, 0, time);
 }
 
