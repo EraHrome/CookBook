@@ -1,81 +1,81 @@
 ﻿@charset "UTF-8";
 /*Обнуление*/
 * {
-  padding: 0;
-  margin: 0;
-  border: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
 }
 
-*,
-*:before,
-*:after {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
+    *,
+    *:before,
+    *:after {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
 
 :focus,
 :active {
-  outline: none;
+    outline: none;
 }
 
 a:focus,
 a:active {
-  outline: none;
+    outline: none;
 }
 
 nav,
 footer,
 header,
 aside {
-  display: block;
+    display: block;
 }
 
 html,
 body {
-  height: 100%;
-  width: 100%;
-  font-size: 100%;
-  line-height: 1;
-  font-size: 14px;
-  -ms-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
 }
 
 input,
 button,
 textarea {
-  font-family: inherit;
+    font-family: inherit;
 }
 
-input::-ms-clear {
-  display: none;
-}
+    input::-ms-clear {
+        display: none;
+    }
 
 button {
-  cursor: pointer;
+    cursor: pointer;
 }
 
-button::-moz-focus-inner {
-  padding: 0;
-  border: 0;
-}
+    button::-moz-focus-inner {
+        padding: 0;
+        border: 0;
+    }
 
 a,
 a:visited {
-  text-decoration: none;
+    text-decoration: none;
 }
 
-a:hover {
-  text-decoration: none;
-}
+    a:hover {
+        text-decoration: none;
+    }
 
 ul li {
-  list-style: none;
+    list-style: none;
 }
 
 img {
-  vertical-align: top;
+    vertical-align: top;
 }
 
 h1,
@@ -84,91 +84,88 @@ h3,
 h4,
 h5,
 h6 {
-  font-size: inherit;
-  font-weight: 400;
+    font-size: inherit;
+    font-weight: 400;
 }
 
 /*--------------------*/
 .red-btn {
-  font-family: "NotoSans";
-  width: 200px;
-  height: 60px;
-  background: #fe6d73;
-  border-radius: 25px;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 25px;
-  color: #ffffff;
-  -webkit-filter: drop-shadow(0px 4px 4px #fe6d73);
-          filter: drop-shadow(0px 4px 4px #fe6d73);
-  -webkit-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s;
+    font-family: "NotoSans";
+    width: 200px;
+    height: 60px;
+    background: #fe6d73;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 25px;
+    color: #ffffff;
+    -webkit-filter: drop-shadow(0px 4px 4px #fe6d73);
+    filter: drop-shadow(0px 4px 4px #fe6d73);
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
 }
-.red-btn:hover {
-  background: #ec565c;
+
+    .red-btn:hover {
+        background: #ec565c;
+    }
+
+@font-face {
+    font-family: "NotoSans";
+    font-display: swap;
+    src: url("../fonts/NotoSans-Regular.woff") format("woff"), url("../fonts/NotoSans-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: "NotoSans";
-  font-display: swap;
-  src: url("../fonts/NotoSans-Regular.woff") format("woff"), url("../fonts/NotoSans-Regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
+    font-family: "NotoSans";
+    font-display: swap;
+    src: url("../fonts/NotoSans-SemiBold.woff") format("woff"), url("../fonts/NotoSans-SemiBold.woff2") format("woff2");
+    font-weight: 600;
+    font-style: normal;
 }
+
 @font-face {
-  font-family: "NotoSans";
-  font-display: swap;
-  src: url("../fonts/NotoSans-SemiBold.woff") format("woff"), url("../fonts/NotoSans-SemiBold.woff2") format("woff2");
-  font-weight: 600;
-  font-style: normal;
+    font-family: "OpenSans";
+    font-display: swap;
+    src: url("../fonts/OpenSans-ExtraBold.woff") format("woff"), url("../fonts/OpenSans-ExtraBold.woff2") format("woff2");
+    font-weight: 800;
+    font-style: normal;
 }
+
 @font-face {
-  font-family: "OpenSans";
-  font-display: swap;
-  src: url("../fonts/OpenSans-ExtraBold.woff") format("woff"), url("../fonts/OpenSans-ExtraBold.woff2") format("woff2");
-  font-weight: 800;
-  font-style: normal;
+    font-family: "OpenSans";
+    font-display: swap;
+    src: url("../fonts/OpenSans-Bold.woff") format("woff"), url("../fonts/OpenSans-Bold.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
 }
-@font-face {
-  font-family: "OpenSans";
-  font-display: swap;
-  src: url("../fonts/OpenSans-Bold.woff") format("woff"), url("../fonts/OpenSans-Bold.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-}
+
 .container {
-  max-width: 1300px;
-  padding: 0 15px;
-  margin: 0 auto;
+    max-width: 1300px;
+    padding: 0 15px;
+    margin: 0 auto;
 }
 
 .header {
-  background: #FE6D73;
+    background: #FE6D73;
 }
+
 .header__inner {
-  height: 84px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+    height: 84px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
 }
+
 .header__nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-.header__logo {
-    margin-right: 150px;
-    margin-left: 40px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -176,17 +173,30 @@ h6 {
     -ms-flex-align: center;
     align-items: center;
 }
+
+.header__logo {
+    margin-right: 150px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
 .header__logo-link {
-  font-family: "OpenSans";
-  font-style: normal;
-  font-weight: 800;
-  font-size: 18px;
-  line-height: 25px;
-  color: #F8F8F8;
+    font-family: "OpenSans";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 25px;
+    color: #F8F8F8;
 }
-.header__logo-link:first-child {
-  padding-right: 10px;
-}
+
+    .header__logo-link:first-child {
+        padding-right: 10px;
+    }
+
 .header__profile {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -198,251 +208,284 @@ h6 {
     cursor: pointer;
     width: 570px;
     height: 100%;
-    padding-right: 40px;
+    padding-right: 139px;
     -webkit-box-pack: end;
     -ms-flex-pack: end;
     justify-content: flex-end;
+    background-image: url("../images/main/whitebackheader.png");
     position: relative;
 }
-.header__profile::after {
-  content: "";
-  width: 20px;
-  height: 20px;
-  display: block;
-  position: absolute;
-  right: 94px;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
-}
+
+    .header__profile::after {
+        content: "";
+        width: 20px;
+        height: 20px;
+        display: block;
+        position: absolute;
+        right: 94px;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+
 .header__profile-name {
-  margin-right: 20px;
-  font-family: "NotoSans";
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 19px;
-  color: #2c2c2c;
-}
-.header__profile-img {
-  width: 50px;
-  height: 50px;
-}
-.header__menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-.header__menu-item {
-  margin-left: 20px;
-  margin-right: 20px;
-}
-.header__menu-item a {
-  font-family: "NotoSans";
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 19px;
-  text-align: right;
-  color: #F8F8F8;
+    margin-right: 20px;
+    font-family: "NotoSans";
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    color: #2c2c2c;
 }
 
+.header__profile-img {
+    width: 50px;
+    height: 50px;
+}
+
+.header__logo-link a {
+    color: white;
+}
+
+.header__menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.header__menu-item {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+    .header__menu-item a {
+        font-family: "NotoSans";
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 19px;
+        text-align: right;
+        color: #F8F8F8;
+    }
+
 .meal__stars {
-  margin-right: 25px;
-  width: 88px;
-  height: 37px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  padding-left: 43px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-family: "NotoSans";
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 25px;
-  color: #000000;
-  background: #ffffff;
-  border-radius: 15px;
-  position: relative;
+    margin-right: 25px;
+    width: 88px;
+    height: 37px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-left: 43px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-family: "NotoSans";
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 25px;
+    color: #000000;
+    background: #ffffff;
+    border-radius: 15px;
+    position: relative;
 }
-.meal__stars::before {
-  content: "";
-  width: 20px;
-  height: 20px;
-  background: url("../images/header/star.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: inline-block;
-  position: absolute;
-  left: 16px;
-  top: 50%;
-  -webkit-transform: translateY(-53%);
-      -ms-transform: translateY(-53%);
-          transform: translateY(-53%);
-}
+
+    .meal__stars::before {
+        content: "";
+        width: 20px;
+        height: 20px;
+        background: url("../images/header/star.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: inline-block;
+        position: absolute;
+        left: 16px;
+        top: 50%;
+        -webkit-transform: translateY(-53%);
+        -ms-transform: translateY(-53%);
+        transform: translateY(-53%);
+    }
+
 .meal__profile-img {
-  width: 37px;
-  height: 37px;
+    width: 37px;
+    height: 37px;
 }
 
 .header {
-  margin-bottom: 35px;
+    margin-bottom: 35px;
 }
+
 .container3 {
-  max-width: 1044px;
-  padding: 0 15px;
-  margin: 0 auto;
+    max-width: 1044px;
+    padding: 0 15px;
+    margin: 0 auto;
 }
 
 .recipes {
-  background-image: url("../images/main/back.png");
-  background-position: right;
-  background-repeat: no-repeat;
-  padding-bottom: 68px;
-}
-.recipes__inner {
-  position: relative;
-}
-.recipes__inner::before {
-  content: "";
-  width: 14px;
-  height: 14px;
-  display: block;
-  background-image: url("../images/main/input.png");
-  position: absolute;
-  left: 13px;
-  top: 13px;
-}
-.recipes__input {
-  padding-left: 54px;
-  padding-right: 54px;
-  width: 100%;
-  background: #e9e9e9;
-  border-radius: 15px;
-  height: 38px;
-  font-family: "NotoSans";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 19px;
-  color: black;
-  margin-bottom: 42px;
-}
-.recipes__input::-webkit-input-placeholder {
-  color: #555555;
-  font-weight: 500;
-}
-.recipes__input::-moz-placeholder {
-  color: #555555;
-  font-weight: 500;
-}
-.recipes__input:-ms-input-placeholder {
-  color: #555555;
-  font-weight: 500;
-}
-.recipes__input::-ms-input-placeholder {
-  color: #555555;
-  font-weight: 500;
-}
-.recipes__input::placeholder {
-  color: #555555;
-  font-weight: 500;
-}
-.recipes__items-1 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin-bottom: 42px;
-}
-.recipes__item-1 {
-  padding-left: 34px;
-  padding-right: 34px;
-  padding-top: 312px;
-  width: 490px;
-  height: 567px;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  border-radius: 15px;
-}
-.recipes__item-1:first-child {
-  background-image: -webkit-gradient(linear, left bottom, left top, from(#000000), to(rgba(0, 0, 0, 0))), url("../images/header/meet.png");
-  background-image: -o-linear-gradient(bottom, #000000 0%, rgba(0, 0, 0, 0) 100%), url("../images/header/meet.png");
-  background-image: linear-gradient(360deg, #000000 0%, rgba(0, 0, 0, 0) 100%), url("../images/header/meet.png");
-}
-.recipes__item-1:last-child {
-  background-image: -webkit-gradient(linear, left bottom, left top, from(#000000), to(rgba(0, 0, 0, 0))), url("../images/main/salat.jpg");
-  background-image: -o-linear-gradient(bottom, #000000 0%, rgba(0, 0, 0, 0) 100%), url("../images/main/salat.jpg");
-  background-image: linear-gradient(360deg, #000000 0%, rgba(0, 0, 0, 0) 100%), url("../images/main/salat.jpg");
-}
-.recipes__title {
-  font-family: "OpenSans";
-  font-style: normal;
-  font-weight: bold;
-  font-size: 36px;
-  line-height: 49px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  color: #ffffff;
-  margin-bottom: 7px;
-}
-.recipes__time {
-  font-family: "NotoSans";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 25px;
-  color: #f5f5f5;
-  margin-bottom: 61px;
-}
-.recipes__item-2 {
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  border-radius: 15px;
-  padding-left: 69px;
-  padding-right: 37px;
-  width: 100%;
-  padding-top: 64px;
-  min-height: 209px;
-}
-.recipes__item-2 .recipes__time {
-  margin-bottom: 8px;
-}
-.recipes__item-2:first-child {
-  background-image: -webkit-gradient(linear, left bottom, left top, from(#000000), to(rgba(0, 0, 0, 0))), url("../images/main/mokoron.png");
-  background-image: -o-linear-gradient(bottom, #000000 0%, rgba(0, 0, 0, 0) 100%), url("../images/main/mokoron.png");
-  background-image: linear-gradient(360deg, #000000 0%, rgba(0, 0, 0, 0) 100%), url("../images/main/mokoron.png");
-  margin-bottom: 42px;
-}
-.recipes__item-2:last-child {
-  background-image: -webkit-gradient(linear, left bottom, left top, from(#000000), to(rgba(0, 0, 0, 0))), url("../images/header/meet.png");
-  background-image: -o-linear-gradient(bottom, #000000 0%, rgba(0, 0, 0, 0) 100%), url("../images/header/meet.png");
-  background-image: linear-gradient(360deg, #000000 0%, rgba(0, 0, 0, 0) 100%), url("../images/header/meet.png");
+    background-image: url("../images/main/back.png");
+    background-position: right;
+    background-repeat: no-repeat;
+    padding-bottom: 68px;
 }
 
-.meal__items {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+.recipes__inner {
+    position: relative;
 }
+
+    .recipes__inner::before {
+        content: "";
+        width: 14px;
+        height: 14px;
+        display: block;
+        background-image: url("../images/main/input.png");
+        position: absolute;
+        left: 13px;
+        top: 13px;
+    }
+
+.recipes__input {
+    padding-left: 54px;
+    padding-right: 54px;
+    width: 100%;
+    background: #e9e9e9;
+    border-radius: 15px;
+    height: 38px;
+    font-family: "NotoSans";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 19px;
+    color: black;
+    margin-bottom: 42px;
+}
+
+    .recipes__input::-webkit-input-placeholder {
+        color: #555555;
+        font-weight: 500;
+    }
+
+    .recipes__input::-moz-placeholder {
+        color: #555555;
+        font-weight: 500;
+    }
+
+    .recipes__input:-ms-input-placeholder {
+        color: #555555;
+        font-weight: 500;
+    }
+
+    .recipes__input::-ms-input-placeholder {
+        color: #555555;
+        font-weight: 500;
+    }
+
+    .recipes__input::placeholder {
+        color: #555555;
+        font-weight: 500;
+    }
+
+.recipes__items-1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-bottom: 42px;
+}
+
+.recipes__item-1 {
+    padding-left: 34px;
+    padding-right: 34px;
+    padding-top: 312px;
+    width: 490px;
+    height: 567px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+}
+
+    .recipes__item-1:first-child {
+        background-image: -webkit-gradient(linear, left bottom, left top, from(#000000), to(rgba(0, 0, 0, 0))), url("../images/header/meet.png");
+        background-image: -o-linear-gradient(bottom, #000000 0%, rgba(0, 0, 0, 0) 100%), url("../images/header/meet.png");
+        background-image: linear-gradient(360deg, #000000 0%, rgba(0, 0, 0, 0) 100%), url("../images/header/meet.png");
+    }
+
+    .recipes__item-1:last-child {
+        background-image: -webkit-gradient(linear, left bottom, left top, from(#000000), to(rgba(0, 0, 0, 0))), url("../images/main/salat.jpg");
+        background-image: -o-linear-gradient(bottom, #000000 0%, rgba(0, 0, 0, 0) 100%), url("../images/main/salat.jpg");
+        background-image: linear-gradient(360deg, #000000 0%, rgba(0, 0, 0, 0) 100%), url("../images/main/salat.jpg");
+    }
+
+.recipes__title {
+    font-family: "OpenSans";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 49px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    color: #ffffff;
+    margin-bottom: 7px;
+}
+
+.recipes__time {
+    font-family: "NotoSans";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 25px;
+    color: #f5f5f5;
+    margin-bottom: 61px;
+}
+
+.recipes__item-2 {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+    padding-left: 69px;
+    padding-right: 37px;
+    width: 100%;
+    padding-top: 64px;
+    min-height: 209px;
+}
+
+    .recipes__item-2 .recipes__time {
+        margin-bottom: 8px;
+    }
+
+    .recipes__item-2:first-child {
+        background-image: -webkit-gradient(linear, left bottom, left top, from(#000000), to(rgba(0, 0, 0, 0))), url("../images/main/mokoron.png");
+        background-image: -o-linear-gradient(bottom, #000000 0%, rgba(0, 0, 0, 0) 100%), url("../images/main/mokoron.png");
+        background-image: linear-gradient(360deg, #000000 0%, rgba(0, 0, 0, 0) 100%), url("../images/main/mokoron.png");
+        margin-bottom: 42px;
+    }
+
+    .recipes__item-2:last-child {
+        background-image: -webkit-gradient(linear, left bottom, left top, from(#000000), to(rgba(0, 0, 0, 0))), url("../images/header/meet.png");
+        background-image: -o-linear-gradient(bottom, #000000 0%, rgba(0, 0, 0, 0) 100%), url("../images/header/meet.png");
+        background-image: linear-gradient(360deg, #000000 0%, rgba(0, 0, 0, 0) 100%), url("../images/header/meet.png");
+    }
+
+.meal__items {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
 .bottom {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
 }
