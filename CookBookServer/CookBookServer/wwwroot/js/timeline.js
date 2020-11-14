@@ -86,3 +86,9 @@ $(function () {
     })
 
 });
+
+$("#start-cooking").click(function () {
+    $(".controls__container-watch").hide();
+    $(".controls__container-cooking").show();
+    $("#start-cooking").hide();
+});
