@@ -64,6 +64,11 @@ namespace CookBookServer.Controllers
             return View();
         }
 
+        public IActionResult Complete()
+        {
+            return View();
+        }
+
         [HttpPost]
         public IActionResult SignUp(SignUpDTOModel model)
         {
