@@ -105,9 +105,10 @@ h6 {
   -o-transition: 0.3s;
   transition: 0.3s;
 }
-.red-btn:hover {
-  background: #ec565c;
-}
+    .red-btn:hover {
+        background: #ec565c;
+        filter: drop-shadow(0px 4px 4px #EC565C);
+    }
 
 @font-face {
   font-family: "NotoSans";
@@ -222,11 +223,11 @@ h6 {
 
 .meal {
     position: relative;
-  border-radius: 0px 0px 15px 15px;
-  background: url("../images/page1/background.png ") center no-repeat;
-  padding-top: 177px;
-  padding-bottom: 61px;
-  z-index: -1;
+    border-radius: 0px 0px 15px 15px;
+    padding-top: 177px;
+    padding-bottom: 61px;
+    z-index: -1;
+    background-image: linear-gradient(360deg, #000000 0%, rgba(0, 0, 0, 0) 80%), url("../images/page1/background.png");
 }
 .meal__items {
   margin-bottom: 19px;
@@ -361,4 +362,5 @@ h6 {
 
     .ingredients__btn:hover {
         background: #ec565c;
+        filter: drop-shadow(0px 4px 4px #EC565C);
     }
