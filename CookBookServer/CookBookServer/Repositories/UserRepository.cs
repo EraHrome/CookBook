@@ -30,5 +30,18 @@ namespace CookBookServer.Repositories
 
             return user.First();
         }
+
+        public User GetByEmailOrLogin(string login, string email)
+        {
+            var user = _doc.Find(x =>
+            x.Login == login
+            ||
+            x.Email == email);
+
+            if (user == null || !user.Any())
+                return null;
+
+            return user.First();
+        }
     }
 }

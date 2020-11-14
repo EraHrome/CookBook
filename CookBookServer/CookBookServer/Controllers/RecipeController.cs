@@ -6,7 +6,7 @@ namespace CookBookServer.Controllers
     {
         // GET: RecipeController
         public IActionResult Index()
-        {
+        {            
             return View();
         }
     }
