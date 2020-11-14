@@ -30,6 +30,7 @@ namespace CookBookServer
             services.AddScoped<AuthRepository>();
             services.AddScoped<UserRepository>();
             services.AddScoped<CookieProvider>();
+            services.AddScoped<MongoRecipesRepository>();
 
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)               
                .AddCookie(options =>
