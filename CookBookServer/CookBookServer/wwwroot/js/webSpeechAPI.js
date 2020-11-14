@@ -18,19 +18,17 @@ $(function () {
 
         if (prevKeyWords.indexOf(speech) !== -1) {
             if (!isTimeout) {
-                console.log("Событие переключения назад")
                 $('.btn')[0].click()
                 isTimeout = !isTimeout
-                setTimeout(() => { isTimeout = !isTimeout }, 750)
+                setTimeout(() => { isTimeout = !isTimeout }, 700)
             }
         }
 
         if (nextKeyWords.indexOf(speech) !== -1) {
             if (!isTimeout) {
-                console.log("Событие переключения вперед")
                 $('.btn')[1].click()
                 isTimeout = !isTimeout
-                setTimeout(() => { isTimeout = !isTimeout }, 750)
+                setTimeout(() => { isTimeout = !isTimeout }, 700)
             }
         }
     };
