@@ -1,4 +1,4 @@
-﻿@using Mongo.Models.Recipe 
+﻿@using Mongo.Models.Recipe
 @model IEnumerable<RecipeModel>
 @{
     Layout = "_Layout1";
@@ -23,34 +23,16 @@
                 </div>
             </div>
             <div class="recipes__items-2">
-                <div class="recipes__item-2">
-                    <h2 class="recipes__title">Маринара</h2>
-                    <div class="recipes__time">25 минут</div>
-                    <div class="bottom">
-                        <div class="meal__stars">5.0</div>
+                @foreach (var item in Model)
+                {
+                    <div class="recipes__item-2">
+                        <h2 class="recipes__title">@item.Title</h2>
+                        <div class="recipes__time">@item.CookingTimeMinutes</div>
+                        <div class="bottom">
+                            <div class="meal__stars">@item.Raiting.ToString()</div>
+                        </div>
                     </div>
-                </div>
-                <div class="recipes__item-2">
-                    <h2 class="recipes__title">Классический стейк</h2>
-                    <div class="recipes__time">10 минут</div>
-                    <div class="bottom">
-                        <div class="meal__stars">5.0</div>
-                    </div>
-                </div>
-                <div class="recipes__item-2">
-                    <h2 class="recipes__title">Классический стейк</h2>
-                    <div class="recipes__time">10 минут</div>
-                    <div class="bottom">
-                        <div class="meal__stars">5.0</div>
-                    </div>
-                </div>
-                <div class="recipes__item-2">
-                    <h2 class="recipes__title">Классический стейк</h2>
-                    <div class="recipes__time">10 минут</div>
-                    <div class="bottom">
-                        <div class="meal__stars">5.0</div>
-                    </div>
-                </div>
+                }
             </div>
         </div>
     </div>
