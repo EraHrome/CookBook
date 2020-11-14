@@ -5,6 +5,7 @@ using CookBookServer.Providers;
 using Mongo.Repositories;
 using CookBookServer.Services;
 using System.Threading.Tasks;
+using Mongo.Models.Recipe;
 
 namespace CookBookServer.Controllers
 {
@@ -37,6 +38,16 @@ namespace CookBookServer.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public IActionResult Constructor(RecipeModel model)
+        {
+            if (!ModelState.IsValid)
+                return View();
+
+            return View();
+        }
+
 
         public async Task<IActionResult> Recipes()
         {
