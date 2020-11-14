@@ -1,5 +1,7 @@
 $(function () {
 
+    var isActiveTimer = false
+    var activeTimer
     var dataNodes = $('.checkpoint-desc')
     var newSteps = []
     dataNodes.each(function (index) {
@@ -19,7 +21,13 @@ $(function () {
                 const currentIndex = steps.indexOf(currentStep)
                 console.log(steps[currentIndex])
                 if (steps[currentIndex] && steps[currentIndex].timeCount) {
-                    startNewTimer(steps[currentIndex].timeCount)
+                    activeTimer = startNewTimer(steps[currentIndex].timeCount)
+                    isActiveTimer = true
+                }
+                else if (isActiveTimer) {
+                    isActiveTimer = false
+                    clearInterval(activeTimer)
+                    $('#countdownA').replaceWith('<div class="countdown-bar" id="countdownA"><div></div><div></div></div>')
                 }
 
                 // handle back
