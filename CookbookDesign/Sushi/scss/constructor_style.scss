@@ -1,0 +1,245 @@
+@import "reset";
+@import "fonts";
+@import "header";
+.label {
+    padding-top: 187px;
+    padding-bottom: 66px;
+    background: #fe6d73;
+    border-radius: 0px 0px 15px 15px;
+    background-image: url("../images/constructor/back.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    &__inner {
+        padding-left: 30px;
+    }
+
+    &__title {
+        font-family: "OpenSans";
+        font-style: normal;
+        font-weight: bold;
+        font-size: 36px;
+        line-height: 49px;
+        color: #ffffff;
+        margin-bottom: 23px;
+    }
+
+    &__btn {
+        font-family: "NotoSans";
+        font-style: normal;
+        font-weight: bold;
+        font-size: 13px;
+        line-height: 18px;
+        color: #fe6d73;
+        background: #ffffff;
+        box-shadow: 0px 2px 10px rgba(255, 255, 255, 0.25);
+        border-radius: 25px;
+        width: 200px;
+        height: 50px;
+    }
+}
+.container {
+}
+
+.header {
+    &__inner {
+    }
+
+    &__nav {
+    }
+
+    &__logo {
+    }
+
+    &__logo-link {
+    }
+
+    &__menu {
+    }
+
+    &__menu-item {
+    }
+
+    &__profile {
+    }
+
+    &__profile-name {
+    }
+
+    &__profile-link {
+    }
+
+    &__profile-img {
+    }
+}
+.container {
+}
+.label {
+    
+    &__inner {
+    }
+
+    &__title {
+    }
+
+    &__btn {
+    }
+}
+.instruk {
+    padding-top: 81px;
+    padding-bottom: 150px;
+    &__inner {
+    }
+}
+.form {
+    &__items {
+        display: flex;
+    }
+
+    &__chart1 {
+        margin-right: 25px;
+    }
+
+    &__bar {
+    }
+
+    &__chart2 {
+        font-family: "NotoSans";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 16px;
+
+        color: #555555;
+    }
+
+    &__item1 {
+        margin-bottom: 10px;
+        max-width: 320px;
+    }
+
+    &__item2 {
+        max-width: 320px;
+        margin-bottom: 73px;
+        li {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &__inputs {
+        div {
+            display: flex;
+            margin-bottom: 22px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__input {
+        padding-left: 3px;
+        padding-right: 3px;
+        font-family: "NotoSans";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 16px;
+        color: black;
+        padding-bottom: 5px;
+        border-bottom: 1px solid #bfc0c0;
+        &:placeholder {
+            color: #555555;
+        }
+    }
+
+    &__btn {
+    }
+
+    &__minbtn {
+        background-color: white;
+    }
+
+    &__btns {
+        margin-top: 35px;
+        display: flex;
+        align-items: center;
+        label {
+            font-family: "NotoSans";
+            font-style: normal;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 16px;
+            color: #555555;
+        }
+        input {
+            font-family: "NotoSans";
+            font-style: normal;
+            font-weight: 700;
+            font-size: 12px;
+            line-height: 16px;
+            color: black;
+            &::placeholder {
+                color: #bfc0c0;
+                font-weight: 500;
+            }
+        }
+    }
+
+    &__btn-check {
+        width: 135px;
+        height: 35px;
+        font-family: "NotoSans";
+        font-style: normal;
+        font-weight: bold;
+        font-size: 13px;
+        line-height: 18px;
+        margin-right: 33px;
+        color: #ffffff;
+    }
+
+    &__buon {
+        margin-top: 73px;
+        font-family: "NotoSans";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 16px;
+        color: #fe6d73;
+    }
+
+    &__button {
+        margin-top: 31px;
+        width: 135px;
+        height: 35px;
+        font-family: "NotoSans";
+        font-style: normal;
+        font-weight: bold;
+        font-size: 13px;
+        line-height: 18px;
+        color: #ffffff;
+    }
+}
+.text {
+}
+.num {
+}
+.inp1 {
+    width: 271px;
+    margin-right: 61px;
+}
+.inp2 {
+    width: 133px;
+    margin-right: 42px;
+}
+.inp3 {
+}
+.btn-add {
+    color: #fe6d73;
+    margin-right: 42px;
+}
+.btn-red {
+}
+.red-btn {
+}
