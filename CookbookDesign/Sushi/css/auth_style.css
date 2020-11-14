@@ -1,0 +1,212 @@
+@charset "UTF-8";
+/*Обнуление*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+/*--------------------*/
+.red-btn {
+  font-family: "NotoSans";
+  width: 200px;
+  height: 60px;
+  background: #fe6d73;
+  border-radius: 25px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 25px;
+  color: #ffffff;
+  -webkit-filter: drop-shadow(0px 4px 4px #fe6d73);
+          filter: drop-shadow(0px 4px 4px #fe6d73);
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+.red-btn:hover {
+  background: #ec565c;
+}
+
+@font-face {
+  font-family: "NotoSans";
+  font-display: swap;
+  src: url("../fonts/NotoSans-Regular.woff") format("woff"), url("../fonts/NotoSans-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "NotoSans";
+  font-display: swap;
+  src: url("../fonts/NotoSans-SemiBold.woff") format("woff"), url("../fonts/NotoSans-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "OpenSans";
+  font-display: swap;
+  src: url("../fonts/OpenSans-ExtraBold.woff") format("woff"), url("../fonts/OpenSans-ExtraBold.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: "OpenSans";
+  font-display: swap;
+  src: url("../fonts/OpenSans-Bold.woff") format("woff"), url("../fonts/OpenSans-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+.title {
+  font-family: "OpenSans";
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 49px;
+  color: #1e1e1e;
+}
+
+.input {
+  font-weight: 700;
+  padding-left: 2px;
+  padding-right: 2px;
+  padding-bottom: 5px;
+  width: 100%;
+  font-family: "NotoSans";
+  font-style: normal;
+  font-size: 12px;
+  line-height: 16px;
+  border-bottom: 1px solid #bfc0c0;
+}
+.input::-webkit-input-placeholder {
+  color: #555555;
+  font-weight: 500;
+}
+.input::-moz-placeholder {
+  color: #555555;
+  font-weight: 500;
+}
+.input:-ms-input-placeholder {
+  color: #555555;
+  font-weight: 500;
+}
+.input::-ms-input-placeholder {
+  color: #555555;
+  font-weight: 500;
+}
+.input::placeholder {
+  color: #555555;
+  font-weight: 500;
+}
+
+.auth {
+  min-height: 100vh;
+  background-color: #fe6d73;
+  background-image: url("../images/auth/form.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.auth__form {
+  width: 271px;
+}
+.auth__title {
+  margin-bottom: 31px;
+}
+.auth__input {
+  margin-bottom: 13px;
+}
+.auth__input[type=password] {
+  margin-bottom: 31px;
+}
+.auth__btn {
+  width: 114px;
+  height: 35px;
+}
