@@ -1,9 +1,7 @@
-﻿using CookBookServer.Models;
+﻿using CookBookServer.Models.Recipe;
 using CookBookServer.Models.User;
+using CookBookServer.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace CookBookServer.Repositories
 {
@@ -19,6 +17,10 @@ namespace CookBookServer.Repositories
             if (type == typeof(AuthModel))
             {
                 return "Auth";
+            }
+            if(type == typeof(RecipeModel))
+            {
+                return "Recipe";
             }
 
             return string.Empty;

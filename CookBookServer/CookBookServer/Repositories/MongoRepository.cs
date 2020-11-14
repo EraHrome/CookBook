@@ -1,10 +1,11 @@
-﻿using CookBookServer.Interfaces;
+﻿using CookBookServer.Repositories.Interfaces;
+using CookBookServer.Models.Options;
 using Microsoft.Extensions.Options;
-using MongoDB.Driver;
 using System.Collections.Generic;
-using System.Linq;
-using CookBookServer.Repositories.Interfaces;
+using CookBookServer.Interfaces;
 using CookBookServer.Models;
+using MongoDB.Driver;
+using System.Linq;
 
 namespace CookBookServer.Repositories
 {
@@ -13,7 +14,19 @@ namespace CookBookServer.Repositories
         private IMongoDatabase _database;
         protected IMongoCollection<T> _doc;
 
-        public MongoRepository(IOptions<MongoDbOptions> settings, IMongoClient mongoClient)
+        public MongoRepository(IOptions<MongoAuthorizedDbOptions> settings, IMongoClient mongoClient)
+        {
+            _database = mongoClient.GetDatabase(settings.Value.DataBaseName);
+            _doc = _database.GetCollection<T>(MongoDocumentNameResolver.GetMongoDocumentName<T>());
+        }
+
+        public MongoRepository(IOptions<MongoRecipedDbOptions> settings, IMongoClient mongoClient)
+        {
+            _database = mongoClient.GetDatabase(settings.Value.DataBaseName);
+            _doc = _database.GetCollection<T>(MongoDocumentNameResolver.GetMongoDocumentName<T>());
+        }
+
+        public MongoRepository(IOptions<MongoUsersDbOptions> settings, IMongoClient mongoClient)
         {
             _database = mongoClient.GetDatabase(settings.Value.DataBaseName);
             _doc = _database.GetCollection<T>(MongoDocumentNameResolver.GetMongoDocumentName<T>());

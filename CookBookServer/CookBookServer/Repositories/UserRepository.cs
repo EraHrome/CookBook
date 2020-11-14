@@ -13,10 +13,13 @@ namespace CookBookServer.Repositories
 {
     public class UserRepository : MongoRepository<User>
     {
-        public UserRepository(IOptions<MongoDbOptions> options, IMongoClient client) : base(options, client)
+        public UserRepository(IOptions<MongoAuthorizedDbOptions> options, IMongoClient client) : base(options, client)
         {
            
         }
+
+        public User GetById(string id)
+            => _doc.Find(x => x.Id == id)?.FirstOrDefault();
 
         public User Get(SignInDTOModel model)
         {

@@ -10,23 +10,23 @@ namespace CookBookServer.Repositories
 
         private IMongoDatabase _database;
         protected IMongoCollection<AuthModel> _collection;
-        private readonly MongoDbOptions _options;
+        private readonly MongoAuthorizedDbOptions _options;
 
-        public AuthRepository(IOptions<MongoDbOptions> options, IMongoClient mongoClient)
+        public AuthRepository(IOptions<MongoAuthorizedDbOptions> options, IMongoClient mongoClient)
         {
             _options = options.Value;
             _database = mongoClient.GetDatabase(_options.DataBaseName);
-            _collection = _database.GetCollection<AuthModel>(MongoDocumentNameResolver.GetMongoDocumentName<AuthModel>());
+            _collection = _database.GetCollection<AuthModel>(options.Value.CollectionName);
         }
 
         public void UpdateOne(AuthModel authorizationModel)
         {
             _collection.DeleteOne(x => x.UserId == authorizationModel.UserId);
             _collection.InsertOne(new AuthModel()
-                {
-                    UserId = authorizationModel.UserId,
-                    Guid = authorizationModel.Guid
-                }
+            {
+                UserId = authorizationModel.UserId,
+                Guid = authorizationModel.Guid
+            }
             );
         }
 
