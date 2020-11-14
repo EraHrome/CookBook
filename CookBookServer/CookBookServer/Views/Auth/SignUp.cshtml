@@ -11,19 +11,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <title>Регистрация</title>
-
+    <link rel="stylesheet" href="~/css/complete_style.css">
     <link rel="stylesheet" href="~/css/registration_style.css">
 </head>
 <body>
     @if (ViewBag.ShowResult != null && ViewBag.ShowResult)
     {
-        <div>
-            Пользователь создан! Для дальнейшей работы на сайте необходимо подтвердить учетную запись.
-            Письмо с ссылкой для подтверждения выслано Вам на указанный адрес электронной почты (todo).
-        </div>
-        <input type="button" class="header__btn red-btn" value="На главную" onclick="window.location.href='../../';" />
+        <main class="main">
+            <div class="container">
+                <div class="main__inner">
+                    <div class="main__text">
+                        Спасибо за регистрацию
+                    </div>
+                    <div class="main__mem">
+                        <img src="~/images/mem.jpg" alt="">
+                    </div>
+                    <div class="main__btn">
+                        <a class="red-btn" href="../../">На главную</a>
+                    </div>
+                </div>
+            </div>
+        </main>
     }
-
     else
     {
         <main class="registration">
