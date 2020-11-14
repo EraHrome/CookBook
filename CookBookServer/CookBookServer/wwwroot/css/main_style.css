@@ -201,7 +201,6 @@ h6 {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  background-image: url("../images/main/whitebackheader.png");
   position: relative;
 }
 .header__profile::after {
@@ -209,7 +208,6 @@ h6 {
   width: 20px;
   height: 20px;
   display: block;
-  background-image: url("../images/header/exit.png");
   position: absolute;
   right: 94px;
   top: 50%;
