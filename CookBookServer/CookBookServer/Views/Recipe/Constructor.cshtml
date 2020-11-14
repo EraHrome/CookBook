@@ -1,0 +1,71 @@
+﻿@{
+    Layout = "_Layout1";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/constructor_style.css">
+}
+
+<section class="label">
+    <div class="container">
+        <div class="label__inner">
+            <div class="label__title">Введите название</div>
+            <button class="label__btn">Загрузить обложку</button>
+        </div>
+    </div>
+</section>
+<section class="instruk">
+    <div class="container">
+        <div class="instruk__inner">
+            <form action="#" class="form">
+                <div class="form__items">
+                    <div class="form__chart1">
+                        <img class="form__bar" src="~/images/constructor/bar.png" alt="">
+                    </div>
+                    <div class="form__chart2">
+                        <div class="form__item1">
+                            Накройте свиные стейки пленкой и оставить мариноваться. Время от
+                            времени переворачивайте кусочки.
+                        </div>
+                        <ul class="form__item2">
+                            <li>
+                                <div class="text">- Стейк свиной</div>
+                                <div class="num"> 200 гр.</div>
+                            </li>
+                            <li>
+                                <div class="text">- Масло оливковое для маринада</div>
+                                <div class="num">200 кг.</div>
+                            </li>
+                        </ul>
+                        <div class="form__inputs">
+                            <div>
+                                <input type="text" class="form__input inp1"
+                                       placeholder="Введите инструкцию для точки">
+                            </div>
+                            <div>
+                                <input type="text" class="form__input inp1" placeholder="Введите ингредиент">
+                                <input type="text" class="form__input inp2" placeholder="Введите количество">
+                                <button class="form__minbtn">Удалить</button>
+                            </div>
+                            <div>
+                                <input type="text" class="form__input inp1" placeholder="Введите ингредиент">
+                                <input type="text" class="form__input inp2" placeholder="Введите количество">
+                                <button class="form__minbtn btn-add">Добавить</button>
+                                <button class="form__minbtn">Удалить</button>
+                            </div>
+
+                        </div>
+                        <div class="form__btns">
+                            <button class="red-btn form__btn-check">Добавить</button>
+                            <label>Новый чекпоинт через <input type="number" min="0" placeholder="введите число минут"></label>
+                        </div>
+                        <div class="form__buon">Buon Appetito!</div>
+                    </div>
+
+                </div>
+                <button class="form__button red-btn">Опубликовать</button>
+            </form>
+        </div>
+    </div>
+</section>
+

@@ -274,7 +274,6 @@ body {
 }
 
 .recipes {
-    background-image: url("../images/main/back.png");
     background-position: right;
     background-repeat: no-repeat;
     padding-bottom: 68px;
@@ -482,6 +481,8 @@ body {
     width: 100%;
     padding-top: 64px;
     min-height: 209px;
+    background-image: linear-gradient(360deg, #000000 0%, rgba(0, 0, 0, 0) 100%), url("../images/main/salat.jpg");
+    margin-bottom: 42px;
 }
 
     .recipes__item-2 .recipes__time {
@@ -491,20 +492,16 @@ body {
         font-size: 18px;
         line-height: 25px;
         color: #f5f5f5;
-        margin-bottom: 61px;
+        margin-bottom: 8px;
     }
 
     .recipes__item-2:first-child {
-        background-image: -webkit-gradient(linear, left bottom, left top, from(#000000), to(rgba(0, 0, 0, 0))), url("../images/main/mokoron.png");
-        background-image: -o-linear-gradient(bottom, #000000 0%, rgba(0, 0, 0, 0) 100%), url("../images/main/mokoron.png");
         background-image: linear-gradient(360deg, #000000 0%, rgba(0, 0, 0, 0) 100%), url("../images/main/mokoron.png");
         margin-bottom: 42px;
     }
 
     .recipes__item-2:last-child {
-        background-image: -webkit-gradient(linear, left bottom, left top, from(#000000), to(rgba(0, 0, 0, 0))), url("../images/header/meet.png");
-        background-image: -o-linear-gradient(bottom, #000000 0%, rgba(0, 0, 0, 0) 100%), url("../images/header/meet.png");
-        background-image: linear-gradient(360deg, #000000 0%, rgba(0, 0, 0, 0) 100%), url("../images/header/meet.png");
+        background-image: linear-gradient(360deg, #000000 0%, rgba(0, 0, 0, 0) 100%), url("../images/page1/back.jpg");
     }
 
 .bottom {
