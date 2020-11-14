@@ -17,7 +17,7 @@ $(function () {
                 console.log("Событие переключения")
                 $('.btn')[1].click()
                 isTimeout = !isTimeout
-                setTimeout(() => { isTimeout = !isTimeout }, 1000)
+                setTimeout(() => { isTimeout = !isTimeout }, 750)
             }
         }
     };
