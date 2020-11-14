@@ -66,7 +66,7 @@ namespace CookBookServer.Controllers
                     PublicationDate = DateTime.Now,
                     Title = "Этап 1",
                     ImageName = "test",
-                    Raiting = 4.0,
+                    Raiting = 0,
                     CookingTimeMinutes = "30 минут",
                     Checkpoints = new CheckpointModel[]
                     {
