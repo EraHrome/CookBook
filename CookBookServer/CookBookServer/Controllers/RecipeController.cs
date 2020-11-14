@@ -26,9 +26,12 @@ namespace CookBookServer.Controllers
             _apiService = apiService;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(string id)
         {
-            return View();
+
+            var recipe = _apiService.GetRecipeById(id)?.Result;
+            return View(recipe);
+
         }
         public IActionResult Constructor()
         {

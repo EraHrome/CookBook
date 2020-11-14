@@ -358,3 +358,7 @@ h6 {
 .ingredients__btn:first-child {
   margin-right: 15px;
 }
+
+    .ingredients__btn:hover {
+        background: #ec565c;
+    }
