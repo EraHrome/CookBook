@@ -1,12 +1,11 @@
 $(function () {
 
     function getLastIndex() {
-        $('.events-wrapper').find('a').each(function (index) {
-            if (!$(this).hasClass('older-event')) {
-                return index + 2
-            }
+        document.querySelectorAll('.events-wrapper a').forEach(function (el, index) {
+            if (el.classList.contains('selected'))
+                return index;
         })
-        return 1;
+        return 0;
     }
 
     var keyWords = ["следующий", "следующая", "дальше", "продолжить"]
@@ -24,7 +23,8 @@ $(function () {
         if (keyWords.indexOf(event.results[0][0].transcript) !== -1) {
             if (!isTimeout) {
                 var refs = $('.events-wrapper').find('a');
-                var index = getLastIndex();
+                var index = getLastIndex() + 1;
+                console.log(index)
                 if (index < refs.length && index != -1) {
                     console.log("Событие переключения")
                     refs[index].click()
