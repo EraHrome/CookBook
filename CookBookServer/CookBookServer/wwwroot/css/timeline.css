@@ -40,7 +40,7 @@
     position: absolute;
     width: 100vw;
     height: 4px;
-    background-color: #e1ecec38;
+    background-color: #7A7A7A;
     z-index: -1;
 }
 
@@ -100,9 +100,9 @@
 .progress__indicator {
     width: 14px;
     height: 14px;
-    border: 2px solid #BFC0C0;
+    border: 2px solid #7A7A7A;
     border-radius: 50%;
-    background-color: #BFC0C0;
+    background-color: #7A7A7A;
     margin-bottom: 10px;
 }
 

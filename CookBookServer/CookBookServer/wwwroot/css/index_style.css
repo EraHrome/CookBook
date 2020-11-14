@@ -184,12 +184,12 @@ body {
     .header__inner::after {
         content: "";
         display: block;
-        width: 40px;
+        width: 33px;
         height: 40px;
         position: absolute;
         top: 67px;
         left: 0px;
-        background-image: url(/images/header/logomini.png);
+        background-image: url(/images/header/logomini.svg);
     }
 .header__title {
   font-weight: 800;
