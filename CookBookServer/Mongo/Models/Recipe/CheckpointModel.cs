@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System;
 
-namespace CookBookServer.Models.Recipe
+namespace Mongo.Models.Recipe
 {
     public class CheckpointModel
     {

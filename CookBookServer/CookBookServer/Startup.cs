@@ -10,6 +10,7 @@ using CookBookServer.Providers;
 using CookBookServer.Code.Automapper;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using CookBookServer.Models.Options;
+using Mongo.Repositories;
 
 namespace CookBookServer
 {

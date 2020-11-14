@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using CookBookServer.Interfaces;
 using CookBookServer.Enums;
+using Mongo.Interfaces;
 
-namespace CookBookServer.Models.User
+namespace Mongo.Models
 {
     public class User : IHasStringId
     {

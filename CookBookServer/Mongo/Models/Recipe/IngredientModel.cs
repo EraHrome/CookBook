@@ -1,4 +1,4 @@
-﻿namespace CookBookServer.Models.Recipe
+﻿namespace Mongo.Models.Recipe
 {
     public class IngredientModel
     {

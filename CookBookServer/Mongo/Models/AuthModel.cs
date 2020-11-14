@@ -1,4 +1,4 @@
-﻿namespace CookBookServer.Models
+﻿namespace Mongo.Models
 {
     public class AuthModel
     {

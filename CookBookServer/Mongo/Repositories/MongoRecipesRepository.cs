@@ -1,15 +1,16 @@
-﻿using CookBookServer.Models.Options;
 using Microsoft.Extensions.Options;
-using CookBookServer.Models.Recipe;
 using System.Collections.Generic;
 using MongoDB.Driver;
 using System.Linq;
+using Mongo.Models.Recipe;
+using CookBookServer.Repositories;
+using CookBookServer.Models;
 
-namespace CookBookServer.Repositories
+namespace Mongo.Repositories
 {
     public class MongoRecipesRepository : MongoRepository<RecipeModel>
     {
-        public MongoRecipesRepository(IOptions<MongoRecipedDbOptions> options, IMongoClient client) : base(options, client)
+        public MongoRecipesRepository(IOptions<MongoAuthorizedDbOptions> options, IMongoClient client) : base(options, client)
         { }
 
         public RecipeModel GetByUid(string id)

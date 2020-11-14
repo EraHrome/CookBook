@@ -1,11 +1,7 @@
-﻿using CookBookServer.Resourses;
-using System;
-using System.Collections.Generic;
+﻿using DTOModels.Resourses;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace CookBookServer.Models.DTO.Auth
+namespace DTOModels
 {
     public class SignInDTOModel
     {
