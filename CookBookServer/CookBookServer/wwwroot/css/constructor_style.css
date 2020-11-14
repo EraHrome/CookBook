@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 /*Обнуление*/
 * {
   padding: 0;
@@ -268,7 +268,8 @@ h6 {
   font-size: 36px;
   line-height: 49px;
   color: #ffffff;
-  margin-bottom: 23px;
+  margin-bottom: 23px;  
+  background-color: #fe6d73;
 }
 .label__btn {
   font-family: "NotoSans";
@@ -283,6 +284,7 @@ h6 {
   border-radius: 25px;
   width: 200px;
   height: 50px;
+  display: block;
 }
 
 .instruk {
@@ -438,4 +440,17 @@ h6 {
 .btn-add {
   color: #fe6d73;
   margin-right: 42px;
+}
+
+.label__title::-webkit-input-placeholder { /* WebKit browsers */
+    color: white;
+}
+.label__title:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: white;
+}
+.label__title::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: white;
+}
+.label__title:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: white;
 }
