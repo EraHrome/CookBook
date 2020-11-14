@@ -43,8 +43,20 @@ namespace CookBookServer.Controllers
         {
 
             var guid = _cookieProvider.GetGuidFromCookies(HttpContext);
+            if (String.IsNullOrEmpty(guid))
+            {
+                return "Вы не авторизированы";
+            }
             var auth = _authRepository.LoginnedByToken(guid);
+            if (auth == null)
+            {
+                return "Аут. Пользователь не найден";
+            }
             var user = _userRepository.GetById(auth.UserId);
+            if (user == null)
+            {
+                return "Пользователь не найден";
+            }
 
             var recipes = new RecipeModel[]
             {
