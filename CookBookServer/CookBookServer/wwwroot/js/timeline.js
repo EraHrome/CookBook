@@ -1,10 +1,9 @@
 $(function () {
 
     var dataNodes = $('.checkpoint-desc')
-    var timerNodes = $('.checkpoint-timer')
     var newSteps = []
     dataNodes.each(function (index) {
-        newSteps.push({ "label": "test", "content": $(this).text(), "timeCount": timerNodes[index].textContent })
+        newSteps.push({ "label": "test", "content": $(this).text(), "timeCount": $(this).data('value') })
     })
 
     var app = new Vue({
@@ -18,10 +17,9 @@ $(function () {
                 const steps = this.steps
                 const currentStep = this.currentStep
                 const currentIndex = steps.indexOf(currentStep)
-                console.log(steps)
-                console.log(currentStep)
-                if (steps.timeCount && steps.timeCount != "null") {
-                    startNewTimer(steps.timeCount)
+                console.log(steps[currentIndex])
+                if (steps[currentIndex] && steps[currentIndex].timeCount) {
+                    startNewTimer(steps[currentIndex].timeCount)
                 }
 
                 // handle back
