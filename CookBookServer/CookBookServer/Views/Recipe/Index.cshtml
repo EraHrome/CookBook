@@ -59,21 +59,24 @@
         <div class="recept-container">
             {{currentStep ? currentStep.content : "Начать приготовление блюда"}}
         </div>
-        <div class="group__btns">
-            <button class="btn btn-timeline-controls"
-                    v-on:click="nextStep(false)">
-                Назад
-            </button>
-            <button class="btn btn-timeline-controls"
-                    v-on:click="nextStep">
-                Далее
-            </button>
+        <div class="controls__container">
+            <div class="group__btns">
+                <button class="btn btn-timeline-controls"
+                        v-on:click="nextStep(false)">
+                    Назад
+                </button>
+                <button class="btn btn-timeline-controls"
+                        v-on:click="nextStep">
+                    Далее
+                </button>
+            </div>
+            <div class="hint__container">
+                <div class="ingredients__item">Или скажите «</div>
+                <div class="int__mark"> Дальше</div>
+                <div class="ingredients__item">»</div>
+            </div>
         </div>
-        <div class="hint__container">
-            <div class="ingredients__item">Или скажите «</div>
-            <div class="int__mark"> Дальше</div>
-            <div class="ingredients__item">»</div>
-        </div>
+
     </div>
 </div>
 
