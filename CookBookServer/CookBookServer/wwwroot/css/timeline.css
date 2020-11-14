@@ -1,14 +1,14 @@
 #app {
     font-family: Arial;
-    text-transform: capitalize;
+    /*text-transform: capitalize;*/
 }
 
 .progress {
     position: relative;
-    top: 15vh;
+    top: -3vh;
     width: 0%;
-    height: 10px;
-    background-color: #2183DD;
+    height: 4px;
+    background-color: #FFFFFF;
     transition: width .2s;
 }
 
@@ -39,14 +39,14 @@
 .progress__bg {
     position: absolute;
     width: 100vw;
-    height: 10px;
-    background-color: #E5E5E5;
+    height: 4px;
+    background-color: #BFC0C0;
     z-index: -1;
 }
 
 .progress__step {
     position: absolute;
-    top: -8px;
+    top: -5px;
     left: 0;
     display: flex;
     flex-direction: column;
@@ -80,8 +80,8 @@
     }
 
     .progress__step.progress__step--complete .progress__indicator {
-        background-color: #009900;
-        border-color: #2183DD;
+        background-color: #FFFFFF;
+        border-color: #FFFFFF;
         color: #FFFFFF;
         display: flex;
         align-items: center;
@@ -98,11 +98,11 @@
     }
 
 .progress__indicator {
-    width: 25px;
-    height: 25px;
-    border: 2px solid #808080;
+    width: 14px;
+    height: 14px;
+    border: 2px solid #BFC0C0;
     border-radius: 50%;
-    background-color: #FFFFFF;
+    background-color: #BFC0C0;
     margin-bottom: 10px;
 }
 
@@ -120,13 +120,14 @@
 .progress__actions {
     position: absolute;
     top: 75px;
-    left: 10px;
+    left: 230px;
     display: flex;
     align-items: center;
     width: max-content;
+    flex-direction: column;
 }
 
-.btn {
+/*.btn {
     width: fit-content;
     padding: 5px 8px;
     background-color: #FFFFFF;
@@ -138,4 +139,43 @@
 
     .btn:nth-child(2) {
         margin: 0 10px;
-    }
+    }*/
+
+.progress__actions {
+    width: 100vw;
+}
+
+.group__btns {
+    display: flex;
+    flex-direction: row;
+}
+
+.recept-container{
+    width: 20%;
+}
+
+.btn-timeline-controls {
+    font-family: "NotoSans";
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    color: #fe6d73;
+    text-decoration: none;
+    margin: 20px;
+    background-color: white;
+}
+
+.hint__container{
+    display: flex;
+    flex-direction: row;
+}
+
+.int__mark {
+    font-family: "NotoSans";
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #fe6d73;
+    text-decoration: none;
+    background-color: white;
+}

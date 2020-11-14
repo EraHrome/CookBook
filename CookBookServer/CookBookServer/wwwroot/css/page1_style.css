@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 /*Обнуление*/
 * {
   padding: 0;
@@ -221,10 +221,12 @@ h6 {
 }
 
 .meal {
+    position: relative;
   border-radius: 0px 0px 15px 15px;
   background: url("../images/page1/background.png ") center no-repeat;
   padding-top: 177px;
   padding-bottom: 61px;
+  z-index: -1;
 }
 .meal__items {
   margin-bottom: 19px;
