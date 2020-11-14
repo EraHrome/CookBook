@@ -120,12 +120,22 @@
 .progress__actions {
     position: absolute;
     top: 75px;
+    left: 1000px;
+    display: flex;
+    align-items: right;
+    width: max-content;
+    flex-direction: column;
+}
+
+/*.progress__actions {
+    position: absolute;
+    top: 75px;
     left: 230px;
     display: flex;
     align-items: center;
     width: max-content;
     flex-direction: column;
-}
+}*/
 
 /*.btn {
     width: fit-content;
@@ -161,7 +171,7 @@
     line-height: 19px;
     color: #fe6d73;
     text-decoration: none;
-    margin-left: 20px;
+    margin-right: 20px;
     background-color: white;
 }
 
