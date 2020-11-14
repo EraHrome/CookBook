@@ -2,6 +2,7 @@ $(function () {
 
     var nextKeyWords = ["следующий", "следующая", "дальше", "продолжить"]
     var prevKeyWords = ["назад", "предыдущий"]
+    var stopWords = ["стоп"]
     var isTimeout = false
 
     if (window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition) {
@@ -16,23 +17,34 @@ $(function () {
 
         var speech = event.results[0][0].transcript;
 
+        if (stopWords.indexOf(speech) !== -1) {
+            if (!isTimeout) {
+                stopTimer()
+                event.preventDefault()
+                isTimeout = !isTimeout
+                setTimeout(() => { isTimeout = !isTimeout }, 1000)
+            }
+        }
+
+
         if (prevKeyWords.indexOf(speech) !== -1) {
             if (!isTimeout) {
-                console.log("Событие переключения назад")
                 $('.btn')[0].click()
+                event.preventDefault()
                 isTimeout = !isTimeout
-                setTimeout(() => { isTimeout = !isTimeout }, 750)
+                setTimeout(() => { isTimeout = !isTimeout }, 1000)
             }
         }
 
         if (nextKeyWords.indexOf(speech) !== -1) {
             if (!isTimeout) {
-                console.log("Событие переключения вперед")
                 $('.btn')[1].click()
+                event.preventDefault()
                 isTimeout = !isTimeout
-                setTimeout(() => { isTimeout = !isTimeout }, 750)
+                setTimeout(() => { isTimeout = !isTimeout }, 1000)
             }
         }
+
     };
     SpeechRecognition.onend = function () {
         SpeechRecognition.start();

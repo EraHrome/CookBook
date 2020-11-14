@@ -1,5 +1,14 @@
+var activeTimer
+
+function stopTimer() {
+    if (activeTimer) {
+        clearInterval(activeTimer)
+    }
+}
+
 $(function () {
 
+    var isActiveTimer = false
     var dataNodes = $('.checkpoint-desc')
     var newSteps = []
     dataNodes.each(function (index) {
@@ -17,13 +26,20 @@ $(function () {
                 const steps = this.steps
                 const currentStep = this.currentStep
                 const currentIndex = steps.indexOf(currentStep)
-                console.log(steps[currentIndex])
+
                 if (steps[currentIndex] && steps[currentIndex].timeCount) {
-                    startNewTimer(steps[currentIndex].timeCount)
+                    activeTimer = startNewTimer(steps[currentIndex].timeCount)
+                    isActiveTimer = true
+                }
+                else if (isActiveTimer) {
+                    isActiveTimer = false
+                    stopTimer()
+                    $('#countdownA').replaceWith('<div class="countdown-bar" id="countdownA"><div></div><div></div></div>')
                 }
 
                 // handle back
                 if (!next) {
+
                     if (currentStep && currentStep.label === 'complete') {
                         return this.currentStep = steps[steps.length - 1]
                     }
@@ -69,4 +85,10 @@ $(function () {
         }
     })
 
+});
+
+$("#start-cooking").click(function () {
+    $(".controls__container-watch").hide();
+    $(".controls__container-cooking").show();
+    $("#start-cooking").hide();
 });

@@ -9,8 +9,8 @@ function config() {
     $config.loadingBars = '.countdown-bar';
 
     // Countdown Loading Bar
-    $config.loadingBars_width = 200;
-    $config.loadingBars_height = 20;
+    $config.loadingBars_width = 250;
+    $config.loadingBars_height = 30;
     $config.loadingBars_border_color = '#E74C3C';
     $config.loadingBars_color =  '#C0392B';
     $config.loadingBars_background_color =  '#BDC3C7';
@@ -20,7 +20,7 @@ function config() {
     $config.timer_font_weight = 700;
     $config.timer_font = 'Roboto Condensed';
     $config.timer_font_size = 12;
-    $config.endtime_message = 'Timer expired!';
+    $config.endtime_message = 'Время вышло!';
 
     return $config;
 }
@@ -58,7 +58,7 @@ function countdown($element, $daysAdd, $hoursAdd, $minutesAdd, $secondsAdd) {
     $second = $dateNow.getSeconds();
     $now_loader = new Date().getTime();
 
-    var interval = setInterval(function() {
+    return setInterval(function () {
 
         $loadingBars_loader = $('#' + $element).children('div')[0];
         $loadingBars_timer = $('#' + $element).children('div')[1];
@@ -156,6 +156,6 @@ function startNewTimer(time)
 {
     //console.log(time)
 	//var getTime = parseInt(time);
-    countdown('countdownA', 0, 0, 0, time);
+    return countdown('countdownA', 0, 0, 0, time);
 }
 

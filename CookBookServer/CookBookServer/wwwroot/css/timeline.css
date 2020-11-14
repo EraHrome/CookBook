@@ -161,13 +161,14 @@
     line-height: 19px;
     color: #fe6d73;
     text-decoration: none;
-    margin: 20px;
+    margin-left: 20px;
     background-color: white;
 }
 
 .hint__container{
     display: flex;
     flex-direction: row;
+    margin-top: 10px;
 }
 
 .int__mark {
