@@ -1,113 +1,160 @@
-﻿const FULL_DASH_ARRAY = 283;
-const WARNING_THRESHOLD = 10;
-const ALERT_THRESHOLD = 5;
+﻿/**
+ * Config Settings
+ *
+ * @returns {array}
+ */
+function config() {
 
-const COLOR_CODES = {
-    info: {
-        color: "green"
-    },
-    warning: {
-        color: "orange",
-        threshold: WARNING_THRESHOLD
-    },
-    alert: {
-        color: "red",
-        threshold: ALERT_THRESHOLD
-    }
-};
+    var $config = [];
+    $config.loadingBars = '.countdown-bar';
 
-const TIME_LIMIT = 20;
-let timePassed = 0;
-let timeLeft = TIME_LIMIT;
-let timerInterval = null;
-let remainingPathColor = COLOR_CODES.info.color;
+    // Countdown Loading Bar
+    $config.loadingBars_width = 200;
+    $config.loadingBars_height = 20;
+    $config.loadingBars_border_color = '#E74C3C';
+    $config.loadingBars_color =  '#C0392B';
+    $config.loadingBars_background_color =  '#BDC3C7';
 
-document.getElementById("timer").innerHTML = `
-<div class="base-timer">
-  <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-    <g class="base-timer__circle">
-      <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
-      <path
-        id="base-timer-path-remaining"
-        stroke-dasharray="283"
-        class="base-timer__path-remaining ${remainingPathColor}"
-        d="
-          M 50, 50
-          m -45, 0
-          a 45,45 0 1,0 90,0
-          a 45,45 0 1,0 -90,0
-        "
-      ></path>
-    </g>
-  </svg>
-  <span id="base-timer-label" class="base-timer__label">${formatTime(
-    timeLeft
-)}</span>
-</div>
-`;
+    // Countdown Timer
+    $config.timer_color = '#C0392B';
+    $config.timer_font_weight = 700;
+    $config.timer_font = 'Roboto Condensed';
+    $config.timer_font_size = 12;
+    $config.endtime_message = 'Timer expired!';
 
-startTimer();
-
-function onTimesUp() {
-    clearInterval(timerInterval);
+    return $config;
 }
 
-function startTimer() {
-    timerInterval = setInterval(() => {
-        timePassed = timePassed += 1;
-        timeLeft = TIME_LIMIT - timePassed;
-        document.getElementById("base-timer-label").innerHTML = formatTime(
-            timeLeft
-        );
-        setCircleDasharray();
-        setRemainingPathColor(timeLeft);
 
-        if (timeLeft === 0) {
-            onTimesUp();
+/**
+ * Set countdown element
+ *
+ * Element should be build as
+ * <div class="countdownbar" id="elementID">
+ * <div></div>
+ * <div></div>
+ * </div>
+ *
+ * Then call the function countdown('elementID', 0, 0, 0, 10)
+ *
+ * @param {string} $element
+ * @param {number} $daysAdd
+ * @param {number} $hoursAdd
+ * @param {number} $minutesAdd
+ * @param {number} $secondsAdd
+ */
+function countdown($element, $daysAdd, $hoursAdd, $minutesAdd, $secondsAdd) {
+
+    $config = this.config();
+
+    $($config.loadingBars).css('width', $config.loadingBars_width);
+    $($config.loadingBars).css('height', $config.loadingBars_height);
+    $($config.loadingBars).css('background-color', $config.loadingBars_background_color);
+    $($config.loadingBars).css('border-color', $config.loadingBars_border_color);
+
+    $dateNow = new Date();
+    $hour = $dateNow.getHours();
+    $minute = $dateNow.getMinutes();
+    $second = $dateNow.getSeconds();
+    $now_loader = new Date().getTime();
+
+    var interval = setInterval(function() {
+
+        $loadingBars_loader = $('#' + $element).children('div')[0];
+        $loadingBars_timer = $('#' + $element).children('div')[1];
+
+        $countDownDate = $dateNow.setDate($dateNow.getDate() + $daysAdd);
+        $countDownDate = $dateNow.setHours($hour + $hoursAdd);
+        $countDownDate = $dateNow.setMinutes($minute + $minutesAdd);
+        $countDownDate = $dateNow.setSeconds($second + $secondsAdd + 1);
+
+        $now = new Date().getTime();
+        $distance = $countDownDate - $now;
+
+        $distance_loader = $countDownDate - $now_loader;
+        $distance_loadingBar_part =  (($config.loadingBars_width / ($distance_loader - 1000)) * 1000);
+        $distance_loadingBar_part = Math.floor($distance_loadingBar_part * 10000) / 10000;
+
+        $secondsPast = parseInt(($distance_loader - $distance) / 1000);
+
+        $newDistance  = $distance_loadingBar_part * $secondsPast;
+        if($newDistance > $config.loadingBars_width) $newDistance = $config.loadingBars_width;
+
+        $($loadingBars_loader).animate({ width: $newDistance + 'px' }, 500);
+
+        // TIMER
+        $timerHtmlStart = '<span style="color: ' + $config.timer_color + '; font-weight: ' + $config.timer_font_weight + '; font-family: ' + $config.timer_font + '; font-size: ' + $config.timer_font_size + 'px;">';
+        $timerHtmlEnd = '</span>';
+
+
+        // set loading bar background-color as set in config
+        $($loadingBars_loader).css('background-color', $config.loadingBars_color);
+        $($loadingBars_timer).css('width', $config.loadingBars_width);
+        $($loadingBars_timer).css('height', $config.loadingBars_height);
+
+        // SET LOADING-BAR
+        if($newDistance == $config.loadingBars_width) {
+                $($loadingBars_timer).html($timerHtmlStart + $config.endtime_message + $timerHtmlEnd);
+
+                clearInterval(interval);
+                return;
+        } else {
+
+            $timeLeftFinal = setTimer($distance);
+
+            $($loadingBars_timer).html($timerHtmlStart + $timeLeftFinal + $timerHtmlEnd);
+
         }
     }, 1000);
 }
 
-function formatTime(time) {
-    const minutes = Math.floor(time / 60);
-    let seconds = time % 60;
 
-    if (seconds < 10) {
-        seconds = `0${seconds}`;
+
+
+/**
+ * Set the timer compared to what date it is and what time is set for it.
+ *
+ * @param {timstamp} $distance
+ */
+function setTimer($distance) {
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor($distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor(($distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor(($distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor(($distance % (1000 * 60)) / 1000);
+
+    if(hours < 10) {
+        hours = "0" + hours;
     }
 
-    return `${minutes}:${seconds}`;
-}
-
-function setRemainingPathColor(timeLeft) {
-    const { alert, warning, info } = COLOR_CODES;
-    if (timeLeft <= alert.threshold) {
-        document
-            .getElementById("base-timer-path-remaining")
-            .classList.remove(warning.color);
-        document
-            .getElementById("base-timer-path-remaining")
-            .classList.add(alert.color);
-    } else if (timeLeft <= warning.threshold) {
-        document
-            .getElementById("base-timer-path-remaining")
-            .classList.remove(info.color);
-        document
-            .getElementById("base-timer-path-remaining")
-            .classList.add(warning.color);
+    if(minutes < 10) {
+        minutes = "0" + minutes;
     }
+
+    if(seconds < 10) {
+        seconds = "0" + seconds;
+    }
+
+    var timeLeft = hours + ":" + minutes + ":" + seconds;
+
+    if(days !== 0) {
+
+        if(days === 1) {
+            var timeLeftFinal = days + " day + " + timeLeft;
+        } else {
+            var timeLeftFinal = days + " days + " + timeLeft;
+        }
+
+    } else {
+        var timeLeftFinal = timeLeft;
+    }
+
+    return timeLeftFinal;
 }
 
-function calculateTimeFraction() {
-    const rawTimeFraction = timeLeft / TIME_LIMIT;
-    return rawTimeFraction - (1 / TIME_LIMIT) * (1 - rawTimeFraction);
+function startNewTimer(time)
+{
+	var getTime = parseInt(time);
+	countdown('countdownA', 0, 0, 0, getTime);
 }
 
-function setCircleDasharray() {
-    const circleDasharray = `${(
-        calculateTimeFraction() * FULL_DASH_ARRAY
-    ).toFixed(0)} 283`;
-    document
-        .getElementById("base-timer-path-remaining")
-        .setAttribute("stroke-dasharray", circleDasharray);
-}
