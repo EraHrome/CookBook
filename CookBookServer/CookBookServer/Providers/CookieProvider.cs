@@ -1,5 +1,6 @@
 ﻿using CookBookServer.Repositories;
 using Microsoft.AspNetCore.Http;
+using Mongo.Repositories;
 using System;
 
 namespace CookBookServer.Providers
@@ -58,6 +59,7 @@ namespace CookBookServer.Providers
         public void DeleteGuidFromCookies(HttpContext httpContext)
         {
             httpContext.Response.Cookies.Delete("token");
+            httpContext.Response.Cookies.Delete(".AspNetCore.Cookies");
         }
 
     }

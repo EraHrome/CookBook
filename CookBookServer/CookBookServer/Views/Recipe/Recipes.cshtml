@@ -1,0 +1,57 @@
+﻿@using Mongo.Models.Recipe 
+@model IEnumerable<RecipeModel>
+@{
+    Layout = "_Layout1";
+}
+@section Styles {
+    <link rel="stylesheet" href="~/css/main_style.css">
+    <link rel="stylesheet" href="~/css/recepts_style.css">
+}
+<main class="main">
+    <div class="container3">
+        <div class="main__inner">
+            <div class="main__label">
+                <div class="main__item">
+                    <div class="main__item1">
+                        <div class="meal__stars">5.0</div>
+                        <div class="main__kolichestvo">10 рецептов</div>
+                    </div>
+                    <h1 class="main__item-title1">Мои рецепты:</h1>
+                </div>
+                <div class="main__item">
+                    <button class="main__item-btn red-btn">Добавить</button>
+                </div>
+            </div>
+            <div class="recipes__items-2">
+                <div class="recipes__item-2">
+                    <h2 class="recipes__title">Маринара</h2>
+                    <div class="recipes__time">25 минут</div>
+                    <div class="bottom">
+                        <div class="meal__stars">5.0</div>
+                    </div>
+                </div>
+                <div class="recipes__item-2">
+                    <h2 class="recipes__title">Классический стейк</h2>
+                    <div class="recipes__time">10 минут</div>
+                    <div class="bottom">
+                        <div class="meal__stars">5.0</div>
+                    </div>
+                </div>
+                <div class="recipes__item-2">
+                    <h2 class="recipes__title">Классический стейк</h2>
+                    <div class="recipes__time">10 минут</div>
+                    <div class="bottom">
+                        <div class="meal__stars">5.0</div>
+                    </div>
+                </div>
+                <div class="recipes__item-2">
+                    <h2 class="recipes__title">Классический стейк</h2>
+                    <div class="recipes__time">10 минут</div>
+                    <div class="bottom">
+                        <div class="meal__stars">5.0</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

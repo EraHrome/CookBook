@@ -9,6 +9,8 @@ using CookBookServer.Models;
 using CookBookServer.Providers;
 using CookBookServer.Code.Automapper;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using CookBookServer.Models.Options;
+using Mongo.Repositories;
 
 namespace CookBookServer
 {
@@ -25,18 +27,20 @@ namespace CookBookServer
         {
             string mongoConnStr = Configuration["MongoDbConnectionString"];
             services.AddScoped<IMongoClient, MongoClient>(c => new MongoClient(mongoConnStr));
-            services.Configure<MongoDbOptions>(Configuration.GetSection("MongoAuthorizedDbOptions"));
+            services.Configure<MongoAuthorizedDbOptions>(Configuration.GetSection("MongoAuthorizedDbOptions"));
+            services.Configure<MongoRecipedDbOptions>(Configuration.GetSection("MongoRecipedDbOptions"));
+            services.Configure<MongoUsersDbOptions>(Configuration.GetSection("MongoUsersDbOptions"));
 
             services.AddScoped<AuthRepository>();
             services.AddScoped<UserRepository>();
             services.AddScoped<CookieProvider>();
             services.AddScoped<MongoRecipesRepository>();
 
-            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)               
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                .AddCookie(options =>
                 {
-                   options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Auth/SignIn");
-               });
+                    options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Auth/SignIn");
+                });
 
             services.AddControllersWithViews();
             services.AddMapper("CookBookServer");
@@ -58,7 +62,7 @@ namespace CookBookServer
 
             app.UseRouting();
 
-            app.UseAuthentication();   
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

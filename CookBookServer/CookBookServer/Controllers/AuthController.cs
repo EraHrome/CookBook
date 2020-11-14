@@ -1,13 +1,12 @@
 ﻿using AutoMapper;
-using CookBookServer.Models;
-using CookBookServer.Models.DTO.Auth;
-using CookBookServer.Models.User;
 using CookBookServer.Providers;
 using CookBookServer.Repositories;
-using CookBookServer.Services;
+using DTOModels;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
+using Mongo.Models;
+using Mongo.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Security.Claims;
@@ -23,10 +22,10 @@ namespace CookBookServer.Controllers
         private readonly IMapper _mapper;
 
         public AuthController(
-            UserRepository userRepository, 
+            UserRepository userRepository,
             AuthRepository authRepository,
             CookieProvider cookieProvider,
-            IMapper mapper) 
+            IMapper mapper)
         {
             _userRepository = userRepository;
             _authRepository = authRepository;
@@ -45,7 +44,7 @@ namespace CookBookServer.Controllers
             ViewBag.IsSuccess = true;
             return View();
         }
-        
+
         public IActionResult Confirm([FromRoute] string Id)
         {
             var user = _userRepository.Get(Id);
@@ -56,7 +55,7 @@ namespace CookBookServer.Controllers
         }
 
         public IActionResult SignUp()
-        {            
+        {
             return View();
         }
 
@@ -72,7 +71,7 @@ namespace CookBookServer.Controllers
             {
                 if (!ModelState.IsValid)
                     return View();
-                
+
                 var oldUser = _userRepository.GetByEmailOrLogin(model.Login.Trim(), model.Email.Trim());
                 if (oldUser != null)
                 {
@@ -139,7 +138,7 @@ namespace CookBookServer.Controllers
                 {
                     ViewBag.Error = "Подтвердите почту! Сообщение было отправлено вам на почту.";
                     return View();
-                }                
+                }
 
                 var auth = new AuthModel
                 {
@@ -156,17 +155,26 @@ namespace CookBookServer.Controllers
             {
                 ViewBag.Error = "Пользователь с такими данными не найден";
                 return View();
-            }           
+            }
         }
         private async Task Authenticate(string userName)
-        {           
+        {
             var claims = new List<Claim>
                 {
                     new Claim(ClaimsIdentity.DefaultNameClaimType, userName)
                 };
-            
-            ClaimsIdentity id = new ClaimsIdentity(claims, "ApplicationCookie", ClaimsIdentity.DefaultNameClaimType, ClaimsIdentity.DefaultRoleClaimType);           
+
+            ClaimsIdentity id = new ClaimsIdentity(claims, "ApplicationCookie", ClaimsIdentity.DefaultNameClaimType, ClaimsIdentity.DefaultRoleClaimType);
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(id));
         }
+
+        public IActionResult SignOut()
+        {
+            var guid = _cookieProvider.GetGuidFromCookies(HttpContext);
+            _cookieProvider.DeleteGuidFromCookies(HttpContext);
+            _authRepository.DeleteOneByGuid(guid);
+            return View("SignIn");
+        }
+
     }
 }

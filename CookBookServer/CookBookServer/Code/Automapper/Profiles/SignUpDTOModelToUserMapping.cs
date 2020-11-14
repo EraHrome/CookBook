@@ -1,11 +1,8 @@
 ﻿using AutoMapper;
 using CookBookServer.Enums;
-using CookBookServer.Models.DTO.Auth;
-using CookBookServer.Models.User;
+using DTOModels;
+using Mongo.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace CookBookServer.Code.Automapper.Profiles
 {

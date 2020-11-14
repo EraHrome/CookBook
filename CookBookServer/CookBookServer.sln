@@ -5,7 +5,11 @@ VisualStudioVersion = 16.0.30225.117
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CookBookServer", "CookBookServer\CookBookServer.csproj", "{6CF99520-1A59-4C12-8B30-DD8B9974FB99}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CookBackApi", "CookBackApi\CookBackApi.csproj", "{741EF60C-7291-4012-83CF-8DCE86874E1C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CookBackApi", "CookBackApi\CookBackApi.csproj", "{741EF60C-7291-4012-83CF-8DCE86874E1C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mongo", "Mongo\Mongo.csproj", "{76FB018B-A913-4774-91A7-E2C7CB8BF3BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTOModels", "DTOModels\DTOModels.csproj", "{B5413BA7-BCF4-4364-80C6-D66AD6663317}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{741EF60C-7291-4012-83CF-8DCE86874E1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{741EF60C-7291-4012-83CF-8DCE86874E1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{741EF60C-7291-4012-83CF-8DCE86874E1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76FB018B-A913-4774-91A7-E2C7CB8BF3BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76FB018B-A913-4774-91A7-E2C7CB8BF3BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76FB018B-A913-4774-91A7-E2C7CB8BF3BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76FB018B-A913-4774-91A7-E2C7CB8BF3BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5413BA7-BCF4-4364-80C6-D66AD6663317}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5413BA7-BCF4-4364-80C6-D66AD6663317}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5413BA7-BCF4-4364-80C6-D66AD6663317}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5413BA7-BCF4-4364-80C6-D66AD6663317}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
