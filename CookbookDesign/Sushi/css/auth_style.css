@@ -209,4 +209,27 @@ h6 {
 .auth__btn {
   width: 114px;
   height: 35px;
+  margin-right: 31px;
+}
+.auth__btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.auth__links a {
+  font-family: "NotoSans";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #2c2c2c;
 }
