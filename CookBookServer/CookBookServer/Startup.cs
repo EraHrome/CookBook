@@ -5,10 +5,11 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 using MongoDB.Driver;
 using CookBookServer.Repositories;
-using CookBookServer.Models;
 using CookBookServer.Providers;
 using CookBookServer.Code.Automapper;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Mongo.Models;
+using Mongo.Repositories;
 
 namespace CookBookServer
 {

@@ -1,11 +1,12 @@
 ﻿using Microsoft.Extensions.Options;
-using CookBookServer.Models.Recipe;
 using System.Collections.Generic;
-using CookBookServer.Models;
 using MongoDB.Driver;
 using System.Linq;
+using Mongo.Models;
+using Mongo;
+using Mongo.Models.Recipe;
 
-namespace CookBookServer.Repositories
+namespace Mongo.Repositories
 {
     public class MongoRecipesRepository : MongoRepository<RecipeModel>
     {

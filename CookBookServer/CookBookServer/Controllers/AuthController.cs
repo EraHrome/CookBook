@@ -1,13 +1,12 @@
 ﻿using AutoMapper;
-using CookBookServer.Models;
-using CookBookServer.Models.DTO.Auth;
-using CookBookServer.Models.User;
 using CookBookServer.Providers;
 using CookBookServer.Repositories;
-using CookBookServer.Services;
+using DTOModels;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
+using Mongo.Models;
+using Mongo.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Security.Claims;

@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using CookBookServer.Interfaces;
 using System;
+using Mongo.Interfaces;
 
-namespace CookBookServer.Models.Recipe
+namespace Mongo.Models.Recipe
 {
     public class RecipeModel : IHasStringId
     {

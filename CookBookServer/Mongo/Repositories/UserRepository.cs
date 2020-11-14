@@ -1,13 +1,10 @@
 ﻿using Microsoft.Extensions.Options;
-using CookBookServer.Models;
 using MongoDB.Driver;
 using System.Linq;
-using CookBookServer.Models.User;
-using System.Threading.Tasks;
 using System;
-using MongoDB.Bson;
-using CookBookServer.Repositories;
-using CookBookServer.Models.DTO.Auth;
+using Mongo;
+using Mongo.Models;
+using DTOModels;
 
 namespace CookBookServer.Repositories
 {

@@ -1,9 +1,10 @@
 ﻿using Microsoft.Extensions.Options;
-using CookBookServer.Models;
 using MongoDB.Driver;
 using System.Linq;
+using Mongo.Models;
+using Mongo;
 
-namespace CookBookServer.Repositories
+namespace Mongo.Repositories
 {
     public class AuthRepository
     {

@@ -1,12 +1,12 @@
-﻿using CookBookServer.Interfaces;
-using Microsoft.Extensions.Options;
+﻿using Microsoft.Extensions.Options;
+using Mongo.Interfaces;
+using Mongo.Models;
 using MongoDB.Driver;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using CookBookServer.Repositories.Interfaces;
-using CookBookServer.Models;
+using System.Text;
 
-namespace CookBookServer.Repositories
+namespace Mongo
 {
     public class MongoRepository<T> : IMongoService<T> where T : class, IHasStringId
     {

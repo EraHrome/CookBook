@@ -1,13 +1,9 @@
-﻿using CookBookServer.Models;
-using CookBookServer.Models.User;
+﻿using Mongo.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace CookBookServer.Repositories
+namespace Mongo
 {
-    public static class MongoDocumentNameResolver
+    public class MongoDocumentNameResolver
     {
         public static string GetMongoDocumentName<T>() where T : class
         {
