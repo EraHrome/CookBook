@@ -1,5 +1,13 @@
 $(function () {
 
+    function getLastIndex() {
+        document.querySelectorAll('.events-wrapper a').forEach(function (el, index) {
+            if (el.classList.contains('selected'))
+                return index;
+        })
+        return 0;
+    }
+
     var keyWords = ["следующий", "следующая", "дальше", "продолжить"]
     var isTimeout = false
 
@@ -14,9 +22,15 @@ $(function () {
     SpeechRecognition.onresult = function (event) {
         if (keyWords.indexOf(event.results[0][0].transcript) !== -1) {
             if (!isTimeout) {
-                console.log("Событие переключения")
-                isTimeout = !isTimeout
-                setTimeout(() => { isTimeout = !isTimeout }, 5000)
+                var refs = $('.events-wrapper').find('a');
+                var index = getLastIndex() + 1;
+                console.log(index)
+                if (index < refs.length && index != -1) {
+                    console.log("Событие переключения")
+                    refs[index].click()
+                    isTimeout = !isTimeout
+                    setTimeout(() => { isTimeout = !isTimeout }, 5000)
+                }
             }
         }
     };

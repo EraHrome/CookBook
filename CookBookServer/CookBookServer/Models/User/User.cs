@@ -1,14 +1,11 @@
 ﻿using CookBookServer.Enums;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using CookBookServer.Interfaces;
 
 namespace CookBookServer.Models.User
 {
-    public class User
+    public class User : IHasStringId
     {
-        public Guid Id { get; set; }
+        public string Id { get; set; }
 
         public UserRoleEnum Role { get; set; }
 
@@ -16,16 +13,14 @@ namespace CookBookServer.Models.User
 
         public string LastName { get; set; }
 
-        public string MiddleName { get; set; }
-
-        public string Nickname { get; set; }
+        public string Login { get; set; }
 
         public string Email { get; set; }
 
         public string Password { get; set; }
 
-        public string Rating { get; set; }
+        public double Rating { get; set; }
 
-        public string IsConfirmed { get; set; }
+        public bool IsConfirmed { get; set; }
     }
 }

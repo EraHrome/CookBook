@@ -204,8 +204,8 @@ jQuery(document).ready(function($){
 	function parseDate(events) {
 		var dateArrays = [];
 		events.each(function(){
-			var dateComp = $(this).data('date').split(':'),
-				newDate = new Date(0, 0, 0, dateComp[0], dateComp[1]);
+			var dateComp = $(this).data('date').split('/'),
+				newDate = new Date(dateComp[2], dateComp[1]-1, dateComp[0]);
 			dateArrays.push(newDate);
 		});
 	    return dateArrays;

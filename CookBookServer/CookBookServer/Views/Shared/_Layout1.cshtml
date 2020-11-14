@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - CookBookServer</title>
+    @RenderSection("Styles", required: false)
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <nav class="header__nav">
+                    <div class="header__logo">
+                        <span class="header__logo-link">@Html.ActionLink("ВашСуШеф.рф", "Index", "Home")</span>
+                    </div>
+                    <ul class="header__menu">
+                        <li class="header__menu-item">
+                            @Html.ActionLink("Главная", "Index", "Home")
+                        </li>
+                        <li class="header__menu-item">
+                            <a href="#">Мои рецепты</a>
+                        </li>
+                        <li class="header__menu-item">
+                            <a href="#">Избранное</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="header__profile">
+                    <div class="header__profile-name">Имя Фамилия</div>
+                    <a class="header__profile-link" href="#">
+                        <img class="header__profile-img" src="~/images/page1/prifile.png" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    @RenderBody()
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

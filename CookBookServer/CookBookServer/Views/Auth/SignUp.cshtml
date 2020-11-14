@@ -1,41 +1,61 @@
-﻿@*
-    
-*@
+﻿@model CookBookServer.Models.DTO.Auth.SignUpDTOModel;
+
 @{
+    Layout = null;
 }
 
+@if (ViewBag.ShowResult != null && ViewBag.ShowResult)
+{
+    <div>
+        Пользователь создан! Для дальнейшей работы на сайте необходимо подтвердить учетную запись.
+        Письмо с ссылкой для подтверждения выслано Вам на указанный адрес электронной почты.
+    </div>
+}
 
-<div>Регистрация!</div>
+else
+{
+    <div>Регистрация!</div>
 
-<div>
-    @using (Html.BeginForm("SignUp", "Auth", FormMethod.Post))
-    {
-        <p class="field">
-            <input type="text" name="FirstName" placeholder="Имя" />
-            <i class="icon-user icon-large"></i>
-        </p>
-        <p class="field">
-            <input type="text" name="LastName" placeholder="Фамилия" />
-            <i class="icon-user icon-large"></i>
-        </p>
-        <p class="field">
-            <input type="text" name="MiddleName" placeholder="Отчество" />
-            <i class="icon-user icon-large"></i>
-        </p>
-        <p class="field">
-            <input type="text" name="Nickname" placeholder="Никнейм" />
-            <i class="icon-user icon-large"></i>
-        </p>
-        <p class="field">
-            <input type="text" name="Email" placeholder="Введите е-мэйл" />
-            <i class="icon-user icon-large"></i>
-        </p>
-        <p class="field">
-            <input type="password" name="Password" placeholder="Пароль" />
-            <i class="icon-lock icon-large"></i>
-        </p>
-        <p class="submit">
-            <button type="submit" name="submit"><i class="icon-arrow-right icon-large">Отправить</i></button>
-        </p>
-    }
-</div>
+    <div>
+        @using (Html.BeginForm("SignUp", "Auth", FormMethod.Post))
+        {
+            if (!String.IsNullOrEmpty(ViewBag.Error))
+            {
+                <p class="failed" style="color:red;">
+                    @ViewBag.Error
+                </p>
+            }
+
+            <p class="field">
+                @Html.EditorFor(x => x.Email, new { htmlAttributes = new { placeholder = "Введите адрес электронной почты" } })
+                @Html.ValidationMessageFor(x => x.Email)
+                <i class="icon-user icon-large"></i>
+            </p>
+            <p class="field">
+                @Html.EditorFor(x => x.Login, new { htmlAttributes = new { placeholder = "Задайте логин" } })
+                @Html.ValidationMessageFor(x => x.Login)
+                <i class="icon-user icon-large"></i>
+            </p>
+            <p class="field">
+                @Html.EditorFor(x => x.FirstName, new { htmlAttributes = new { placeholder = "Введите имя" } })
+                @Html.ValidationMessageFor(x => x.FirstName)
+                <i class="icon-user icon-large"></i>
+            </p>
+            <p class="field">
+                @Html.EditorFor(x => x.LastName, new { htmlAttributes = new { placeholder = "Введите фамилию" } })
+                @Html.ValidationMessageFor(x => x.LastName)
+                <i class="icon-user icon-large"></i>
+            </p>
+            <p class="field">
+                @Html.EditorFor(x => x.Password, new { htmlAttributes = new { placeholder = "Задайте пароль" } })
+                @Html.ValidationMessageFor(x => x.Password)
+                <i class="icon-user icon-large"></i>
+            </p>
+
+            <p class="submit">
+                <button type="submit" name="submit"><i class="icon-arrow-right icon-large">Зарегистрироваться</i></button>
+            </p>
+        }
+    </div>
+
+}

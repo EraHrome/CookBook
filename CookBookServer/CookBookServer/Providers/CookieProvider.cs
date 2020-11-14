@@ -1,15 +1,15 @@
-﻿using Microsoft.AspNetCore.Http;
-using MyCodeServer.Repositories;
+﻿using CookBookServer.Repositories;
+using Microsoft.AspNetCore.Http;
 using System;
 
-namespace MyCodeServer.Providers
+namespace CookBookServer.Providers
 {
     public class CookieProvider
     {
 
-        private readonly MongoAuthorizationRepository _mongoAuthorizationRepository;
+        private readonly AuthRepository _mongoAuthorizationRepository;
 
-        public CookieProvider(MongoAuthorizationRepository mongoAuthorizationRepository) 
+        public CookieProvider(AuthRepository mongoAuthorizationRepository) 
         {
 
             _mongoAuthorizationRepository = mongoAuthorizationRepository;
