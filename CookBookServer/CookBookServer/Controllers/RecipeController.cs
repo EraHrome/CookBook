@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using CookBookServer.Providers;
 using Mongo.Repositories;
 using CookBookServer.Services;
+using System.Threading.Tasks;
 
 namespace CookBookServer.Controllers
 {
@@ -34,14 +35,14 @@ namespace CookBookServer.Controllers
             return View();
         }
 
-        public IActionResult Recipes()
+        public async Task<IActionResult> Recipes()
         {
             var guid = _cookieProvider.GetGuidFromCookies(HttpContext);
             var auth = _authRepository.LoginnedByToken(guid);
             var user = _userRepository.GetById(auth.UserId);
 
 
-            var recipes = _apiService.GetManyRecipiesByIds(user.RecipesIds);
+            var recipes = await _apiService.GetManyRecipiesByIds(user.RecipesIds);
 
             return View(recipes);
         }

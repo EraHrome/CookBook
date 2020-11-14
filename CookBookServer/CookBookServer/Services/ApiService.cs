@@ -21,7 +21,7 @@ namespace CookBookServer.Services
 
         public async Task<IEnumerable<RecipeModel>> GetRecipes()
         {
-            var response = await _client.GetAsync($"Get");
+            var response = await _client.GetAsync($"Recipe/Get");
 
             response.EnsureSuccessStatusCode();
 
@@ -31,7 +31,7 @@ namespace CookBookServer.Services
 
         public async Task<RecipeModel> GetRecipeById(string id)
         {            
-            var response = await _client.GetAsync($"Get/{id}");
+            var response = await _client.GetAsync($"Recipe/Get/{id}");
 
             response.EnsureSuccessStatusCode();
 
@@ -41,8 +41,8 @@ namespace CookBookServer.Services
         
         public async Task<IEnumerable<RecipeModel>> GetManyRecipiesByIds(IEnumerable<string> ids)
         {
-            var content = new StringContent(Newtonsoft.Json.JsonConvert.SerializeObject(ids), Encoding.UTF8, "application/json");
-            var response = await _client.PostAsync("GetByIds/", content);
+            var content = new StringContent(Newtonsoft.Json.JsonConvert.SerializeObject(ids ?? new List<string>()), Encoding.UTF8, "application/json");
+            var response = await _client.PostAsync("Recipe/GetByIds/", content);
 
             response.EnsureSuccessStatusCode();
 
@@ -53,7 +53,7 @@ namespace CookBookServer.Services
         public async Task<RecipeModel> CreateRecipe(RecipeModel model)
         {
             var content = new StringContent(Newtonsoft.Json.JsonConvert.SerializeObject(model), Encoding.UTF8, "application/json");
-            var response = await _client.PostAsync("Create/", content);
+            var response = await _client.PostAsync("Recipe/Create/", content);
 
             response.EnsureSuccessStatusCode();
 

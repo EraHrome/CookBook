@@ -16,6 +16,6 @@ namespace Mongo.Models.Recipe
         public DateTime CookingTime { get; set; }
         public IEnumerable<CheckpointModel> Checkpoints { get; set; }
         public IEnumerable<IngredientModel> Ingredients { get; set; }
-        public Dictionary<int, int> Raitings { get; set; }
+        public double Raiting { get; set; }
     }
 }

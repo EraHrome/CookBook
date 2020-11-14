@@ -45,6 +45,9 @@ namespace CookBackApi.Controllers
         {
             try
             {
+                if (Id == null)
+                    return Ok(null);
+
                 var res = _recipesRepository.GetByUid(Id);
                 return Ok(res);
             }
@@ -60,6 +63,9 @@ namespace CookBackApi.Controllers
         {
             try
             {
+                if (Ids == null || !Ids.Any())
+                    return Ok(new List<RecipeModel>());
+
                 var res = _recipesRepository.GetManyByIds(Ids.ToArray());
                 return Ok(res);
             }
