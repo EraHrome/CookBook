@@ -222,9 +222,7 @@ h6 {
 
 .meal {
   border-radius: 0px 0px 15px 15px;
-  background: url("../images/page1/background.png");
-  background-repeat: no-repeat;
-  background-position: center;
+  background: url("../images/page1/back.jpg") center no-repeat;
   padding-top: 177px;
   padding-bottom: 61px;
 }

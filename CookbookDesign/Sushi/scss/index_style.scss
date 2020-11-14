@@ -1,0 +1,257 @@
+@import "reset";
+@import "fonts";
+// font-family: "NotoSans";
+// font-family: "OpenSans";
+body {
+    font-family: "OpenSans";
+    color: black;
+}
+.container {
+    max-width: 1666px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.header {
+    min-height: 100vh;
+    background-color: white;
+    &::after {
+        content: "";
+        display: block;
+        width: 1126px;
+        height: 993px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background: url("../images/header/header-decor.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: 2;
+    }
+    &__inner {
+        &::after {
+            content: "";
+            display: block;
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            top: 67px;
+            left: 0px;
+            background: #fe6d73;
+        }
+        position: relative;
+        z-index: 4;
+        min-height: 100vh;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    &__title {
+        font-weight: 800;
+        font-size: 48px;
+        line-height: 65px;
+        margin-bottom: 11px;
+    }
+
+    &__descr {
+        font-family: "NotoSans";
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 25px;
+        color: #555555;
+        max-width: 508px;
+        margin-bottom: 40px;
+    }
+
+    &__items {
+        display: flex;
+    }
+
+    &__btn {
+        margin-right: 35px;
+    }
+
+    &__create {
+        display: flex;
+        align-items: center;
+    }
+
+    &__create-label {
+        font-family: "NotoSans";
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 19px;
+        color: #2c2c2c;
+        margin-right: 3px;
+    }
+
+    &__create-link {
+        font-family: "NotoSans";
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 19px;
+        color: #fe6d73;
+        text-decoration: underline;
+    }
+}
+
+.statistics {
+    background-color: #fe6d73;
+    padding-top: 71px;
+    padding-bottom: 61px;
+    &__inner {
+        max-width: 1057px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__item {
+        text-align: center;
+    }
+
+    &__item-num {
+        font-family: "OpenSans";
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 65px;
+        color: #ffffff;
+    }
+
+    &__item-descr {
+        font-family: "NotoSans";
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 25px;
+        color: #ffffff;
+    }
+}
+
+.recipes {
+    margin-top: 71px;
+    margin-bottom: 71px;
+    &__inner {
+    }
+
+    &__title {
+        text-align: center;
+        font-family: "OpenSans";
+        font-weight: bold;
+        font-size: 36px;
+        line-height: 49px;
+        color: #1e1e1e;
+        margin-bottom: 71px;
+    }
+
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    &__item {
+        width: 1200px;
+        background: #ffffff;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
+        border-radius: 25px;
+        display: flex;
+        overflow: hidden;
+        margin-bottom: 37px;
+        &:last-child {
+            margin-bottom: 0px;
+        }
+        cursor: pointer;
+    }
+
+    &__img {
+        margin-right: 55px;
+        position: relative;
+        &::after {
+            content: "";
+            width: 5px;
+            height: 100%;
+            background: #fe6d73;
+            display: block;
+            position: absolute;
+            right: -5px;
+            top: 0;
+        }
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__info-stars {
+        margin-bottom: 7px;
+        img {
+            margin-right: 14px;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    &__info-title {
+        font-family: "OpenSans";
+        font-weight: bold;
+        font-size: 36px;
+        line-height: 49px;
+        color: #1e1e1e;
+        margin-bottom: 7px;
+    }
+
+    &__info-time {
+        font-family: "NotoSans";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 25px;
+        color: #7a7a7a;
+    }
+}
+
+.footer {
+    min-height: 100vh;
+    background: #fe6d73;
+    text-align: right;
+    background-image: url("../images/header/footer.png");
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    padding-top: 13%;
+    &__inner {
+        max-width: 752px;
+        display: inline-block;
+        text-align: left;
+        padding-right: 100px;
+    }
+
+    &__title {
+        font-family: "OpenSans";
+        font-weight: 800;
+        font-size: 48px;
+        line-height: 65px;
+        color: #ffffff;
+        margin-bottom: 11px;
+    }
+
+    &__text {
+        font-family: "NotoSans";
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 25px;
+        color: #ffffff;
+    }
+
+    &__text-item {
+        margin-bottom: 23px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+.container {
+}

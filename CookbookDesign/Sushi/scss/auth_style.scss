@@ -1,0 +1,55 @@
+@import "reset";
+@import "fonts";
+.title {
+    font-family: "OpenSans";
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 49px;
+    color: #1e1e1e;
+}
+.input {
+    font-weight: 700;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-bottom: 5px;
+    width: 100%;
+    font-family: "NotoSans";
+    font-style: normal;
+    font-size: 12px;
+    line-height: 16px;
+    &::placeholder {
+        color: #555555;
+        font-weight: 500;
+    }
+    border-bottom: 1px solid #bfc0c0;
+}
+.auth {
+    min-height: 100vh;
+    background-color: #fe6d73;
+    background-image: url("../images/auth/form.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__form {
+        width: 271px;
+    }
+
+    &__title {
+        margin-bottom: 31px;
+    }
+
+    &__input {
+        margin-bottom: 13px;
+        &[type="password"] {
+            margin-bottom: 31px;
+        }
+    }
+
+    &__btn {
+        width: 114px;
+        height: 35px;
+    }
+}
