@@ -73,7 +73,7 @@ namespace CookBookServer.Controllers
                        new CheckpointModel ()
                        {
                        CookingSeconds = null,
-                       Description = "начните готовить",
+                       Description = "Срежьте с куска мяса лишний жир, если он, по-вашему, есть. Разрежьте стейк на 2 равные части, сохраняя толщину. Растолките перец в ступке не очень мелко. Натрите мясо с двух сторон (не там, где разрез) солью, вдавите пальцами перец. Дайте мясу полежать 15–20 мин.",
                        Ingredients = new IngredientModel[]
                        {
                            new IngredientModel()
@@ -88,7 +88,7 @@ namespace CookBookServer.Controllers
                        new CheckpointModel ()
                        {
                        CookingSeconds = "10",
-                       Description = "начните готовить",
+                       Description = "В хорошо разогретой на сильном огне сковороде с толстым дном растопите в оливковом сливочное масло. Уложите стейки на сковороду, жарьте 3 мин. Переверните и жарьте еще 2 мин. Снимите сковороду с огня и дайте постоять 5 мин. Затем верните сковороду на огонь и жарьте еще по 1–3 мин. на каждой стороне, до желаемой степени прожарки. Переложите мясо на подогретые тарелки и накройте куском фольги, не заворачивая края.",
                        Ingredients = new IngredientModel[]
                        {
                            new IngredientModel()
@@ -103,14 +103,29 @@ namespace CookBookServer.Controllers
                        new CheckpointModel ()
                        {
                        CookingSeconds = null,
-                       Description = "начните готовить",
+                       Description = "Пока мясо отдыхает, сделайте соус. Нарежьте очень мелко шалот, положите его на сковороду, где жарилось мясо. Обжарьте на среднем огне 2 мин. Наклоните сковороду на огне и, держась от нее подальше, влейте коньяк. Он должен загореться (если у вас электрическая плита или коньяк не загорелся от газа, подожгите его прямо в сковороде длинной спичкой). Дайте алкоголю прогореть.",
                        Ingredients = new IngredientModel[]
                        {
                            new IngredientModel()
                             {
                              Id = Guid.NewGuid().ToString(),
                              Amount = "1 шт",
-                             Title = "Хлеб"
+                             Title = "Соус"
+                            },
+
+                        }
+                     },
+                       new CheckpointModel ()
+                       {
+                       CookingSeconds = null,
+                       Description = "Добавьте теплый бульон, готовьте на сильном огне, помешивая, 1 мин. Добавьте масло, снимите с огня и подайте к стейкам.",
+                       Ingredients = new IngredientModel[]
+                       {
+                           new IngredientModel()
+                            {
+                             Id = Guid.NewGuid().ToString(),
+                             Amount = "200 мл",
+                             Title = "теплый бульон"
                             },
 
                         }

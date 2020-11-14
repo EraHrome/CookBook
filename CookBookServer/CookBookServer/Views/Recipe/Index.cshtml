@@ -10,7 +10,7 @@
     <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="~/css/page1_style.css">
     <link rel="stylesheet" href="~/css/timeline.css">
-    <link rel="stylesheet" href="~/css/timer.css"/>
+    <link rel="stylesheet" href="~/css/timer.css" />
 }
 @section Scripts{
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
@@ -18,8 +18,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
     <script src="~/js/webSpeechAPI.js"></script>
     <script src="~/js/timer.js"></script>
-    <script src="~/js/timeline.js" ></script>
+    <script src="~/js/timeline.js"></script>
 }
+<div id="Data" style="display:none">
+    @foreach (var item in Model.Checkpoints)
+    {
+        <span class="checkpoint-desc">@item.Description</span>
+    }
+</div>
 <section class="meal">
     <div class="container2">
         <div class="meal__inner">
@@ -71,32 +77,23 @@
     </div>
 </div>
 
+
 <section class="recipe">
     <div class="container2">
         <div class="recipe__inner">
             <div class="ingredients">
                 <h4 class="ingredients__title">Ингредиенты:</h4>
                 <div class="ingredients__items">
-                    <div class="ingredients__item">
-                        <div class="ingredients__item-name">- Стейк свиной</div>
-                        <div class="ingredients__item-num">200 гр.</div>
-                    </div>
-                    <div class="ingredients__item">
-                        <div class="ingredients__item-name">- Стейк свиной</div>
-                        <div class="ingredients__item-num">200 гр.</div>
-                    </div>
-                    <div class="ingredients__item">
-                        <div class="ingredients__item-name">- Стейк свиной</div>
-                        <div class="ingredients__item-num">200 гр.</div>
-                    </div>
-                    <div class="ingredients__item">
-                        <div class="ingredients__item-name">- Стейк свиной</div>
-                        <div class="ingredients__item-num">200 гр.</div>
-                    </div>
-                    <div class="ingredients__item">
-                        <div class="ingredients__item-name">- Стейк свиной</div>
-                        <div class="ingredients__item-num">200 гр.</div>
-                    </div>
+                    @if (Model.Ingredients != null)
+                    {
+                        @foreach (var rec in Model.Ingredients)
+                        {
+                            <div class="ingredients__item">
+                                <div class="ingredients__item-name">@rec.Title</div>
+                                <div class="ingredients__item-num">@rec.Amount</div>
+                            </div>
+                        }
+                    }
                 </div>
                 <div class="ingredients__btn-items">
                     <button class="ingredients__btn">В избранное</button>
