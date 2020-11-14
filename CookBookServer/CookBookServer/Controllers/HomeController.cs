@@ -74,7 +74,8 @@ namespace CookBookServer.Controllers
                        {
                        CookingSeconds = null,
                        Description = "Срежьте с куска мяса лишний жир, если он, по-вашему, есть. Разрежьте стейк на 2 равные части, сохраняя толщину. Растолките перец в ступке не очень мелко. Натрите мясо с двух сторон (не там, где разрез) солью, вдавите пальцами перец. Дайте мясу полежать 15–20 мин.",
-                       Ingredients = new IngredientModel[]
+                       TimerSeconds = "20",
+                           Ingredients = new IngredientModel[]
                        {
                            new IngredientModel()
                             {
@@ -119,7 +120,7 @@ namespace CookBookServer.Controllers
                        {
                        CookingSeconds = null,
                        Description = "Добавьте теплый бульон, готовьте на сильном огне, помешивая, 1 мин. Добавьте масло, снимите с огня и подайте к стейкам.",
-                       Ingredients = new IngredientModel[]
+                           Ingredients = new IngredientModel[]
                        {
                            new IngredientModel()
                             {
