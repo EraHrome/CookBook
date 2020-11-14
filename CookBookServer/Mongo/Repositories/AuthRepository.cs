@@ -17,7 +17,7 @@ namespace Mongo.Repositories
         {
             _options = options.Value;
             _database = mongoClient.GetDatabase(_options.DataBaseName);
-            _collection = _database.GetCollection<AuthModel>(options.Value.CollectionName);
+            _collection = _database.GetCollection<AuthModel>(MongoDocumentNameResolver.GetMongoDocumentName<AuthModel>());
         }
 
         public void UpdateOne(AuthModel authorizationModel)

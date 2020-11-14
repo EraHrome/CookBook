@@ -9,7 +9,7 @@ using System.Linq;
 namespace CookBackApi.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class RecipeController : ControllerBase
     {
 
@@ -55,8 +55,8 @@ namespace CookBackApi.Controllers
             }            
         }
 
-        [HttpGet("[action]")]
-        public IActionResult GetByIds([FromRoute] IEnumerable<string> Ids)
+        [HttpPost("[action]")]
+        public IActionResult GetByIds([FromBody] IEnumerable<string> Ids)
         {
             try
             {

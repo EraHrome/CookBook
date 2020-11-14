@@ -10,6 +10,8 @@ using CookBookServer.Code.Automapper;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Mongo.Repositories;
 using Mongo.Models;
+using System;
+using CookBookServer.Services;
 
 namespace CookBookServer
 {
@@ -37,6 +39,11 @@ namespace CookBookServer
                 {
                     options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Auth/SignIn");
                 });
+
+            services.AddHttpClient<ApiService>(c =>
+            {
+                c.BaseAddress = new Uri(Configuration["ApiService"] + "api/");
+            });
 
             services.AddControllersWithViews();
             services.AddMapper("CookBookServer");
