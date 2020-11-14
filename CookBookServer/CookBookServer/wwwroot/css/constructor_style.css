@@ -1,81 +1,81 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 /*Обнуление*/
 * {
-  padding: 0;
-  margin: 0;
-  border: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
 }
 
-*,
-*:before,
-*:after {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
+    *,
+    *:before,
+    *:after {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
 
 :focus,
 :active {
-  outline: none;
+    outline: none;
 }
 
 a:focus,
 a:active {
-  outline: none;
+    outline: none;
 }
 
 nav,
 footer,
 header,
 aside {
-  display: block;
+    display: block;
 }
 
 html,
 body {
-  height: 100%;
-  width: 100%;
-  font-size: 100%;
-  line-height: 1;
-  font-size: 14px;
-  -ms-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
 }
 
 input,
 button,
 textarea {
-  font-family: inherit;
+    font-family: inherit;
 }
 
-input::-ms-clear {
-  display: none;
-}
+    input::-ms-clear {
+        display: none;
+    }
 
 button {
-  cursor: pointer;
+    cursor: pointer;
 }
 
-button::-moz-focus-inner {
-  padding: 0;
-  border: 0;
-}
+    button::-moz-focus-inner {
+        padding: 0;
+        border: 0;
+    }
 
 a,
 a:visited {
-  text-decoration: none;
+    text-decoration: none;
 }
 
-a:hover {
-  text-decoration: none;
-}
+    a:hover {
+        text-decoration: none;
+    }
 
 ul li {
-  list-style: none;
+    list-style: none;
 }
 
 img {
-  vertical-align: top;
+    vertical-align: top;
 }
 
 h1,
@@ -84,358 +84,404 @@ h3,
 h4,
 h5,
 h6 {
-  font-size: inherit;
-  font-weight: 400;
+    font-size: inherit;
+    font-weight: 400;
 }
 
 /*--------------------*/
 .red-btn {
-  font-family: "NotoSans";
-  width: 200px;
-  height: 60px;
-  background: #fe6d73;
-  border-radius: 25px;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 25px;
-  color: #ffffff;
-  -webkit-filter: drop-shadow(0px 4px 4px #fe6d73);
-          filter: drop-shadow(0px 4px 4px #fe6d73);
-  -webkit-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s;
+    font-family: "NotoSans";
+    width: 200px;
+    height: 60px;
+    background: #fe6d73;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 25px;
+    color: #ffffff;
+    -webkit-filter: drop-shadow(0px 4px 4px #fe6d73);
+    filter: drop-shadow(0px 4px 4px #fe6d73);
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
 }
-.red-btn:hover {
-  background: #ec565c;
+
+    .red-btn:hover {
+        background: #ec565c;
+    }
+
+@font-face {
+    font-family: "NotoSans";
+    font-display: swap;
+    src: url("../fonts/NotoSans-Regular.woff") format("woff"), url("../fonts/NotoSans-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: "NotoSans";
-  font-display: swap;
-  src: url("../fonts/NotoSans-Regular.woff") format("woff"), url("../fonts/NotoSans-Regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
+    font-family: "NotoSans";
+    font-display: swap;
+    src: url("../fonts/NotoSans-SemiBold.woff") format("woff"), url("../fonts/NotoSans-SemiBold.woff2") format("woff2");
+    font-weight: 600;
+    font-style: normal;
 }
+
 @font-face {
-  font-family: "NotoSans";
-  font-display: swap;
-  src: url("../fonts/NotoSans-SemiBold.woff") format("woff"), url("../fonts/NotoSans-SemiBold.woff2") format("woff2");
-  font-weight: 600;
-  font-style: normal;
+    font-family: "OpenSans";
+    font-display: swap;
+    src: url("../fonts/OpenSans-ExtraBold.woff") format("woff"), url("../fonts/OpenSans-ExtraBold.woff2") format("woff2");
+    font-weight: 800;
+    font-style: normal;
 }
+
 @font-face {
-  font-family: "OpenSans";
-  font-display: swap;
-  src: url("../fonts/OpenSans-ExtraBold.woff") format("woff"), url("../fonts/OpenSans-ExtraBold.woff2") format("woff2");
-  font-weight: 800;
-  font-style: normal;
+    font-family: "OpenSans";
+    font-display: swap;
+    src: url("../fonts/OpenSans-Bold.woff") format("woff"), url("../fonts/OpenSans-Bold.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
 }
-@font-face {
-  font-family: "OpenSans";
-  font-display: swap;
-  src: url("../fonts/OpenSans-Bold.woff") format("woff"), url("../fonts/OpenSans-Bold.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-}
+
 .container {
-  max-width: 1300px;
-  padding: 0 15px;
-  margin: 0 auto;
+    max-width: 1300px;
+    padding: 0 15px;
+    margin: 0 auto;
 }
 
 .header {
-  background: #FE6D73;
-}
-.header__inner {
-  height: 84px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-.header__nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-.header__logo {
-  margin-right: 150px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-.header__logo-link {
-  font-family: "OpenSans";
-  font-style: normal;
-  font-weight: 800;
-  font-size: 18px;
-  line-height: 25px;
-  color: #F8F8F8;
-}
-.header__logo-link:first-child {
-  padding-right: 10px;
-}
-.header__profile {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  position: relative;
-  cursor: pointer;
-  width: 570px;
-  height: 100%;
-  padding-right: 139px;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  background-image: url("../images/main/whitebackheader.png");
-  position: relative;
-}
-.header__profile::after {
-  content: "";
-  width: 20px;
-  height: 20px;
-  display: block;
-  background-image: url("../images/header/exit.png");
-  position: absolute;
-  right: 94px;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
-}
-.header__profile-name {
-  margin-right: 20px;
-  font-family: "NotoSans";
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 19px;
-  color: #2c2c2c;
-}
-.header__profile-img {
-  width: 50px;
-  height: 50px;
-}
-.header__menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-.header__menu-item {
-  margin-left: 20px;
-  margin-right: 20px;
-}
-.header__menu-item a {
-  font-family: "NotoSans";
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 19px;
-  text-align: right;
-  color: #F8F8F8;
+    background: #FE6D73;
 }
 
+.header__inner {
+    height: 84px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.header__nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.header__logo {
+    margin-right: 150px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.header__logo-link {
+    font-family: "OpenSans";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 25px;
+    color: #F8F8F8;
+}
+
+    .header__logo-link:first-child {
+        padding-right: 10px;
+    }
+
+.header__profile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    width: 570px;
+    height: 100%;
+    padding-right: 139px;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    background-image: url("../images/main/whitebackheader.png");
+    position: relative;
+}
+
+    .header__profile::after {
+        content: "";
+        width: 20px;
+        height: 20px;
+        display: block;
+        position: absolute;
+        right: 94px;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+
+.header__profile-name {
+    margin-right: 20px;
+    font-family: "NotoSans";
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    color: #2c2c2c;
+}
+
+.header__profile-img {
+    width: 50px;
+    height: 50px;
+}
+
+.header__menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.header__menu-item {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+    .header__menu-item a {
+        font-family: "NotoSans";
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 19px;
+        text-align: right;
+        color: #F8F8F8;
+    }
+
 .label {
-  padding-top: 187px;
-  padding-bottom: 66px;
-  background: #fe6d73;
-  border-radius: 0px 0px 15px 15px;
-  background-image: url("../images/constructor/back.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  overflow: hidden;
+    padding-top: 187px;
+    padding-bottom: 66px;
+    background: #fe6d73;
+    border-radius: 0px 0px 15px 15px;
+    background-image: url("../images/constructor/back.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
 }
+
 .label__inner {
-  padding-left: 30px;
+    padding-left: 30px;
 }
+
 .label__title {
-  font-family: "OpenSans";
-  font-style: normal;
-  font-weight: bold;
-  font-size: 36px;
-  line-height: 49px;
-  color: #ffffff;
-  margin-bottom: 23px;
+    background-color: #fe6d73;
+    font-family: "OpenSans";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 49px;
+    color: #ffffff;
+    margin-bottom: 23px;
 }
+
+    .label__title::placeholder {
+        color: white;
+    }
+
 .label__btn {
-  font-family: "NotoSans";
-  font-style: normal;
-  font-weight: bold;
-  font-size: 13px;
-  line-height: 18px;
-  color: #fe6d73;
-  background: #ffffff;
-  -webkit-box-shadow: 0px 2px 10px rgba(255, 255, 255, 0.25);
-          box-shadow: 0px 2px 10px rgba(255, 255, 255, 0.25);
-  border-radius: 25px;
-  width: 200px;
-  height: 50px;
+    font-family: "NotoSans";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 18px;
+    color: #fe6d73;
+    background: #ffffff;
+    -webkit-box-shadow: 0px 2px 10px rgba(255, 255, 255, 0.25);
+    box-shadow: 0px 2px 10px rgba(255, 255, 255, 0.25);
+    border-radius: 25px;
+    width: 200px;
+    height: 50px;
 }
 
 .instruk {
-  padding-top: 81px;
-  padding-bottom: 150px;
+    padding-top: 81px;
+    padding-bottom: 150px;
 }
+
 .form__items {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
 }
+
 .form__chart1 {
-  margin-right: 25px;
+    margin-right: 25px;
 }
+
 .form__chart2 {
-  font-family: "NotoSans";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 16px;
-  color: #555555;
+    font-family: "NotoSans";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    color: #555555;
 }
+
 .form__item1 {
-  margin-bottom: 10px;
-  max-width: 320px;
+    margin-bottom: 10px;
+    max-width: 320px;
 }
+
 .form__item2 {
-  max-width: 320px;
-  margin-bottom: 73px;
+    max-width: 320px;
+    margin-bottom: 73px;
 }
-.form__item2 li {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
+
+    .form__item2 li {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+    }
+
 .form__inputs div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-bottom: 22px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 22px;
 }
-.form__inputs div:last-child {
-  margin-bottom: 0;
-}
+
+    .form__inputs div:last-child {
+        margin-bottom: 0;
+    }
+
 .form__input {
-  padding-left: 3px;
-  padding-right: 3px;
-  font-family: "NotoSans";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 16px;
-  color: black;
-  padding-bottom: 5px;
-  border-bottom: 1px solid #bfc0c0;
+    padding-left: 3px;
+    padding-right: 3px;
+    font-family: "NotoSans";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 16px;
+    color: black;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #bfc0c0;
 }
-.form__input:placeholder {
-  color: #555555;
-}
+
+    .form__input:placeholder {
+        color: #555555;
+    }
+
 .form__minbtn {
-  background-color: white;
+    background-color: white;
 }
+
 .form__btns {
-  margin-top: 35px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+    margin-top: 35px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
 }
-.form__btns label {
-  font-family: "NotoSans";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 16px;
-  color: #555555;
-}
-.form__btns input {
-  font-family: "NotoSans";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 16px;
-  color: black;
-}
-.form__btns input::-webkit-input-placeholder {
-  color: #bfc0c0;
-  font-weight: 500;
-}
-.form__btns input::-moz-placeholder {
-  color: #bfc0c0;
-  font-weight: 500;
-}
-.form__btns input:-ms-input-placeholder {
-  color: #bfc0c0;
-  font-weight: 500;
-}
-.form__btns input::-ms-input-placeholder {
-  color: #bfc0c0;
-  font-weight: 500;
-}
-.form__btns input::placeholder {
-  color: #bfc0c0;
-  font-weight: 500;
-}
+
+    .form__btns label {
+        font-family: "NotoSans";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 16px;
+        color: #555555;
+    }
+
+    .form__btns input {
+        font-family: "NotoSans";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 16px;
+        color: black;
+    }
+
+        .form__btns input::-webkit-input-placeholder {
+            color: #bfc0c0;
+            font-weight: 500;
+        }
+
+        .form__btns input::-moz-placeholder {
+            color: #bfc0c0;
+            font-weight: 500;
+        }
+
+        .form__btns input:-ms-input-placeholder {
+            color: #bfc0c0;
+            font-weight: 500;
+        }
+
+        .form__btns input::-ms-input-placeholder {
+            color: #bfc0c0;
+            font-weight: 500;
+        }
+
+        .form__btns input::placeholder {
+            color: #bfc0c0;
+            font-weight: 500;
+        }
+
 .form__btn-check {
-  width: 135px;
-  height: 35px;
-  font-family: "NotoSans";
-  font-style: normal;
-  font-weight: bold;
-  font-size: 13px;
-  line-height: 18px;
-  margin-right: 33px;
-  color: #ffffff;
+    width: 135px;
+    height: 35px;
+    font-family: "NotoSans";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 18px;
+    margin-right: 33px;
+    color: #ffffff;
 }
+
 .form__buon {
-  margin-top: 73px;
-  font-family: "NotoSans";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 16px;
-  color: #fe6d73;
+    margin-top: 73px;
+    font-family: "NotoSans";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    color: #fe6d73;
 }
+
 .form__button {
-  margin-top: 31px;
-  width: 135px;
-  height: 35px;
-  font-family: "NotoSans";
-  font-style: normal;
-  font-weight: bold;
-  font-size: 13px;
-  line-height: 18px;
-  color: #ffffff;
+    margin-top: 31px;
+    width: 135px;
+    height: 35px;
+    font-family: "NotoSans";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 18px;
+    color: #ffffff;
 }
 
 .inp1 {
-  width: 271px;
-  margin-right: 61px;
+    width: 271px;
+    margin-right: 61px;
 }
 
 .inp2 {
-  width: 133px;
-  margin-right: 42px;
+    width: 133px;
+    margin-right: 42px;
 }
 
 .btn-add {
-  color: #fe6d73;
-  margin-right: 42px;
+    color: #fe6d73;
+    margin-right: 42px;
 }
