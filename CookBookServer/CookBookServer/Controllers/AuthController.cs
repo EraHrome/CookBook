@@ -77,9 +77,9 @@ namespace CookBookServer.Controllers
                 if (oldUser != null)
                 {
                     if (oldUser.Email == model.Email)
-                        ViewBag.Error = "Пользователь с таким адресом электронной существует!";
+                        ViewBag.Error = "Емейл уже используется!";
                     if (oldUser.Login == model.Login)
-                        ViewBag.Error = "Пользователь с таким логином существует!";
+                        ViewBag.Error = "Логином уже используется!";
 
                     return View();
                 }

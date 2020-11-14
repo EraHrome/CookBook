@@ -10,7 +10,6 @@ namespace CookBookServer.Controllers
       
         public IActionResult Index()
         {
-            var keke = User.Identity.IsAuthenticated;
             return View();
         }
     }
