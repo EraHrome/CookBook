@@ -32,8 +32,7 @@ namespace CookBookServer.Services
                 message.IsBodyHtml = email.IsBodyHtml;
 
                 using (var smtp = new SmtpClient(_smtpHost, _smtpPort))
-                {
-                    smtp.UseDefaultCredentials = false;
+                {                    
                     smtp.Credentials = new NetworkCredential(_smtpEmail, _smtpPassword);
                     smtp.EnableSsl = true;
                     smtp.Send(message);

@@ -68,8 +68,17 @@ namespace CookBookServer.Controllers
             {
                 if (!ModelState.IsValid)
                     return View();
-                //todo проверка на существования юзера с таким логином или емейлом 
+                
+                var oldUser = _userRepository.GetByEmailOrLogin(model.Login.Trim(), model.Email.Trim());
+                if (oldUser != null)
+                {
+                    if (oldUser.Email == model.Email)
+                        ViewBag.Error = "Пользователь с таким адресом электронной существует!";
+                    if (oldUser.Login == model.Login)
+                        ViewBag.Error = "Пользователь с таким логином существует!";
 
+                    return View();
+                }
                 var user = _mapper.Map<User>(model);
                 var newUser = _userRepository.Create(user);
 
@@ -80,27 +89,27 @@ namespace CookBookServer.Controllers
                 };
                 _authRepository.UpdateOne(auth);
 
-                try
-                {
-                    var url = Url.Action("Confirm", "Auth", new { id = user.Id }, protocol: Request.Scheme);
-                    EmailService.Send(new Email
-                    {
-                        Subject = "Подтверждение регистрации",
-                        Recipients = new List<string> { user.Email },
-                        Body = $"Здравствуйте, {user.FirstName}!<br><br> Перейдите по ссылке, для того, чтобы завершить регистрацию!<br> {url}",
-                        IsBodyHtml = true
-                    });
-                }
-                catch (Exception ex)
-                {
-                    _userRepository.Remove(user);
-                    _authRepository.DeleteOne(auth);
+                //try
+                //{
+                //    var url = Url.Action("Confirm", "Auth", new { id = user.Id }, protocol: Request.Scheme);
+                //    EmailService.Send(new Email
+                //    {
+                //        Subject = "Подтверждение регистрации",
+                //        Recipients = new List<string> { user.Email },
+                //        Body = $"Здравствуйте, {user.FirstName}!<br><br> Перейдите по ссылке, для того, чтобы завершить регистрацию!<br> {url}",
+                //        IsBodyHtml = true
+                //    });
+                //}
+                //catch (Exception ex)
+                //{
+                //    _userRepository.Remove(user);
+                //    _authRepository.DeleteOne(auth);
 
-                    ViewBag.Error = "Не удалось отправить сообщение для подтверждения! Попробуйье позднее";
-                    return View();
-                }
-                
-              
+                //    ViewBag.Error = "Не удалось отправить сообщение для подтверждения! Попробуйье позднее";
+                //    return View();
+                //}
+
+
                 ViewBag.ShowResult = true;
                 return View();
             }
@@ -136,7 +145,7 @@ namespace CookBookServer.Controllers
                 _cookieProvider.UpdateGuidInCookies(HttpContext, auth.Guid);
                 _authRepository.UpdateOne(auth);
 
-                return Redirect("/Home/Index");
+                return Redirect("../..");
             }
             catch (Exception ex)
             {

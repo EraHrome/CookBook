@@ -8,8 +8,9 @@
 {
     <div>
         Пользователь создан! Для дальнейшей работы на сайте необходимо подтвердить учетную запись.
-        Письмо с ссылкой для подтверждения выслано Вам на указанный адрес электронной почты.
+        Письмо с ссылкой для подтверждения выслано Вам на указанный адрес электронной почты (todo).
     </div>
+    <input type="button" class="header__btn red-btn" value="На главную" onclick="window.location.href='../../';" />
 }
 
 else
@@ -23,6 +24,9 @@ else
             {
                 <p class="failed" style="color:red;">
                     @ViewBag.Error
+                </p>
+                <p class="submit">
+                    <button type="button" name="home"><i class="icon-arrow-right icon-large">Зарегистрироваться</i></button>
                 </p>
             }
 
