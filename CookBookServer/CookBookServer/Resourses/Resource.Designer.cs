@@ -61,7 +61,34 @@ namespace CookBookServer.Resourses {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Логин не может быть пустым.
+        ///   Looks up a localized string similar to Поле &quot;Емейл&quot; не может быть пустым.
+        /// </summary>
+        public static string EmailValidationError {
+            get {
+                return ResourceManager.GetString("EmailValidationError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Поле &quot;Имя&quot; не может быть пустым.
+        /// </summary>
+        public static string FirstNameValidationError {
+            get {
+                return ResourceManager.GetString("FirstNameValidationError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Поле &quot;Фамилия&quot; не может быть пустым.
+        /// </summary>
+        public static string LastNameValidationError {
+            get {
+                return ResourceManager.GetString("LastNameValidationError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Поле &quot;Логин&quot; не может быть пустым.
         /// </summary>
         public static string LoginValidationError {
             get {
@@ -70,7 +97,7 @@ namespace CookBookServer.Resourses {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Пароль не может быть пустым.
+        ///   Looks up a localized string similar to Поле &quot;Пароль&quot; не может быть пустым.
         /// </summary>
         public static string PasswordValidationError {
             get {

@@ -16,7 +16,7 @@ namespace CookBookServer.Repositories
             {
                 return "Users";
             }
-            if (type == typeof(CookAuthorizationModel))
+            if (type == typeof(AuthModel))
             {
                 return "Auth";
             }
