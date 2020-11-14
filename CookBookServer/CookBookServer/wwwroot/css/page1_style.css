@@ -105,9 +105,10 @@ h6 {
   -o-transition: 0.3s;
   transition: 0.3s;
 }
-.red-btn:hover {
-  background: #ec565c;
-}
+    .red-btn:hover {
+        background: #ec565c;
+        filter: drop-shadow(0px 4px 4px #EC565C);
+    }
 
 @font-face {
   font-family: "NotoSans";
@@ -361,4 +362,5 @@ h6 {
 
     .ingredients__btn:hover {
         background: #ec565c;
+        filter: drop-shadow(0px 4px 4px #EC565C);
     }

@@ -105,9 +105,10 @@ h6 {
   -o-transition: 0.3s;
   transition: 0.3s;
 }
-.red-btn:hover {
-  background: #ec565c;
-}
+    .red-btn:hover {
+        background: #ec565c;
+        filter: drop-shadow(0px 4px 4px #EC565C);
+    }
 
 @font-face {
   font-family: "NotoSans";
@@ -194,6 +195,19 @@ h6 {
       -ms-flex-align: center;
           align-items: center;
 }
+
+    .auth::after {
+        content: "";
+        display: block;
+        width: 33px;
+        height: 40px;
+        position: absolute;
+        top: 67px;
+        left: 148.5px;
+        background-image: url(/images/header/logomini2.svg);
+    }
+
+
 .auth__form {
   width: 271px;
 }
