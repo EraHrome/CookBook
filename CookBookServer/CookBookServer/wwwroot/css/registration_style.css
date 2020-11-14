@@ -137,6 +137,45 @@ h6 {
   font-weight: 700;
   font-style: normal;
 }
+.registration {
+  min-height: 100vh;
+  background-image: url("../images/registration/backg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.registration__form {
+  width: 271px;
+}
+.registration__title {
+  margin-bottom: 31px;
+}
+.registration__input {
+  margin-bottom: 13px;
+}
+.registration__input[type=password] {
+  margin-bottom: 31px;
+}
+.registration__btn {
+  width: 192px;
+  height: 35px;
+  font-family: "NotoSans";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 18px;
+  color: #ffffff;
+}
+
 .title {
   font-family: "OpenSans";
   font-weight: bold;
@@ -176,60 +215,4 @@ h6 {
 .input::placeholder {
   color: #555555;
   font-weight: 500;
-}
-
-.auth {
-  min-height: 100vh;
-  background-color: #fe6d73;
-  background-image: url("../images/auth/form.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-.auth__form {
-  width: 271px;
-}
-.auth__title {
-  margin-bottom: 31px;
-}
-.auth__input {
-  margin-bottom: 13px;
-}
-.auth__input[type=password] {
-  margin-bottom: 31px;
-}
-.auth__btn {
-  width: 114px;
-  height: 35px;
-  margin-right: 31px;
-}
-.auth__btns {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-.auth__links a {
-  font-family: "NotoSans";
-  font-style: normal;
-  font-weight: normal;
-  font-size: 10px;
-  line-height: 14px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  color: #2c2c2c;
 }
