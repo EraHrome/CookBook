@@ -26,6 +26,7 @@ $(function () {
         $('.ingredients__btn.stop').addClass('active')
         $('.ingredients__btn.restart').addClass('active')
         $('#countdownA').replaceWith('<div class="countdown-bar" id="countdownA"><div></div><div></div></div>')
+        stopTimer()
         activeTimer = startNewTimer(timeCount)
     });
 
