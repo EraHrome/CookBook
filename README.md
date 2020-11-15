@@ -5,15 +5,19 @@
 
 # Содержание
 * [Демо-версия проекта](#demo)
+* [Видео демонстрация Функиональности](#videodemo)
 * [О проекте](#about)
 * [Отличительные особенности проекта](#special)
 * [Перспективы развития](#perspectives)
-* [Стэк технологий](#technology-stack)
+* [Стек технологий](#technology-stack)
 * [Контакты](#contacts)
 * [Участники команды](#team-members)
 
 # <a name="demo"></a>Демо-версия проекта
-(ToDo) Добавть ссылку
+* https://cookbook-defpix.azurewebsites.net/
+
+# <a name="videodemo"></a>Видео демонстрация Функиональности
+* [Ссылка на видео](https://drive.google.com/file/d/1FpmqH8obEpDuYc_ewcCe68u4uNphp4VB/view?usp=sharing)
 
 # <a name="about"></a>О проекте
 Задание от компании Максимастер "Интерактивная поваренная книга"
@@ -40,13 +44,15 @@
 * Монетизация сервиса путем кооперации проекта с сервисами по доставке продуктов
 * Монетизация сервиса путем внедрения системы бонусного контента для платных подписчиков
 
-# <a name="technology-stack"></a>Стэк технологий
+# <a name="technology-stack"></a>Стек технологий
 * Asp.NET Core MVC
 * MongoDB
 * HTML 5
 * CSS3
+* JavaScript
 * SourceTree
 * GitHub
+* Веб-хостинг Azure
 
 # <a name="contacts"></a>Контакты
 Полковников Никита - polkovnikovnikita99@yandex.ru
