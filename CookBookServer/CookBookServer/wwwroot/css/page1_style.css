@@ -411,3 +411,24 @@ h6 {
 .header__btn.red-btn {
     cursor: pointer;
 }
+
+.white-btn {
+    font-family: "NotoSans";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 18px;
+    color: #fe6d73;
+    background: #ffffff;
+    -webkit-box-shadow: 0px 2px 10px rgba(255, 255, 255, 0.25);
+    box-shadow: 0px 2px 10px rgba(255, 255, 255, 0.25);
+    border-radius: 25px;
+    width: 90px;
+    height: 35px;
+    display: block;
+}
+    .white-btn:hover {
+        box-shadow: none;
+        color: #EC565C;
+        cursor: pointer;
+    }
