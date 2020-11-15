@@ -22,10 +22,10 @@ namespace Mongo.Repositories
 
         public void UpdateOne(AuthModel authorizationModel)
         {
-            _collection.DeleteOne(x => x.UserId == authorizationModel.UserId);
+            _collection.DeleteOne(x => x.Id == authorizationModel.Id);
             _collection.InsertOne(new AuthModel()
             {
-                UserId = authorizationModel.UserId,
+                Id = authorizationModel.Id,
                 Guid = authorizationModel.Guid
             }
             );
@@ -33,7 +33,7 @@ namespace Mongo.Repositories
 
         public void DeleteOneByUserId(AuthModel authorizationModel)
         {
-            _collection.DeleteOne(x => x.UserId == authorizationModel.UserId);
+            _collection.DeleteOne(x => x.Id == authorizationModel.Id);
         }
 
         public void DeleteOneByGuid(string guid)

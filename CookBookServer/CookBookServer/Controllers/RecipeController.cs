@@ -63,7 +63,7 @@ namespace CookBookServer.Controllers
 
             var guid = _cookieProvider.GetGuidFromCookies(HttpContext);
             var auth = _authRepository.LoginnedByToken(guid);
-            var user = _userRepository.GetById(auth.UserId);
+            var user = _userRepository.GetById(auth.Id);
             var recipesIds = user.RecipesIds?.ToList() ?? new List<string>();
             recipesIds.Add(recipes.Id);
             user.RecipesIds = recipesIds;
@@ -76,7 +76,7 @@ namespace CookBookServer.Controllers
         {
             var guid = _cookieProvider.GetGuidFromCookies(HttpContext);
             var auth = _authRepository.LoginnedByToken(guid);
-            var user = _userRepository.GetById(auth.UserId);
+            var user = _userRepository.GetById(auth.Id);
 
 
             var recipes = await _apiService.GetManyRecipiesByIds(user.RecipesIds);

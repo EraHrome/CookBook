@@ -92,7 +92,7 @@ namespace CookBookServer.Controllers
 
                 var auth = new AuthModel
                 {
-                    UserId = user.Id,
+                    Id = user.Id,
                     Guid = Guid.NewGuid().ToString()
                 };
                 _authRepository.UpdateOne(auth);
@@ -147,7 +147,7 @@ namespace CookBookServer.Controllers
 
                 var auth = new AuthModel
                 {
-                    UserId = user.Id,
+                    Id = user.Id,
                     Guid = Guid.NewGuid().ToString()
                 };
                 _cookieProvider.UpdateGuidInCookies(HttpContext, auth.Guid);

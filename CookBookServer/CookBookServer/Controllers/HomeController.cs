@@ -56,7 +56,7 @@ namespace CookBookServer.Controllers
             {
                 return "Аут. Пользователь не найден";
             }
-            var user = _userRepository.GetById(auth.UserId);
+            var user = _userRepository.GetById(auth.Id);
             if (user == null)
             {
                 return "Пользователь не найден";
