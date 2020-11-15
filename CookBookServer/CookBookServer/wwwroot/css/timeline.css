@@ -175,10 +175,12 @@
     background-color: white;
 }
 
-.hint__container{
+.hint__container {
+    font-weight: bold;
+    font-style: italic;
     display: flex;
     flex-direction: row;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .int__mark {
