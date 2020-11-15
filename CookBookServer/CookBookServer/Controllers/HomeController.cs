@@ -9,6 +9,7 @@ using CookBookServer.Services;
 using Mongo.Models.Recipe;
 using System;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace CookBookServer.Controllers
 {
@@ -31,11 +32,11 @@ namespace CookBookServer.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
             if (HttpContext.User.Identity.IsAuthenticated)
             {
-                var recipes = _apiService.GetRecipes();
+                var recipes = await _apiService.GetRecipes();
                 return View(recipes);
             }
 
