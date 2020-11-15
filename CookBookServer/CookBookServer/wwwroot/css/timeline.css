@@ -117,7 +117,7 @@
     top: 40px;
 }
 
-.progress__actions {
+/*.progress__actions {
     position: absolute;
     top: 75px;
     left: 1000px;
@@ -125,9 +125,9 @@
     align-items: right;
     width: max-content;
     flex-direction: column;
-}
+}*/
 
-/*.progress__actions {
+.progress__actions {
     position: absolute;
     top: 75px;
     left: 230px;
@@ -135,7 +135,7 @@
     align-items: center;
     width: max-content;
     flex-direction: column;
-}*/
+}
 
 /*.btn {
     width: fit-content;
