@@ -494,14 +494,9 @@ body {
         color: #f5f5f5;
         margin-bottom: 8px;
     }
-
-    .recipes__item-2:first-child {
-        background-image: linear-gradient(360deg, #000000 0%, rgba(0, 0, 0, 0) 100%), url("../images/main/mokoron.png");
-        margin-bottom: 42px;
-    }
-
-    .recipes__item-2:last-child {
+    .recipes__item-2 {
         background-image: linear-gradient(360deg, #000000 0%, rgba(0, 0, 0, 0) 100%), url("../images/page1/back.jpg");
+        margin-bottom: 20px;
     }
 
 .bottom {
