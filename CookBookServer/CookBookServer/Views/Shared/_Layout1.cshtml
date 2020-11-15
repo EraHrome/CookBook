@@ -20,9 +20,12 @@
                         <li class="header__menu-item">
                             @Html.ActionLink("Главная", "Index", "Home")
                         </li>
-                        <li class="header__menu-item">
-                            @Html.ActionLink("Мои рецепты", "Recipes", "Recipe")
-                        </li>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="header__menu-item">
+                                @Html.ActionLink("Мои рецепты", "Recipes", "Recipe")
+                            </li>
+                        }
                     </ul>
                 </nav>
                 @if (User.Identity.IsAuthenticated)
@@ -33,7 +36,7 @@
                             <img class="header__profile-img" src="~/images/page1/prifile.png" alt="">
                         </a>
                         <a class="header__profile-link" style="margin-left: 25px;" href="@Url.Action("SignOut", "Auth")">
-                            <img class="header__out-img" src="~/images/page1/out.svg" alt="">
+                            <div class="header__out-img"></div>
                         </a>
                     </div>
                 }
