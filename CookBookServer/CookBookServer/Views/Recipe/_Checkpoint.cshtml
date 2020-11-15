@@ -1,0 +1,32 @@
+﻿@model Mongo.Models.Recipe.CheckpointModel
+
+@{
+    var Id = String.Format("checkpoint-{0}", Guid.NewGuid());
+}
+
+<div class="new_checkpoint">
+    <input type="hidden" name="Checkpoints.Index" value="@Id" />
+    <div class="form__inputs">
+        <div>
+            <input class="form__input inp1" placeholder="Введите инструкцию для точки"  type="text"  required name="Checkpoints[@Id].Description" />
+            @Html.ValidationMessageFor(x => x.Description)
+        </div>
+
+        <div id="@Id" style="display: block;"></div>
+        <button class="form__minbtn btn-add" data-checkpointid="@Id">Добавить ингредиент</button>
+
+        <label class="timer_label">
+            Время на шаг -
+            <input min = "0", placeholder = "0" type = "number" required name="Checkpoints[@Id].CookingSeconds" />
+            минут
+        </label>
+        @Html.ValidationMessageFor(x => x.CookingSeconds)
+
+        <label class="timer_label">
+            Установить таймер на            
+            <input min = "0", type = "number", placeholder = "0" name="Checkpoints[@Id].TimerSeconds" />
+            минут
+        </label>
+        @Html.ValidationMessageFor(x => x.TimerSeconds)
+    </div>
+</div>

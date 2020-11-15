@@ -502,3 +502,14 @@ h6 {
     color: #fe6d73;
     margin-right: 42px;
 }
+
+.timer_label {
+    display: block;
+    margin-top: 20px;
+}
+
+.new_checkpoint {
+    padding-bottom: 30px;
+    padding-top: 20px;
+    border-bottom: solid 3px;
+}
