@@ -17,16 +17,16 @@
 
         <label class="timer_label">
             Время на шаг -
-            <input min = "0", placeholder = "0" type = "number" required name="Checkpoints[@Id].CookingSeconds" />
+            <input min = "0", placeholder = "0" type = "number" required name="Checkpoints[@Id].CookingMinutes" />
             минут
         </label>
-        @Html.ValidationMessageFor(x => x.CookingSeconds)
+        @Html.ValidationMessageFor(x => x.CookingMinutes)
 
         <label class="timer_label">
             Установить таймер на            
-            <input min = "0", type = "number", placeholder = "0" name="Checkpoints[@Id].TimerSeconds" />
+            <input min = "0", type = "number", placeholder = "0" name="Checkpoints[@Id].TimerMinutes" />
             минут
         </label>
-        @Html.ValidationMessageFor(x => x.TimerSeconds)
+        @Html.ValidationMessageFor(x => x.TimerMinutes)
     </div>
 </div>
