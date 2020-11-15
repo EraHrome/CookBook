@@ -6,6 +6,7 @@
 # Содержание
 * [Демо-версия проекта](#demo)
 * [Видео демонстрация Функиональности](#videodemo)
+* [Дизайн макет](#layout)
 * [О проекте](#about)
 * [Отличительные особенности проекта](#special)
 * [Перспективы развития](#perspectives)
@@ -18,6 +19,9 @@
 
 # <a name="videodemo"></a>Видео демонстрация Функиональности
 * [Ссылка на видео](https://drive.google.com/file/d/1FpmqH8obEpDuYc_ewcCe68u4uNphp4VB/view?usp=sharing)
+
+# <a name="layout"></a>Дизайн макет
+* https://www.figma.com/file/fisTMLXOPyLyiLZP6e9hYG/References?node-id=19%3A526
 
 # <a name="about"></a>О проекте
 Задание от компании Максимастер "Интерактивная поваренная книга"
