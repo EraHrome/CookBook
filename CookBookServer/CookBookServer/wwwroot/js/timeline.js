@@ -8,17 +8,17 @@ function stopTimer() {
 $(function () {
 
     $(document).on('click', '.ingredients__btn.start.active', function () {
-        activeTimer = startNewTimer(timeCount)
         $('.ingredients__btn').removeClass('active')
         $('.ingredients__btn.stop').addClass('active')
         $('.ingredients__btn.restart').addClass('active')
+        activeTimer = startNewTimer(timeCount)
     });
 
     $(document).on('click', '.ingredients__btn.stop.active', function () {
-        stopTimer();
         $('.ingredients__btn').removeClass('active')
         $('.ingredients__btn.restart').addClass('active')
         $('.ingredients__btn.continue').addClass('active')
+        stopTimer();
     });
 
     $(document).on('click', '.ingredients__btn.restart.active', function () {
@@ -65,17 +65,33 @@ $(function () {
                 const currentStep = this.currentStep
                 const currentIndex = steps.indexOf(currentStep)
 
-                if (steps[currentIndex] && steps[currentIndex].timeCount) {
-                    $('.ingredients__btn.start').addClass('active');
-                    timeCount = steps[currentIndex].timeCount
-                    //activeTimer = startNewTimer(steps[currentIndex].timeCount)
-                    isActiveTimer = true
+                if (next) {
+                    if (steps[currentIndex] && steps[currentIndex].timeCount) {
+                        $('.ingredients__btn.start').addClass('active');
+                        timeCount = steps[currentIndex].timeCount
+                        //activeTimer = startNewTimer(steps[currentIndex].timeCount)
+                        isActiveTimer = true
+                    }
+                    else if (isActiveTimer) {
+                        $('.ingredients__btn.start').removeClass('active');
+                        isActiveTimer = false
+                        stopTimer()
+                        $('#countdownA').replaceWith('<div class="countdown-bar" id="countdownA"><div></div><div></div></div>')
+                    }
                 }
-                else if (isActiveTimer) {
-                    $('.ingredients__btn.start').removeClass('active');
-                    isActiveTimer = false
-                    stopTimer()
-                    $('#countdownA').replaceWith('<div class="countdown-bar" id="countdownA"><div></div><div></div></div>')
+                else {
+                    if (steps[currentIndex - 2] && steps[currentIndex - 2].timeCount) {
+                        $('.ingredients__btn.start').addClass('active');
+                        timeCount = steps[currentIndex].timeCount
+                        //activeTimer = startNewTimer(steps[currentIndex].timeCount)
+                        isActiveTimer = true
+                    }
+                    else if (isActiveTimer) {
+                        $('.ingredients__btn.start').removeClass('active');
+                        isActiveTimer = false
+                        stopTimer()
+                        $('#countdownA').replaceWith('<div class="countdown-bar" id="countdownA"><div></div><div></div></div>')
+                    }
                 }
 
                 // handle back
