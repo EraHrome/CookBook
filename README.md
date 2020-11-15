@@ -5,6 +5,7 @@
 
 # Содержание
 * [Демо-версия проекта](#demo)
+* [Видео демонстрация Функиональности](#videodemo)
 * [О проекте](#about)
 * [Отличительные особенности проекта](#special)
 * [Перспективы развития](#perspectives)
@@ -14,6 +15,9 @@
 
 # <a name="demo"></a>Демо-версия проекта
 * https://cookbook-defpix.azurewebsites.net/
+
+# <a name="videodemo"></a>Видео демонстрация Функиональности
+* [Ссылка на видео](https://drive.google.com/file/d/1FpmqH8obEpDuYc_ewcCe68u4uNphp4VB/view?usp=sharing)
 
 # <a name="about"></a>О проекте
 Задание от компании Максимастер "Интерактивная поваренная книга"
