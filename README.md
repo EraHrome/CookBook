@@ -45,8 +45,10 @@
 * MongoDB
 * HTML 5
 * CSS3
+* JavaScript
 * SourceTree
 * GitHub
+* Веб-хостинг Azure
 
 # <a name="contacts"></a>Контакты
 Полковников Никита - polkovnikovnikita99@yandex.ru
