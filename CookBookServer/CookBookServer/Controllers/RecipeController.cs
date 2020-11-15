@@ -48,7 +48,6 @@ namespace CookBookServer.Controllers
             return View();
         }
 
-
         public async Task<IActionResult> Recipes()
         {
             var guid = _cookieProvider.GetGuidFromCookies(HttpContext);
@@ -61,5 +60,15 @@ namespace CookBookServer.Controllers
             return View(recipes);
         }
 
+        public IActionResult Ingredient([FromQuery] string pointId)
+        {
+            ViewBag.PointId = pointId;
+            return PartialView("_Ingredient");
+        }
+
+        public IActionResult Checkpoint()
+        {
+            return PartialView("_Checkpoint");
+        }
     }
 }

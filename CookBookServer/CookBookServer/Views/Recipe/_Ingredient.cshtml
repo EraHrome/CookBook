@@ -1,0 +1,19 @@
+﻿@model Mongo.Models.Recipe.IngredientModel
+
+@{
+    var pointId = ViewBag.PointId;
+    var Id = String.Format("ingredient-{0}", Guid.NewGuid());
+}
+
+<div id="@Id">
+    <input type="hidden" name="Checkpoints[@pointId].Ingredients.Index" value="@Id" />
+
+    <input class="form__input inp1" placeholder="Введите ингредиент" type="text" required name="Checkpoints[@pointId].Ingredients[@Id].Title" />
+    @Html.ValidationMessageFor(x => x.Title)
+
+
+    <input class="form__input inp1" placeholder="Введите количество" type="text" required name="Checkpoints[@pointId].Ingredients[@Id].Amount" />
+    @Html.ValidationMessageFor(x => x.Amount)
+
+    <button class="form__minbtn btn-del" data-indid="@Id">Удалить</button>
+</div>
