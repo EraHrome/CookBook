@@ -20,9 +20,12 @@
                         <li class="header__menu-item">
                             @Html.ActionLink("Главная", "Index", "Home")
                         </li>
-                        <li class="header__menu-item">
-                            @Html.ActionLink("Мои рецепты", "Recipes", "Recipe")
-                        </li>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="header__menu-item">
+                                @Html.ActionLink("Мои рецепты", "Recipes", "Recipe")
+                            </li>
+                        }
                     </ul>
                 </nav>
                 @if (User.Identity.IsAuthenticated)
