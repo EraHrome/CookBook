@@ -68,6 +68,27 @@ namespace CookBookServer.Controllers
                     ImageName = "test",
                     Raiting = 0.0,
                     CookingTimeMinutes = "30 минут",
+                    Ingredients = new IngredientModel[]
+                    {
+                    new IngredientModel()
+                            {
+                             Id = Guid.NewGuid().ToString(),
+                             Amount = "3 шт",
+                             Title = "Мясо"
+                            },
+                    new IngredientModel()
+                            {
+                             Id = Guid.NewGuid().ToString(),
+                             Amount = "1 шт",
+                             Title = "Соус"
+                            },
+                    new IngredientModel()
+                            {
+                             Id = Guid.NewGuid().ToString(),
+                             Amount = "200 мл",
+                             Title = "Бульон"
+                            },
+                    },
                     Checkpoints = new CheckpointModel[]
                     {
                        new CheckpointModel ()
@@ -83,7 +104,6 @@ namespace CookBookServer.Controllers
                              Amount = "3 шт",
                              Title = "Мясо"
                             },
-
                         }
                      },
                        new CheckpointModel ()
