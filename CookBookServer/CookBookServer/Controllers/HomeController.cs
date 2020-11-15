@@ -1,15 +1,15 @@
 ﻿using Microsoft.Extensions.Logging;
-using Microsoft.AspNetCore.Mvc;
+using CookBookServer.Repositories;
 using CookBookServer.Models;
+using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using CookBookServer.Providers;
-using CookBookServer.Repositories;
+using System.Threading.Tasks;
 using Mongo.Repositories;
 using CookBookServer.Services;
 using Mongo.Models.Recipe;
 using System;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace CookBookServer.Controllers
 {
@@ -43,7 +43,12 @@ namespace CookBookServer.Controllers
                 return View(recipes);
             }
 
-            return View("Main");
+            var mainRecipes = (await _apiService.GetRecipes())
+                    .OrderByDescending(x => x.Raiting)
+                    .Take(3)
+                    .ToArray();
+
+            return View("Main", mainRecipes);
         }
 
         public string AddTestRecept()
