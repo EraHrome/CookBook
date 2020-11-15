@@ -127,17 +127,36 @@
     flex-direction: column;
 }*/
 
+
+.progress__wrapper {
+    width: 100vw;
+    position: relative;
+}
+
 .progress__actions {
     position: absolute;
     top: 75px;
-    left: 230px;
+    right: 50%;
     display: flex;
     align-items: center;
-    width: max-content;
     flex-direction: column;
+    width: 360px;
+    transform: translateX(100%);
 }
 
-/*.btn {
+@media(max-width: 800px) {
+    .progress__actions {
+        position: static;
+        margin-left: 20px;
+        transform: none;
+    }
+    .progress {
+        height: auto;
+    }
+}
+
+    
+    /*.btn {
     width: fit-content;
     padding: 5px 8px;
     background-color: #FFFFFF;
@@ -150,15 +169,13 @@
     .btn:nth-child(2) {
         margin: 0 10px;
     }*/
-
-.progress__actions {
+    /*.progress__actions {
     width: 100vw;
-}
-
-.group__btns {
-    display: flex;
-    flex-direction: row;
-}
+}*/
+    .group__btns {
+        display: flex;
+        flex-direction: row;
+    }
 
 .recept-container{
     width: 20%;

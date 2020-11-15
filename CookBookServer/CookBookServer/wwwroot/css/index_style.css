@@ -153,6 +153,8 @@ body {
 .header {
   min-height: 100vh;
   background-color: white;
+  position: relative;
+  overflow: hidden;
 }
 .header::after {
   content: "";
@@ -160,6 +162,7 @@ body {
   width: 1126px;
   height: 993px;
   position: absolute;
+  top: 0;
   bottom: 0;
   right: 0;
   background: url("../images/header/header-decor.png");
@@ -554,4 +557,30 @@ body {
     line-height: 25px;
     color: #f5f5f5;
     margin-bottom: 61px;
+}
+
+@media(max-width: 1300px) {
+    .header::after {
+        opacity: .5;
+    }
+    .header__descr, .header__create-label {
+        color: #000;
+    }
+    .footer {
+        background-size: contain;
+    }
+    .footer__title, .footer__text {
+        color: #000;
+    }
+    .footer__inner {
+        padding: 20px;
+        border-radius: 20px;
+        background-color: #fff;
+    }
+}
+
+@media(max-width: 1000px) {
+    .recipes__item-2 {
+        padding-bottom: 20px;
+    }
 }

@@ -54,56 +54,58 @@
                 </div>*@
         </div>
     </template>
-    <div class="progress__actions">
-        <div class="recept-container">
-            <div class="countdown-bar" id="countdownA">
-                <div></div>
-                <div></div>
+    <div class="progress__wrapper">
+        <div class="progress__actions">
+            <div class="recept-container">
+                <div class="countdown-bar" id="countdownA">
+                    <div></div>
+                    <div></div>
+                </div>
+                {{currentStep ? currentStep.content : "Начать приготовление блюда"}}
             </div>
-            {{currentStep ? currentStep.content : "Начать приготовление блюда"}}
-        </div>
-        <div class="controls__container">
-            <div class="group__btns">
-                <button class="btn btn-timeline-controls"
-                        v-on:click="nextStep(false)">
-                    Назад
-                </button>
-                <button class="btn btn-timeline-controls"
-                        v-on:click="nextStep">
-                    Далее
-                </button>
+            <div class="controls__container">
+                <div class="group__btns">
+                    <button class="btn btn-timeline-controls"
+                            v-on:click="nextStep(false)">
+                        Назад
+                    </button>
+                    <button class="btn btn-timeline-controls"
+                            v-on:click="nextStep">
+                        Далее
+                    </button>
+                </div>
+                <div class="hint__container">
+                    <ul>
+                        <li>
+                            <div class="ingredients__item">Вы можете перелистывать страницы словами </div>
+                            <div class="int__mark">&nbsp;Дальше,&nbsp;Назад&nbsp;</div>
+                            <br>
+                        </li>
+                        <li>
+                            <div class="ingredients__item">Вы можете запустить таймер словами </div>
+                            <div class="int__mark">&nbsp;Старт,&nbsp;Запуск&nbsp;</div>
+                            <br>
+                        </li>
+                        <li>
+                            <div class="ingredients__item">Вы можете остановить таймер словами </div>
+                            <div class="int__mark">&nbsp;Стоп&nbsp;,Остановить&nbsp;</div>
+                            <br>
+                        </li>
+                        <li>
+                            <div class="ingredients__item">Вы можете перезапустить таймер словами </div>
+                            <div class="int__mark">&nbsp;Заново,&nbsp;Рестарт</div>
+                            <br>
+                        </li>
+                        <li>
+                            <div class="ingredients__item">Вы можете возобновить работу таймера словам</div>
+                            <div class="int__mark">&nbsp;Продолжить&nbsp;</div>
+                            <br>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div class="hint__container">
-                <ul>
-                    <li>
-                        <div class="ingredients__item">Вы можете перелистывать страницы словами </div>
-                        <div class="int__mark">&nbsp;Дальше,&nbsp;Назад&nbsp;</div>
-                        <br>
-                    </li>
-                    <li>
-                        <div class="ingredients__item">Вы можете запустить таймер словами </div>
-                        <div class="int__mark">&nbsp;Старт,&nbsp;Запуск&nbsp;</div>
-                        <br>
-                    </li>
-                    <li>
-                        <div class="ingredients__item">Вы можете остановить таймер словами </div>
-                        <div class="int__mark">&nbsp;Стоп&nbsp;,Остановить&nbsp;</div>
-                        <br>
-                    </li>
-                    <li>
-                        <div class="ingredients__item">Вы можете перезапустить таймер словами </div>
-                        <div class="int__mark">&nbsp;Заново,&nbsp;Рестарт</div>
-                        <br>
-                    </li>
-                    <li>
-                        <div class="ingredients__item">Вы можете возобновить работу таймера словам</div>
-                        <div class="int__mark">&nbsp;Продолжить&nbsp;</div>
-                        <br>
-                    </li>
-                </ul>
-            </div>
-        </div>
 
+        </div>
     </div>
 </div>
 

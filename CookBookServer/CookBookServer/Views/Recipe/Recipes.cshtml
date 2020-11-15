@@ -28,7 +28,7 @@
                     <a href="@Url.ActionLink("Index","Recipe",new { id = item.Id })">
                         <div class="recipes__item-2">
                             <h2 class="recipes__title">@item.Title</h2>
-                            <div class="recipes__time">@item.CookingTimeMinutes</div>
+                            <div class="recipes__time">@item.CookingTimeMinutes минут</div>
                             <div class="bottom">
                                 <div class="meal__stars">@item.Raiting.ToString("0.0")</div>
                             </div>
