@@ -177,9 +177,11 @@
         flex-direction: row;
     }
 
-.recept-container{
-    width: 20%;
+.recept-container {
+    width: 100%;
+    margin-top: 30px;
 }
+
 
 .btn-timeline-controls {
     font-family: "NotoSans";
