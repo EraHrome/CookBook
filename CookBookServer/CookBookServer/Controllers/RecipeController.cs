@@ -64,7 +64,9 @@ namespace CookBookServer.Controllers
             var guid = _cookieProvider.GetGuidFromCookies(HttpContext);
             var auth = _authRepository.LoginnedByToken(guid);
             var user = _userRepository.GetById(auth.UserId);
-            user.RecipesIds.ToList().Add(recipes.Id);
+            var recipesIds = user.RecipesIds?.ToList();
+            recipesIds.Add(recipes.Id);
+            user.RecipesIds = recipesIds;
             _userRepository.Update(user.Id, user);
 
             return Redirect("/Recipe/Recipes");
