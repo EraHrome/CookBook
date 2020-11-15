@@ -100,6 +100,10 @@ function countdown($element, $daysAdd, $hoursAdd, $minutesAdd, $secondsAdd) {
         if ($newDistance == $config.loadingBars_width) {
             $($loadingBars_timer).html($timerHtmlStart + $config.endtime_message + $timerHtmlEnd);
             clearInterval(this);
+            if (!ended) {
+                alert("Время вышло!")
+                ended = !ended
+            }
             return;
         } else {
 

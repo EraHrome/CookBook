@@ -44,7 +44,7 @@ namespace CookBookServer.Controllers
 
         [HttpPost]
         public async Task<IActionResult> Constructor(RecipeModel model)
-        {           
+        {
             model.Id = Guid.NewGuid().ToString();
             model.Ingredients = model.Checkpoints.SelectMany(x => x.Ingredients != null && x.Ingredients.Any() ? x.Ingredients : new List<IngredientModel>()).ToList();
             model.PublicationDate = DateTime.Now;
@@ -64,7 +64,7 @@ namespace CookBookServer.Controllers
             var guid = _cookieProvider.GetGuidFromCookies(HttpContext);
             var auth = _authRepository.LoginnedByToken(guid);
             var user = _userRepository.GetById(auth.UserId);
-            var recipesIds = user.RecipesIds?.ToList();
+            var recipesIds = user.RecipesIds?.ToList() ?? new List<string>();
             recipesIds.Add(recipes.Id);
             user.RecipesIds = recipesIds;
             _userRepository.Update(user.Id, user);

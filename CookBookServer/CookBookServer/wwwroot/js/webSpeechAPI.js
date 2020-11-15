@@ -2,9 +2,9 @@ $(function () {
 
     var nextKeyWords = ["следующий", "следующая", "дальше", "далее"]
     var prevKeyWords = ["назад", "предыдущий"]
-    var stopWords = ["стоп"]
+    var stopWords = ["стоп", "остановить"]
     var continueWords = ["продолжить"]
-    var restartWords = ["заново"]
+    var restartWords = ["заново", "рестарт"]
     var startWords = ["старт", "запуск"]
     var isTimeout = false
 
