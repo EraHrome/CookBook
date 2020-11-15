@@ -54,9 +54,12 @@
                 </div>*@
         </div>
     </template>
-
     <div class="progress__actions">
         <div class="recept-container">
+            <div class="countdown-bar" id="countdownA">
+                <div></div>
+                <div></div>
+            </div>
             {{currentStep ? currentStep.content : "Начать приготовление блюда"}}
         </div>
         <div class="controls__container">
@@ -71,9 +74,10 @@
                 </button>
             </div>
             <div class="hint__container">
-                <div class="ingredients__item">Или скажите «</div>
-                <div class="int__mark"> Дальше</div>
-                <div class="ingredients__item">»</div>
+                <div class="ingredients__item">Вы можете перелистывать страницы словами </div>
+                <div class="int__mark">&nbsp;Дальше&nbsp;</div>
+                <div class="ingredients__item">&nbsp;и&nbsp;</div>
+                <div class="int__mark">&nbsp;Назад&nbsp;</div>
             </div>
         </div>
 
@@ -85,10 +89,10 @@
     <div class="container2">
         <div class="recipe__inner">
             <div class="ingredients">
-                <h4 class="ingredients__title">Ингредиенты:</h4>
-                <div class="ingredients__items">
-                    @if (Model.Ingredients != null)
-                    {
+                @if (Model.Ingredients != null && Model.Ingredients.Any())
+                {
+                    <h4 class="ingredients__title">Ингредиенты:</h4>
+                    <div class="ingredients__items">
                         @foreach (var rec in Model.Ingredients)
                         {
                             <div class="ingredients__item">
@@ -96,18 +100,15 @@
                                 <div class="ingredients__item-num">@rec.Amount</div>
                             </div>
                         }
-                    }
-                </div>
+                    </div>
+                }
                 <div class="ingredients__btn-items">
-                    <button class="ingredients__btn">В избранное</button>
-                    <button class="ingredients__btn">Начать</button>
+                    <button class="ingredients__btn start">Запустить таймер</button>
+                    <button class="ingredients__btn stop">Остановить таймер</button>
+                    <button class="ingredients__btn restart">Запустить заново</button>
+                    <button class="ingredients__btn continue">Продолжить</button>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
-<div class="countdown-bar" id="countdownA">
-    <div></div>
-    <div></div>
-</div>

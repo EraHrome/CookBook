@@ -117,6 +117,16 @@
     top: 40px;
 }
 
+/*.progress__actions {
+    position: absolute;
+    top: 75px;
+    left: 1000px;
+    display: flex;
+    align-items: right;
+    width: max-content;
+    flex-direction: column;
+}*/
+
 .progress__actions {
     position: absolute;
     top: 75px;
@@ -161,14 +171,16 @@
     line-height: 19px;
     color: #fe6d73;
     text-decoration: none;
-    margin-left: 20px;
+    margin-right: 20px;
     background-color: white;
 }
 
-.hint__container{
+.hint__container {
+    font-weight: bold;
+    font-style: italic;
     display: flex;
     flex-direction: row;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .int__mark {

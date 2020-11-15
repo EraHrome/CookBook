@@ -9,10 +9,10 @@ function config() {
     $config.loadingBars = '.countdown-bar';
 
     // Countdown Loading Bar
-    $config.loadingBars_width = 250;
-    $config.loadingBars_height = 30;
+    $config.loadingBars_width = 360;
+    $config.loadingBars_height = 8;
     $config.loadingBars_border_color = '#E74C3C';
-    $config.loadingBars_color =  '#C0392B';
+    $config.loadingBars_color =  '#fe6d73';
     $config.loadingBars_background_color =  '#BDC3C7';
 
     // Countdown Timer
@@ -96,7 +96,7 @@ function countdown($element, $daysAdd, $hoursAdd, $minutesAdd, $secondsAdd) {
         if($newDistance == $config.loadingBars_width) {
                 $($loadingBars_timer).html($timerHtmlStart + $config.endtime_message + $timerHtmlEnd);
 
-                clearInterval(interval);
+                clearInterval(this);
                 return;
         } else {
 

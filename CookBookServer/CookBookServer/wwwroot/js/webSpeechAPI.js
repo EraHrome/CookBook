@@ -14,37 +14,38 @@ $(function () {
     SpeechRecognition.lang = "ru-RU";
     SpeechRecognition.interimResults = true;
     SpeechRecognition.onresult = function (event) {
+        if (!isTimeout) {
 
-        var speech = event.results[0][0].transcript;
+            var speech = event.results[0][0].transcript;
 
-        if (stopWords.indexOf(speech) !== -1) {
-            if (!isTimeout) {
-                stopTimer()
-                event.preventDefault()
-                isTimeout = !isTimeout
-                setTimeout(() => { isTimeout = !isTimeout }, 1000)
+            if (stopWords.indexOf(speech) !== -1) {
+                if (!isTimeout) {
+                    stopTimer()
+                    event.preventDefault()
+                    isTimeout = !isTimeout
+                    setTimeout(() => { isTimeout = !isTimeout }, 1000)
+                }
+            }
+
+
+            if (prevKeyWords.indexOf(speech) !== -1) {
+                if (!isTimeout) {
+                    $('.btn')[0].click()
+                    event.preventDefault()
+                    isTimeout = !isTimeout
+                    setTimeout(() => { isTimeout = !isTimeout }, 1000)
+                }
+            }
+
+            if (nextKeyWords.indexOf(speech) !== -1) {
+                if (!isTimeout) {
+                    $('.btn')[1].click()
+                    event.preventDefault()
+                    isTimeout = !isTimeout
+                    setTimeout(() => { isTimeout = !isTimeout }, 1000)
+                }
             }
         }
-
-
-        if (prevKeyWords.indexOf(speech) !== -1) {
-            if (!isTimeout) {
-                $('.btn')[0].click()
-                event.preventDefault()
-                isTimeout = !isTimeout
-                setTimeout(() => { isTimeout = !isTimeout }, 1000)
-            }
-        }
-
-        if (nextKeyWords.indexOf(speech) !== -1) {
-            if (!isTimeout) {
-                $('.btn')[1].click()
-                event.preventDefault()
-                isTimeout = !isTimeout
-                setTimeout(() => { isTimeout = !isTimeout }, 1000)
-            }
-        }
-
     };
     SpeechRecognition.onend = function () {
         SpeechRecognition.start();

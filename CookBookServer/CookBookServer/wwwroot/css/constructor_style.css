@@ -439,16 +439,30 @@ h6 {
         }
 
 .form__btn-check {
-    width: 135px;
+    width: 114px;
     height: 35px;
     font-family: "NotoSans";
     font-style: normal;
     font-weight: bold;
     font-size: 13px;
     line-height: 18px;
-    margin-right: 33px;
     color: #ffffff;
+    background: #fe6d73;
+    border-radius: 25px;
+    -webkit-filter: drop-shadow(0px 4px 4px #fe6d73);
+    filter: drop-shadow(0px 4px 4px #fe6d73);
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    margin-right: 33px;
 }
+
+    .form__btn-check:hover {
+        background: #ec565c;
+        filter: drop-shadow(0px 4px 4px #EC565C);
+    }
+
+
 
 .form__buon {
     margin-top: 73px;
@@ -471,6 +485,8 @@ h6 {
     line-height: 18px;
     color: #ffffff;
 }
+
+
 
 .inp1 {
     width: 271px;
