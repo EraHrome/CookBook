@@ -6,10 +6,11 @@
 # Содержание
 * [Демо-версия проекта](#demo)
 * [Видео демонстрация Функиональности](#videodemo)
+* [Дизайн макет](#layout)
 * [О проекте](#about)
 * [Отличительные особенности проекта](#special)
 * [Перспективы развития](#perspectives)
-* [Стэк технологий](#technology-stack)
+* [Стек технологий](#technology-stack)
 * [Контакты](#contacts)
 * [Участники команды](#team-members)
 
@@ -18,6 +19,9 @@
 
 # <a name="videodemo"></a>Видео демонстрация Функиональности
 * [Ссылка на видео](https://drive.google.com/file/d/1FpmqH8obEpDuYc_ewcCe68u4uNphp4VB/view?usp=sharing)
+
+# <a name="layout"></a>Дизайн макет
+* https://www.figma.com/file/fisTMLXOPyLyiLZP6e9hYG/References?node-id=19%3A526
 
 # <a name="about"></a>О проекте
 Задание от компании Максимастер "Интерактивная поваренная книга"
@@ -44,7 +48,7 @@
 * Монетизация сервиса путем кооперации проекта с сервисами по доставке продуктов
 * Монетизация сервиса путем внедрения системы бонусного контента для платных подписчиков
 
-# <a name="technology-stack"></a>Стэк технологий
+# <a name="technology-stack"></a>Стек технологий
 * Asp.NET Core MVC
 * MongoDB
 * HTML 5
@@ -58,8 +62,8 @@
 Полковников Никита - polkovnikovnikita99@yandex.ru
 
 # <a name="team-members"></a>Участники команды
-* "Полковникв Никита" (Fullstuck)
-* "Соболь Кирилл" (Fullstuck)
-* "Анастасия Никитина" (Fullstuck)
+* "Полковникв Никита" (FullStack)
+* "Соболь Кирилл" (FullStack)
+* "Анастасия Никитина" (FullStack)
 * "Маслов Антон" (Frontend)
 * "Вильямов Михаил" (UX/UI)

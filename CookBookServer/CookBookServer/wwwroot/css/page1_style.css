@@ -42,6 +42,10 @@ body {
     -webkit-text-size-adjust: 100%;
 }
 
+html {
+    overflow: hidden;
+}
+
 input,
 button,
 textarea {
