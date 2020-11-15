@@ -48,18 +48,11 @@
                         <div class="bottom">
                             <div class="meal__stars">5.0</div>
                         </div>
-                    </div>
-                    <div class="recipes__item-2">
-                        <h2 class="recipes__title">Классический стейк</h2>
-                        <div class="recipes__time">10 минут</div>
-                        <div class="bottom">
-                            <div class="meal__stars">5.0</div>
-                        </div>
-                    </div>
+                    </div>                    
 
                     @foreach (var item in Model)
                     {
-                       <a href="@Url.ActionLink("Index","Recipe",new { id = item.Id })">
+                       <a href="@Url.ActionLink("Index", "Recipe", new { id = item.Id })">
                             <div class="recipes__item-2">
                                 <h2 class="recipes__title">@item.Title</h2>
                                 <div class="recipes__time">@item.CookingTimeMinutes минут</div>
