@@ -6,6 +6,12 @@ namespace Mongo.Models.Recipe
 {
     public class RecipeModel : IHasStringId
     {
+        public RecipeModel()
+        {
+            Checkpoints = new List<CheckpointModel>();
+            Ingredients = new List<IngredientModel>();
+        }
+
         public string Id { get; set; }
         public string Title { get; set; }
         public string ImageName { get; set; }
