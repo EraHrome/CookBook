@@ -1,8 +1,11 @@
 $(function () {
 
-    var nextKeyWords = ["следующий", "следующая", "дальше", "продолжить"]
+    var nextKeyWords = ["следующий", "следующая", "дальше", "далее"]
     var prevKeyWords = ["назад", "предыдущий"]
     var stopWords = ["стоп"]
+    var continueWords = ["продолжить"]
+    var restartWords = ["заново"]
+    var startWords = ["старт", "запуск"]
     var isTimeout = false
 
     if (window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition) {
@@ -20,13 +23,39 @@ $(function () {
 
             if (stopWords.indexOf(speech) !== -1) {
                 if (!isTimeout) {
-                    stopTimer()
+                    $('.ingredients__btn.stop.active').click()
                     event.preventDefault()
                     isTimeout = !isTimeout
                     setTimeout(() => { isTimeout = !isTimeout }, 1000)
                 }
             }
 
+            if (startWords.indexOf(speech) !== -1) {
+                if (!isTimeout) {
+                    $('.ingredients__btn.start.active').click()
+                    event.preventDefault()
+                    isTimeout = !isTimeout
+                    setTimeout(() => { isTimeout = !isTimeout }, 1000)
+                }
+            }
+
+            if (restartWords.indexOf(speech) !== -1) {
+                if (!isTimeout) {
+                    $('.ingredients__btn.restart.active').click()
+                    event.preventDefault()
+                    isTimeout = !isTimeout
+                    setTimeout(() => { isTimeout = !isTimeout }, 1000)
+                }
+            }
+
+            if (continueWords.indexOf(speech) !== -1) {
+                if (!isTimeout) {
+                    $('.ingredients__btn.continue.active').click()
+                    event.preventDefault()
+                    isTimeout = !isTimeout
+                    setTimeout(() => { isTimeout = !isTimeout }, 1000)
+                }
+            }
 
             if (prevKeyWords.indexOf(speech) !== -1) {
                 if (!isTimeout) {
