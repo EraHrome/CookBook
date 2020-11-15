@@ -36,7 +36,10 @@ namespace CookBookServer.Controllers
         {
             if (HttpContext.User.Identity.IsAuthenticated)
             {
-                var recipes = await _apiService.GetRecipes();
+                var recipes = (await _apiService.GetRecipes())
+                    .OrderByDescending(x => x.Raiting)
+                    .ToArray();
+
                 return View(recipes);
             }
 
