@@ -12,7 +12,6 @@ using System.Collections.Generic;
 
 namespace CookBookServer.Controllers
 {
-    [Authorize]
     public class RecipeController : Controller
     {
 
@@ -37,11 +36,14 @@ namespace CookBookServer.Controllers
             return View(recipe);
 
         }
+
+        [Authorize]
         public IActionResult Constructor()
         {
             return View();
         }
 
+        [Authorize]
         [HttpPost]
         public async Task<IActionResult> Constructor(RecipeModel model)
         {
@@ -72,6 +74,7 @@ namespace CookBookServer.Controllers
             return Redirect("/Recipe/Recipes");
         }
 
+        [Authorize]
         public async Task<IActionResult> Recipes()
         {
             var guid = _cookieProvider.GetGuidFromCookies(HttpContext);
@@ -84,12 +87,14 @@ namespace CookBookServer.Controllers
             return View(recipes);
         }
 
+        [Authorize]
         public IActionResult Ingredient([FromQuery] string pointId)
         {
             ViewBag.PointId = pointId;
             return PartialView("_Ingredient");
         }
 
+        [Authorize]
         public IActionResult Checkpoint()
         {
             return PartialView("_Checkpoint");
