@@ -27,9 +27,7 @@
                                     </h2>
                                     <div class="recipes__time">@Model[i].CookingTimeMinutes минут</div>
                                     <div class="meal__items">
-                                        <a class="meal__profile-link" href="#">
-                                            <img class="meal__profile-img" src="images/page1/prifile.png" alt="">
-                                        </a>
+                                        <img class="meal__profile-img" src="images/page1/prifile.png" alt="">                                        
                                         <div class="meal__stars">@Model[i].Raiting</div>
                                     </div>
 
@@ -40,17 +38,15 @@
                     <div class="recipes__items-2">                        
                         @for (int i = 2; i < Model.Count(); i++)
                         {
-                            <div class="recipes__item-2">
-                                <a href="@Url.ActionLink("Index", "Recipe", new { id = Model[i].Id })">
-                                    <div class="recipes__item-2">
-                                        <h2 class="recipes__title">@Model[i].Title</h2>
-                                        <div class="recipes__time">@Model[i].CookingTimeMinutes минут</div>
-                                        <div class="bottom">
-                                            <div class="meal__stars">@Model[i].Raiting</div>
-                                        </div>
+                            <a href="@Url.ActionLink("Index", "Recipe", new { id = Model[i].Id })">
+                                <div class="recipes__item-2">
+                                    <h2 class="recipes__title">@Model[i].Title</h2>
+                                    <div class="recipes__time">@Model[i].CookingTimeMinutes минут</div>
+                                    <div class="bottom">
+                                        <div class="meal__stars">@Model[i].Raiting</div>
                                     </div>
-                                </a>
-                            </div>
+                                </div>
+                            </a>
                         }                        
                     </div>
 
