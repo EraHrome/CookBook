@@ -34,7 +34,10 @@ namespace CookBookServer.Controllers
         public IActionResult Index()
         {
             if (HttpContext.User.Identity.IsAuthenticated)
-                return View();
+            {
+                var recipes = _apiService.GetRecipes();
+                return View(recipes);
+            }
 
             return View("Main");
         }
