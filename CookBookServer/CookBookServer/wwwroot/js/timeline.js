@@ -1,12 +1,50 @@
 var activeTimer
+var timeCount
 
 function stopTimer() {
-    if (activeTimer) {
-        clearInterval(activeTimer)
-    }
+    clearInterval(activeTimer)
 }
 
 $(function () {
+
+    $(document).on('click', '.ingredients__btn.start.active', function () {
+        activeTimer = startNewTimer(timeCount)
+        $('.ingredients__btn').removeClass('active')
+        $('.ingredients__btn.stop').addClass('active')
+        $('.ingredients__btn.restart').addClass('active')
+    });
+
+    $(document).on('click', '.ingredients__btn.stop.active', function () {
+        stopTimer();
+        $('.ingredients__btn').removeClass('active')
+        $('.ingredients__btn.restart').addClass('active')
+        $('.ingredients__btn.continue').addClass('active')
+    });
+
+    $(document).on('click', '.ingredients__btn.restart.active', function () {
+        $('.ingredients__btn').removeClass('active')
+        $('.ingredients__btn.stop').addClass('active')
+        $('.ingredients__btn.restart').addClass('active')
+        $('#countdownA').replaceWith('<div class="countdown-bar" id="countdownA"><div></div><div></div></div>')
+        activeTimer = startNewTimer(timeCount)
+    });
+
+    $(document).on('click', '.ingredients__btn.continue.active', function () {
+        $('.ingredients__btn').removeClass('active')
+        $('.ingredients__btn.stop').addClass('active')
+        $('.ingredients__btn.restart').addClass('active')
+        var arr = $('.countdown-bar div span').text().split(':')
+        var seconds = parseInt(arr[2])
+        var minutes = parseInt(arr[1])
+        var hours = parseInt(arr[0])
+        var totalSeconds = hours * 60 * 60 + minutes * 60 + seconds
+        $('#countdownA').replaceWith('<div class="countdown-bar" id="countdownA"><div></div><div></div></div>')
+        activeTimer = startNewTimer(totalSeconds)
+    });
+
+    $(document).on('click', '.btn-timeline-controls', function () {
+        $('.ingredients__btn:not(.start)').removeClass('active')
+    });
 
     var isActiveTimer = false
     var dataNodes = $('.checkpoint-desc')
@@ -28,10 +66,13 @@ $(function () {
                 const currentIndex = steps.indexOf(currentStep)
 
                 if (steps[currentIndex] && steps[currentIndex].timeCount) {
-                    activeTimer = startNewTimer(steps[currentIndex].timeCount)
+                    $('.ingredients__btn.start').addClass('active');
+                    timeCount = steps[currentIndex].timeCount
+                    //activeTimer = startNewTimer(steps[currentIndex].timeCount)
                     isActiveTimer = true
                 }
                 else if (isActiveTimer) {
+                    $('.ingredients__btn.start').removeClass('active');
                     isActiveTimer = false
                     stopTimer()
                     $('#countdownA').replaceWith('<div class="countdown-bar" id="countdownA"><div></div><div></div></div>')
