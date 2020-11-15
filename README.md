@@ -58,8 +58,8 @@
 Полковников Никита - polkovnikovnikita99@yandex.ru
 
 # <a name="team-members"></a>Участники команды
-* "Полковникв Никита" (Fullstuck)
-* "Соболь Кирилл" (Fullstuck)
-* "Анастасия Никитина" (Fullstuck)
+* "Полковникв Никита" (FullStack)
+* "Соболь Кирилл" (FullStack)
+* "Анастасия Никитина" (FullStack)
 * "Маслов Антон" (Frontend)
 * "Вильямов Михаил" (UX/UI)
